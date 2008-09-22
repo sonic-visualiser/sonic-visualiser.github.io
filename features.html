@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <link rel="stylesheet" media="screen" type="text/css" href="screen.css"/>
+    <link rel="icon" type="image/png" href="images/waveform.png"/>
+    <link rel="shortcut" type="image/png" href="images/waveform.png"/>
+    <title>Sonic Visualiser</title>
+    <meta name="robots" content="index"/>
+    <meta name="keywords" content="sonic visualiser visualizer visualise visualize audio music spectrogram feature extraction"/>
+    <meta name="description" content="Sonic Visualiser is a program for viewing and analysing the contents of music audio files."/>
+  </head>
+  <body>
+      <h1 id="header"><span>Sonic Visualiser Features and Design Goals</span></h1>
+
+      <div id="nav">
+      <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="screenshots.html">Screenshots</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="documentation.html">Documentation</a></li>
+      <li><a href="http://www.vamp-plugins.org/">Vamp Plugins</a></li>
+      </ul></div>
+
+      <h2 id="firstpara">Features and Design Goals</h2>
+      <p>Sonic Visualiser contains features for the following:
+      <ul>
+
+	<li>Load audio files in WAV, Ogg and MP3 formats, and view
+	their waveforms.</li>
+	
+	<li>Look at audio visualisations such as spectrogram views, with
+	  interactive adjustment of display parameters.</li>
+	
+	<li>Annotate audio data by adding labelled time points and defining
+	  segments, point values and curves.</li>
+	
+	<li>Overlay annotations on top of one another with aligned
+	scales, and overlay annotations on top of waveform or
+	spectrogram views.</li>
+
+	<li>View the same data at multiple time resolutions
+	simultaneously (for close-up and overview).</li>
+
+	<li>Run feature-extraction plugins to calculate annotations
+	  automatically, using algorithms such as beat trackers, pitch
+	  detectors and so on.</li>
+	
+	<li>Import annotation layers from various text file formats.</li>
+	
+	<li>Import note data from MIDI files, view it alongside other
+	frequency scales, and play it with the original audio.</li>
+	
+	<li>Play back the audio plus synthesised annotations, taking
+	  care to synchronise playback with display.</li>
+
+        <li>Select areas of interest, optionally snapping to nearby
+        feature locations, and audition individual and comparative
+        selections in seamless loops.</li>
+	
+	<li>Time-stretch playback, slowing right down or speeding up
+	to a tiny fraction or huge multiple of the original speed
+	while retaining a synchronised display.</li>
+	
+	<li>Export audio regions and annotation layers to external files.</li>
+      </ul>
+
+      <p>The design goals for Sonic Visualiser are:</p>
+
+      <ul>
+      <li>To provide the best available core
+      waveform and spectrogram audio visualisations for use with
+      substantial files of music audio data.</li>
+
+      <li>To facilitate ready comparisons between different kinds of
+      data, for example by making it easy to overlay one set of data
+      on another, or display the same data in more than one way at the
+      same time.</li>
+
+      <li>To be straightforward.  The user interface should be simpler
+      to learn and to explain than the internal data structures.  In
+      this respect, Sonic Visualiser aims to resemble a consumer
+      audio application.</li>
+
+      <li>To be responsive, slick, and enjoyable.  Even if you have to
+      wait for your results to be calculated, you should be able to do
+      something else with the audio data while you wait.  Sonic
+      Visualiser is pervasively multithreaded, loves multiprocessor
+      and multicore systems, and can make good use of fast processors
+      with plenty of memory.</li>
+
+      <li>To handle large data sets.  The work Sonic Visualiser does
+      is intrinsically processor-hungry and (often) memory-hungry, but
+      the aim is to allow you to work with long audio files on
+      machines with modest CPU and memory where reasonable.  (Disk
+      space is another matter.  Sonic Visualiser eats that.)</li>
+
+      </ul>
+    </body>
+</html>

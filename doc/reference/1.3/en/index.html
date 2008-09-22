@@ -1,0 +1,1468 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <link rel="stylesheet" media="screen" type="text/css" href="screen.css"/>
+    <link rel="icon" type="image/png" href="images/waveform.png"/>
+    <link rel="shortcut" type="image/png" href="images/waveform.png"/>
+      <title>Sonic Visualiser: A Brief Reference</title>
+    <meta name="robots" content="index"/>
+  </head>
+  <body>
+      <a href="http://www.sonicvisualiser.org"><h1 id="header"><span>Sonic Visualiser</span></h1></a>
+
+      <h2 id="firstpara">A Brief Reference</h2>
+
+      <div class="toc2">1. &nbsp;<a href="#panesandlayers">Panes and Layers</a></div>
+      <div class="toc3">1.1. &nbsp;<a href="#paneconcepts">What are Panes and Layers?</a></div>
+      <div class="toc3">1.2. &nbsp;<a href="#paneadding">Adding Panes and Layers</a></div>
+      <div class="toc3">1.3. &nbsp;<a href="#layeredits">Display Properties</a></div>
+      <div class="toc2">2. &nbsp;<a href="#sessionsandundo">Sessions and Undo</a></div>
+      <div class="toc2">3. &nbsp;<a href="#tools">Tools</a></div>
+      <div class="toc2">4. &nbsp;<a href="#selection">Selection</a></div>
+      <div class="toc2">5. &nbsp;<a href="#editing">Editing</a></div>
+      <div class="toc3">5.1. &nbsp;<a href="#cutandpaste">Cut and Paste</a></div>
+      <div class="toc3">5.2. &nbsp;<a href="#dataeditor">The Data Editor</a></div>
+      <div class="toc2">6. &nbsp;<a href="#layerdetails">The Layers in Detail</a></div>
+      <div class="toc3">6.1. &nbsp;<a href="#waveform">Waveform</a></div>
+      <div class="toc3">6.2. &nbsp;<a href="#timeruler">Time Ruler</a></div>
+      <div class="toc3">6.3. &nbsp;<a href="#spectrogram">Spectrogram</a></div>
+      <div class="toc4">6.3.1 &nbsp;<a href="#defaultspectrograms">Initial Spectrogram Properties</a></div>
+      <div class="toc3">6.4. &nbsp;<a href="#spectrum">Spectrum</a></div>
+      <div class="toc3">6.5. &nbsp;<a href="#timeinstants">Time Instants</a></div>
+      <div class="toc3">6.6. &nbsp;<a href="#timevalues">Time Values</a></div>
+      <div class="toc3">6.7. &nbsp;<a href="#notes">Notes</a></div>
+      <div class="toc3">6.8. &nbsp;<a href="#text">Text</a></div>
+      <div class="toc3">6.9. &nbsp;<a href="#images">Images</a></div>
+      <div class="toc3">6.10. &nbsp;<a href="#colour3dplot">Colour 3D Plot</a></div>
+      <div class="toc4">6.10.1 &nbsp;<a href="#slice">Slices</a></div>
+      <div class="toc2">7. &nbsp;<a href="#plugins">Transforms and Plugins</a></div>
+      <div class="toc3">7.1. &nbsp;<a href="#transform">The Transform Menu</a></div>
+      <div class="toc3">7.2. &nbsp;<a href="#vampplugins">Analysis Plugins</a></div>
+      <div class="toc3">7.3. &nbsp;<a href="#ladspaplugins">Effects Plugins</a></div>
+      <div class="toc4">7.3.1. &nbsp;<a href="#effects">Effects</a></div>
+      <div class="toc4">7.3.2. &nbsp;<a href="#effectsdata">Effects Data</a></div>
+      <div class="toc4">7.3.3. &nbsp;<a href="#generators">Generators</a></div>
+      <div class="toc2">8. &nbsp;<a href="#measurements">Measurements</a></div>
+      <div class="toc3">8.1. &nbsp;<a href="#automeasurement">Automatic measurement in the spectrogram</a></div>
+      <div class="toc2">9. &nbsp;<a href="#audioplayback">Audio Playback</a></div>
+      <div class="toc2">10. &nbsp;<a href="#alignment">Time Alignment</a></div>
+      <div class="toc2">11. &nbsp;<a href="#fileimportandexport">File Import and Export</a></div>
+      <div class="toc3">11.1. &nbsp;<a href="#audioimport">Audio File Import</a></div>
+      <div class="toc3">11.2. &nbsp;<a href="#audioexport">Audio File Export</a></div>
+      <div class="toc3">11.3. &nbsp;<a href="#layerimport">Annotation Layer Import</a></div>
+      <div class="toc3">11.4. &nbsp;<a href="#layerexport">Annotation Layer Export</a></div>
+      <div class="toc3">11.5. &nbsp;<a href="#imageexport">Image File Export</a></div>
+      <div class="toc3">11.6. &nbsp;<a href="#remote">Opening Remote Locations</a></div>
+      <div class="toc2">12. &nbsp;<a href="#preferences">Application Preferences</a></div>
+      <div class="toc2">13. &nbsp;<a href="#keyboardandmousereference">Keyboard and Mouse Reference</a></div>
+      <div class="toc3">13.1. &nbsp;<a href="#toolselection">Tool selection</a></div>
+      <div class="toc3">13.2. &nbsp;<a href="#displaylevel">Display level</a></div>
+      <div class="toc3">13.3. &nbsp;<a href="#scrolling">Scrolling</a></div>
+      <div class="toc3">13.4. &nbsp;<a href="#zoom">Zoom</a></div>
+      <div class="toc3">13.5. &nbsp;<a href="#playback">Playback</a></div>
+
+
+<p>Sonic Visualiser is an application for viewing and analysing the
+contents of music audio files.  This is a brief reference manual
+explaining the concepts used in Sonic Visualiser and how to use it.
+This manual describes Sonic Visualiser version 1.3.</p>
+
+<p>This document is Copyright 2006-2008 Chris Cannam and Queen Mary,
+University of London.  You may modify and redistribute it under the
+terms of the Creative Commons Attribution-ShareAlike 2.5 License.  See
+<a
+href="http://creativecommons.org/licenses/by-sa/2.5/">http://creativecommons.org/licenses/by-sa/2.5/</a>
+for details.</p>
+
+<p>Please report errors and omissions using the Sonic Visualiser <a
+href="http://sourceforge.net/tracker/?group_id=162924&atid=825705">bug
+tracker</a>.
+
+<a name="panesandlayers"></a><h2>1. &nbsp;Panes and Layers</h2>
+
+<a name="paneconcepts"></a><h3>1.1. &nbsp;What are Panes and Layers?</h3>
+
+<p>Sonic Visualiser's user interface is structured around <i>panes</i>
+and <i>layers</i>.  A pane is a horizontally scrollable area of window
+like a drawing canvas; a layer is one of a set of things that can be
+shown on a pane, such as a waveform, a line graph of measurements,
+or a subdivision of the horizontal axis into differently coloured segments.</p>
+
+<p>You can stack any number of panes above one another vertically: a
+scrollbar will appear if you have too many to fit in the window.  The
+horizontal axis of each pane corresponds to time in audio sample
+frames, and all of the stacked panes will be aligned to the same
+sample frame at their centre points.</p>
+
+<p>Each pane can then display any number of layers, which are
+conceptually stacked on top of one another like layers in a graphics
+application.  So for example, you may have a spectrogram layer "at the
+back", with line data, onset positions and notes displayed in
+separate layers "in front", i.e. drawn over the top of it.  There are
+several different kinds of layer, which differ in the types of data
+they can represent: instants, curves (time-value plots), and so
+on.</p>
+
+<p><div align="center"><img style="max-width:100%" src="images/pane-layers.png"/><br><i>A pane with four layers: <a href="#waveform">waveform</a> in black, <a href="#timeruler">time ruler</a> in grey, <a href="#timevalues">time values</a> in purple and <a href="#timeinstants">time instants</a> in blue.</i></div></p>
+
+<p>Layers that are stacked on the same pane will always share the same
+ magnification and alignment on the x (time) axis.  However, they do
+ not have to have identical scales on the y axis &ndash; although Sonic Visualiser will
+ attempt to align them by default if their scale units match.</p>
+
+<p style="clear:left"><img style="float:left;padding-top:0.3em;max-width:50%;padding-right:1em" src="images/active.png"/>
+
+One pane is always the "active" pane, and this one is marked with a
+ black vertical bar to its left.  The front layer on that pane is the
+ active layer.  Any menu operation in Sonic Visualiser that works on a single layer
+ will always operate on the active layer.</p>
+
+<p>While most
+ of the annotation layer types are interactively editable on the pane
+ itself, layers corresponding directly to audio data (such as waveform
+ and spectrogram layers) are not.</p>
+
+<a name="paneadding"></a><h3>1.2. &nbsp;Adding Panes and Layers</h3>
+
+<p>Sonic Visualiser starts with a single visible pane.  When you
+import an audio file, it adds <a href="#timeruler">time ruler</a> and
+<a href="#waveform">waveform</a> layers to that pane, displaying the
+new audio file.
+
+<p>There are then three menus dedicated to adding new panes and layers
+to the display, with various kinds of data in them:</p>
+
+<ul>
+
+<li>The Pane menu contains several functions to add new panes
+displaying audio data.<br>Use the Add Waveform and Add Spectrum
+functions to add a new pane containing a <a
+href="#waveform">waveform</a> or <a href="#spectrum">spectrum</a>
+layer.  Use one of the three Add Spectrogram functions to add a pane
+with a <a href="#spectrogram">spectrogram</a> layer with a particular
+set of <a href="#defaultspectrograms">initial properties</a>. You can
+also add an empty pane and add layers to it afterwards.</li><p>
+
+<li>The Layer menu contains the same functions as the Pane menu.  When
+invoked from the Layer menu, they add a new layer to the current pane
+instead of adding a whole new pane.<br>The Layer menu also contains
+functions to add empty layers of each of the editable layer types: <a
+href="#timeinstants">time instants</a>, <a href="#timevalues">time
+values</a>, <a href="#notes">notes</a>, <a href="#text">text</a>, and
+<a href="#images">images</a>.<br>You can also add an existing layer to
+another pane, thus displaying the same thing more than once, or add a
+<a href="#slice">slice</a> of an existing <a
+href="#colour3dplot">colour 3D plot</a> layer.</li><p>
+
+<li>The <a href="#transform">Transform menu</a> lists things you can do
+to your audio in order to produce new layers with data in them.
+Transforms include applying audio effects plugins to produce different
+audio data, and applying feature extraction plugins to extract other
+kinds of data from the audio.  See <a href="#plugins">Transforms and
+Plugins</a>.</li>
+
+</ul>
+
+<p>You can also add a new layer by <a
+href="#layerimport">importing</a> an existing set of annotation data from a file.
+
+<a name="layeredits"></a><h3>1.3. &nbsp;Display Properties</h3>
+
+<p><img style="float:right;max-width:50%;padding-left:1em" src="images/params-spectrogram.png"/>Each layer, whether editable or not, has a set of adjustable
+display properties.  These are shown in a corresponding stack to the
+right of the pane.  To save space, not all of the names of the
+properties are shown; you can hold the mouse pointer over a control to
+see the name of its property in a tooltip.</p>
+
+<p>Click on the numbered tab for a layer in this stack to "raise" that
+layer to the front of the pane and adjust its properties.  The available
+properties for the different layer types are discussed in the sections
+about those layers, below.</p>
+
+<p><img style="float:left;max-width:50%;padding-right:1em" src="images/params-pane.png"/>There is also a tab corresponding to the pane itself, which can
+be used to control the way the pane tracks during playback and its
+alignment with other panes.</p><p>The Global Scroll and Global Zoom settings (both on by default) make the pane follow any horizontal scrolling and zooming that happens in other panes that also have these settings on, so that when you scroll or zoom in one of them, they all scroll or zoom.</p><p>The Follow Playback control allows you to choose whether the pane will track playback using a playback cursor, paging when it reaches the edge of the pane (Page); or whether it will scroll along with the playback (Scroll); or neither.</p>
+
+<a name="sessionsandundo"></a><h2 style="clear:both">2. &nbsp;Sessions and Undo</h2>
+
+<p>A Sonic Visualiser "session" is a record of almost everything you see
+ in front of you in the Sonic Visualiser window: the current layout of panes, the set
+ of layers on each one, all of the data in each of the editable layers,
+ a reference to the source data (for example the audio file) for
+ non-editable layers like waveforms, the display properties for each
+ layer, and some information about where each layer came from (for
+ example, whether it was generated by a plugin and if so, which plugin
+ and how it was configured.)</p>
+
+<p>You can save the entire session to a <code>.sv</code> session file using File -&gt;
+ Save Session As...  Reloading this file should restore your session
+ state, provided that the original audio file can also be found.  (If
+ you are passing session files to other Sonic Visualiser users, be sure to make sure
+ they have the audio data as well, as this is never stored in the
+ session file.)</p>
+
+<p>Sonic Visualiser provides full multi-level Undo and Redo.  Almost all actions that
+ change the session you see in front of you &ndash; with the exception of
+ scrolling and zooming &ndash; can be undone.  This includes adding and
+ removing layers and panes and changing the display properties for a
+ layer, as well as more conventional edits.</p>
+
+<a name="tools"></a><h2>3. &nbsp;Tools</h2>
+
+<p>Sonic Visualiser has six "tools", which control the way mouse actions interact with
+ the panes.  These can be activated using the tool icons on the toolbar:</p>
+<ul>
+<li><img src="images/icons/navigate.png"/> Navigate tool. Used for basic viewing and navigating.  With
+  this tool active, you can just click and drag anywhere on a pane
+  to move the view of the audio data around.  This tool is active by
+  default, except when a new empty editable layer has just been added, when the draw tool (below) is made active.
+
+</li><p><li><img src="images/icons/select.png"/> Select tool. Used for selecting areas.
+  Click and drag in any pane to select a region in time.  See also
+  <a href="#selection">Selection</a>, below.
+
+</li><p><li><img src="images/icons/move.png"/> Edit tool. Used for moving items in editable layers.
+
+</li><p><li><img src="images/icons/draw.png"/> Draw tool. Used for adding items to editable layers.
+
+</li><p><li><img src="images/icons/erase.png"/> Erase tool. Used for removing items from editable layers.
+
+</li><p><li><img src="images/icons/measure.png"/> Measure tool. Used
+to make measurements of pixel regions, in terms of time and scale
+values.  See <a href="#measurements">Measurements</a>.
+
+</li>
+
+</ul>
+<a name="selection"></a><h2>4. &nbsp;Selection</h2>
+
+<p>With the select tool <img src="images/icons/select.png"/> active, click and drag
+ within any pane to select a region.</p>
+
+<p>The selection boundaries will snap to the resolution or features
+ present on the active layer.  For example, if you drag a selection on
+ a spectrogram layer, the selection's boundaries will be aligned with
+ the spectrogram's FFT window hops; if you drag a selection on a
+ time-instants layer, its boundaries will snap to instants present on
+ the layer; if you drag a selection on a waveform layer, its boundaries
+ will simply snap to audio sample frames.</p>
+
+<p>Pressing Shift as you start dragging a selection will defeat this snap
+ effect, forcing the selection to snap to the nearest audio sample to
+ each pixel boundary.</p>
+
+<p>You can select more than one separate region at a time, by holding
+ Ctrl as you start selecting the second and subsequent regions to add
+ them to the existing selection.</p>
+
+<p>You can also click-drag the left and right edges of a selection to
+ change its extents after it has been made.</p>
+
+<p>A selection within Sonic Visualiser conceptually consists of one or more regions in
+ time.  When you select a region in a layer, you are selecting a period
+ of time across all layers; you are not selecting the visible items
+ that happen to fall within that region in that one layer.</p>
+
+<p>This has several consequences:</p>
+<ul>
+<li>If more than one item occurs at the same time in the same layer,
+  there is no way to select only some of them.
+
+</li><p><li>Even if items in a layer are above or below the visible range of the
+  layer's vertical scale (i.e. off the top or bottom of the pane),
+  they will still be selected if they fall within a selected time region.
+
+</li><p><li>If you make a selection in one layer and
+  then make a different layer active before carrying out an editing
+  action that operates on the active layer, it will operate on the new
+  active layer &ndash; not on the items in the layer you originally made
+  the selection in.
+</ul>
+<p>An advantage of this is that it is very easy to select all the items
+ in one layer that fall between certain items in another layer &ndash; make
+ the second layer active, make a selection (which will snap to the item
+ positions on that layer), then make the first layer active again.</p>
+
+<a name="editing"></a><h2>5. &nbsp;Editing</h2>
+
+<p>Most of Sonic Visualiser's annotation layer types are interactively editable.
+ Layers corresponding directly to audio data (such as waveform
+ and spectrogram layers) are not editable.  Sonic Visualiser is not an audio editor.</p>
+
+<p>To move an individual item in a layer, make sure the
+ edit tool <img src="images/icons/move.png"/> is active and then click on and drag
+ the item.  If the item is relatively wide on the screen, you may have
+ to click and drag its left hand edge for the drag to take effect.</p>
+
+<p>You can also edit the details of an item directly, by double-clicking
+ on it with either the navigate <img src="images/icons/navigate.png"/> or edit <img src="images/icons/move.png"/> tool selected.  (The advantage
+ of using the navigate tool is that it removes the risk of
+ accidentally editing the point while double-clicking on it.)</p>
+
+<p>To move a set of items at once, <a href="#selection">select</a> the region around them, then switch to the edit tool <img src="images/icons/move.png"/> and drag the selected
+ region.</p>
+
+<p>To delete one or more items click on them with the erase <img src="images/icons/erase.png"/> tool selected, or <a href="#selection">select</a> the region around them and use Edit -> Delete Selected Items.
+
+<a name="cutandpaste"></a><h3>5.1. &nbsp;Cut and Paste</h3>
+
+<p>Sonic Visualiser allows you to cut and paste between layers of different types,
+ preserving as much information as can be reconciled with the layer
+ types.</p>
+
+<p><img style="float:right;max-width:50%;padding-left:1em;padding-bottom:1em" src="images/paste-options.png"/>To cut and paste between two layers, <a href="#selection">select</a> the items in the source
+ layer, use Edit -&gt; Cut, select the target layer and Edit -&gt; Paste.
+ The items will be pasted at the same location in time as they were
+ found in the source layer.</p>
+
+<p>If the target layer is of a type that represents less information
+than the source &ndash; for example if you are pasting to a time
+instant layer from a time/value curve &ndash; then the relevant
+information (in this case time positions) will be retained, and the
+rest discarded.</p>
+
+<p>
+If the target layer represents more information than the source,
+you will be offered various options for how to make up the values that
+are not present in the pasted items (as shown to the right). <!-- !!! update this image -->
+
+<p>If no suitable target layer is selected at all (for example, if the
+layer that is active when you ask to paste is not of an editable
+type), then a new layer of the most appropriate type will be created
+automatically and the values will be pasted into it.</p>
+
+<a name="dataeditor"></a><h3>5.2. &nbsp;The Data Editor</h3>
+
+<p><img
+style="float:right;max-width:50%;padding-left:1em;padding-bottom:1em"
+src="images/data-editor.png"/>You can also view and edit data for a
+layer directly in the data editor window.  If the current layer is an
+editable one, you can call up this window through the Edit Layer Data
+option on the Layer menu.</p>
+
+<p>You can edit any of the values in this layer simply by
+double-clicking on a value and typing a new one.  If you want to edit
+one of the real-time values in the first column, enter the new value
+in seconds.  Undo applies to any edits made in this window.</p>
+
+<p>By default, this window will scroll to keep time with playback.
+You can toggle this behaviour using the <img
+src="images/icons/playfollow.png"> Track Playback button in the
+toolbar.</p>
+
+<p>Although you can select items in the data editor window and delete
+them as well as inserting new ones, there is no connection between the
+selection in this window and any selection that is in place in the
+main window.</p>
+
+<a name="layerdetails"></a><h2 style="clear:right">6. &nbsp;The Layers in Detail</h2>
+
+<a name="waveform"></a><h3>6.1. &nbsp;Waveform</h3>
+
+<p>The waveform layer shows audio data in a traditional waveform peak
+ display.</p>
+
+<p><div align="center"><img style="max-width:100%" src="images/pane-waveform.png"/><br><i>A waveform layer.</i></div></p>
+
+<p>Each pixel on the horizontal axis shows the peak and mean positive and
+ negative values found in samples falling within that pixel's range at
+ the current zoom level.  The zoom level can be increased or decreased
+ in multiples of sqrt(2) using the mouse wheel or the Up and Down
+ cursor keys.</p>
+
+<p><img style="float:right;max-width:50%;padding-left:1em" src="images/params-waveform.png"/></p>
+
+<p>The Y axis scale can be adjusted using the Scale display properties:</p>
+<ul>
+<li>Linear (the default): The scale displacement is proportional to the voltage level
+  of the resulting audio output.
+
+</li><p><li>dB: The scale displacement is proportional to the log of the
+  absolute voltage.
+
+</li><p><li>Meter: An intermediate scale is used that may be non-linear, intended to make peaks more apparent than the dB scale but quiet sections easier to see than the linear scale.
+</ul>
+<p>The Scale properties also provide a display gain control, and a
+ "Normalize Visible Area" switch which will adjust the display gain
+ continuously so as to ensure full scale displacement for the largest
+ value in the visible section of the waveform.</p>
+
+<p>The way the waveform layer handles multiple channels can be adjusted
+ using the Channels display property:</p>
+<ul>
+<li>Separate (the default): Multiple channels will be shown on separate
+  axes, stacked above one another.
+
+</li><p><li>Mean: A single synthetic channel will be shown, whose peaks are the
+  mean of the peaks of the actual underlying channels.
+
+</li><p><li>Butterfly: For stereo audio, a single synthetic channel will be shown,
+  with the "positive" peaks corresponding to the left (first) underlying channel
+  and the "negative" peaks corresponding to the right (second) channel.
+</ul>
+
+<a name="timeruler"></a><h3>6.2. &nbsp;Time Ruler</h3>
+
+<p>The time ruler layer simply displays a series of labelled time
+ divisions.</p>
+
+<p><div align="center"><img style="max-width:100%" src="images/pane-timeruler.png"/><br><i>A time ruler layer.  The centre line is not part of the layer, but is built in to the pane.</i></div></p>
+
+<p>Each new pane has a time ruler layer in it by default,
+ although you can remove or hide it.  The time ruler layer is not editable.</p>
+
+<a name="spectrogram"></a><h3>6.3. &nbsp;Spectrogram</h3>
+
+<p>The spectrogram layer shows audio data in the frequency domain, with
+ the Y axis corresponding to frequency and the power (or phase) of each
+ frequency within a given time frame shown by the brightness or colour of
+ the pixels corresponding to that frequency.</p>
+
+<p>There are three types of spectrogram layer available in the Sonic
+Visualiser menus: "plain", Melodic Range, and Peak Frequency.  These
+differ only in the <a href="#defaultspectrograms">initial
+properties</a> the layer is set up with.  You can always turn any kind
+of spectrogram into any other kind by adjusting its properties after
+it has been created.</p>
+
+<p><div align="center"><img style="max-width:100%" src="images/pane-spectrogram.png"/><br><i>A spectrogram layer.</i></div></p>
+
+<!-- !!! update params image with new icons -->
+
+<p><img style="float:right;max-width:50%;padding-left:1em" src="images/params-spectrogram.png"/></p>
+<p>The colour scheme used for the spectrogram can be adjusted using
+the Colour properties (Colour, Threshold, and Colour Rotation).  The
+Colour option allows you to select different colour maps; while most
+of these are smooth gradients from one colour to another, there are
+also two colour maps (Banded and Highlight) that employ sudden
+transitions of colour.  These can be useful with the Colour Rotation
+control to isolate areas with similar levels.</p>
+
+
+<p>The type of values displayed, and the way the colour scale for the
+spectrogram is calculated can be adjusted using the Scale display
+properties:</p> <ul> <li>The Colour Scale property controls the
+mapping from the value in each frequency bin to the colour used to
+display that bin.  The mappings (Linear, Meter and dBV) are equivalent
+to those available for the <a href="#waveform">waveform layer</a>
+scale, and there is also a dBV^2 scale which uses a mapping
+proportional to the log of the square of the bin value.  The special setting Phase will set the spectrogram to show
+colours corresponding to the phase angle instead of power of each
+frequency bin.
+
+</li><p><li>The Normalize Columns switch <img src="images/icons/normalise-columns.png"/> will cause the colours in all
+bins to be adjusted so that the frequency bin with the highest value
+in a given time frame receives the brightest available colour.  This
+will increase the overall brightness for quiet frames and may decrease
+it for loud frames.
+
+</li><p><li>The Normalize Visible Area switch <img src="images/icons/normalise.png"/> will cause the colours
+in all bins to be adjusted so that the frequency bin with the highest
+value within the visible region of the spectrogram receives the
+brightest available colour.
+
+</li><p><li>The Gain control applies a gain to the bin values before
+applying the display colour map.
+</ul>
+
+<p>The spectrogram itself is obtained from the results of a series of
+fast Fourier transforms of windowed sections of the original audio.
+The parameters of these transforms can be adjusted using the Window
+display properties:</p>
+
+<ul>
+<p><li>The size of the window can be adjusted using the Window Size property.
+  This value is critical, as it directly controls the number of
+  available frequency bins in the resulting spectrogram.  Smaller values
+  will give a finer resolution in time; larger values will give a finer
+  resolution in frequency.
+
+</li><p><li>The overlap between consecutive windows can be adjusted
+using the Window Overlap property, which determines by what proportion
+of the window size the processing frames will overlap.  Using a larger
+overlap will help to compensate for the reduced time
+resolution of a large window size.</li>
+
+<!-- !!! update following image with Hann -->
+<p><li><img style="float:right;max-width:50%;padding-left:1em"
+src="images/params-windowpreference.png"/>The shape of the window
+applied to each section of audio data is not adjustable from the
+spectrogram properties, but can be adjusted globally in the <a
+href="#preferences">application preferences</a>.  The available shaped
+windows are Hamming, Hann (also known as Hanning), Blackman,
+Blackman-Harris and Nuttall (cosine-based windows); Gaussian, Parzen,
+triangular and un-windowed (rectangular). The Hann window is the
+default and should be appropriate for most purposes.
+
+</li>
+</ul>
+
+<p>The scale used for the Y axis of the spectrogram can be adjusted
+using the Bins properties. </p>
+
+<ul><p><li>The Bin Display property controls the frequency bins that are
+  actually shown and how they are drawn.  If set to Peak Bins, only
+  those bins containing higher values than both of their frequency
+  neighbours in the same time frame will be drawn.  If set to Frequencies,
+  each peak's bin will be drawn with a single line at a position that
+  corresponds to an estimate of the actual frequency present within the 
+  bin, rather than the theoretical frequency range of the bin.  This
+  instantaneous frequency estimate is arrived at by comparing the
+  theoretical phase difference between consecutive time frames at the
+  nominal bin frequency with the measured phase difference.
+
+</li><p><li>The Frequency Scale property controls whether the Y axis
+is proportional to frequency, or proportional to the log of the
+frequency (and thus linearly proportional to musical pitch).  In the
+latter case the spectrogram layer will use a stylised piano keyboard
+as its vertical scale, with the C in each octave shaded in grey.
+</li></ul>
+
+<a name="spectrogramharmonic"></a><p><img
+style="float:right;max-width:50%;padding-left:1em;padding-bottom:0.5em"
+src="images/harmonic-cursor.png"/>If you switch to the <img
+src="images/icons/measure.png"/> measure tool and move the mouse over
+the spectrogram, it will show the "harmonic cursor" (see right).  This
+is a vertical line with tick marks at the frequencies of the second
+harmonic, third harmonic and so on of the frequency that the mouse is
+currently pointing at.  These frequencies are simple multiples of the
+fundamental, so they will be equally spaced if the frequency scale is
+linear, or will get closer together as they go up if the frequency
+scale is logarithmic.  See <a href="#measurements">Measurements</a>
+for other uses of the Measure tool.</p>
+
+<p>When selecting a region of time in a spectrogram layer, the selection
+ will snap to the spectrogram's processing time frames.  Hold the Shift
+ key at the start of selection to defeat this.</p>
+
+<a name="defaultspectrograms"></a><h4>6.3.1. &nbsp;Initial Spectrogram Properties</h4>
+
+<p>The Sonic Visualiser pane and layer menus contain options to add
+three kinds of spectrogram.  These are all the same type of layer, but
+starting with different display properties.</p>
+
+<h5>Spectrogram</h5>
+
+<p>The plain spectrogram option creates a spectrogram that displays
+the full frequency range up to half of the audio file's sampling rate,
+with the vertical Frequency Scale set Linear, with Colour Scale set to
+dBV, and using the default, fairly gentle green-yellow-red colour scheme.</p>
+
+<p>This is a general overview of the content of the file, in
+which background noise and overall equalisation trends may be fairly
+evident but individual musical features are not usually easy to make out.</p>
+
+<h5>Melodic Range Spectrogram</h5>
+
+<p>The melodic range spectrogram aims to make it easier to discern
+individual musically meaningful features.</p>
+
+<p>It shows by default a
+frequency range from approx 40Hz to 1.5KHz, covering around 5.5
+octaves that most usually contain melodic content.  The FFT windows
+are fairly large for better frequency resolution, and heavily overlapped.
+The vertical Frequency Scale is logarithmic in frequency, and
+therefore linear in perceived musical pitch.  The Colour Scale is
+Linear, making noise and lower-level content invisible but making it
+easier to pick out salient musical events, and a crisp colour scheme
+is used.</p>
+
+<h5>Peak Frequency Spectrogram</h5>
+
+<p>The peak frequency spectrogram is similar to the melodic range
+spectrogram, but it aims to make it possible to pick out precise
+frequency content in the material, within certain limitations.</p>
+
+<p>Its Bin Display is set to Frequencies, so that it displays only
+those bins that are stronger then their neighbouring frequency bins,
+and for each bin it calculates an estimated frequency using phase
+unwrapping on the assumption that a stable frequency is present.  This
+frequency is then displayed using a short horizontal line, rather than
+colouring the whole bin as a block.  In good conditions this may
+produce a fairly accurate estimate of the actual frequency of an
+individual tone.</p>
+
+<a name="spectrum"></a><h3 style="clear:right">6.4. &nbsp;Spectrum</h3>
+
+<p>The spectrum layer shows a frequency analysis of the audio at a given point in time, like a vertical slice through a <a href="#spectrogram">spectrogram layer</a>.
+
+<p><div align="center"><img style="max-width:100%" src="images/pane-spectrum.png"/><br><i>A spectrum layer.</i></div></p>
+
+<p>In contrast to almost all of the other layer types, the x axis of a
+spectrum layer does not measure time.  Instead, the spectrum's x axis
+corresponds to frequency, with lower frequencies to the left and
+higher to the right.  The spectrum animates appropriately to match the
+movement of time during playback and navigation, instead of scrolling.
+(In this respect it is closely related to the <a href="#slice">slice
+layer</a>, which can display a similar slice through a <a
+href="#colour3dplot">colour 3D plot</a>.)</p>
+
+<p>The y axis of a spectrum plot shows the value of each frequency
+bin, corresponding to the colour scale of the spectrogram.</p>
+
+<!-- !!! update params with new icons and show peaks property -->
+
+<p><img style="float:right;max-width:50%;padding-left:1em"
+src="images/params-spectrum.png"/>You can adjust the FFT window size
+and overlap using the Window properties, just as in the spectrogram;
+and you can select the y axis scale (linear or dB), gain and
+normalisation using the Scale properties.</p>
+
+<p>The type of plot used to show the spectrum can be adjusted using the Plot Type property:</p>
+
+<ul>
+<li>Lines: The start points of the bins will be connected with straight lines.</li><p>
+<li>Steps: Each bin will be drawn with a single horizontal line showing the full width of the bin's frequency coverage.</li><p>
+<li>Blocks: Each bin will be drawn with an unfilled rectangular block.</li><p>
+<li>Colours: Each bin will be drawn with a coloured rectangular block whose colour is based on the same colour mapping scheme as used in the spectrogram.<br>If this option is selected, the Colour property may be used to select between the available colour maps, instead of showing single colours only.</li><p>
+</ul>
+
+<p>If the Show Peak Frequencies <img
+src="images/icons/show-peaks.png"/> property is set, a vertical line
+will be drawn through the estimated frequency of each spectral peak.</p>
+
+<p>The horizontal extent of each bin depends on the Plot X Scale
+property, which selects the mapping between frequency and x coordinate
+for the plot.</p>
+
+<p>If you switch to the <img src="images/icons/measure.png"/> measure
+tool and move the mouse over the spectrum, it will show a "harmonic
+cursor" like that in the <a
+href="#spectrogramharmonic">spectrogram</a>.  See <a
+href="#measurements">Measurements</a> for other uses of the Measure
+tool.</p>
+
+<a name="timeinstants"></a><h3>6.5. &nbsp;Time Instants</h3>
+
+<p>The time instants layer shows an editable sequence of points in time
+ (instants), with each point displayed as a vertical bar across the
+ full height of the layer.  Each instant may have a label, which will
+ be displayed near the top of the instant.</p>
+
+<p><div align="center"><img style="max-width:100%" src="images/pane-timeinstants.png"/><br><i>A time instants layer.</i></div></p>
+
+<p>Instants can be added by clicking with the draw tool <img src="images/icons/draw.png"/>, and edited by
+ dragging with the edit tool <img src="images/icons/move.png"/>.  You can also
+ double-click on an instant with the edit or navigate tool
+ <img src="images/icons/navigate.png"/>to open an edit dialog in which you can change
+ its label and finely adjust its timing.</p>
+
+<p>When selecting a region of time in a time instants layer, the
+ selection will snap to the nearest instants on the layer (if any).
+ Hold the Shift key at the start of selection to defeat this.</p>
+
+<p>When a time instants layer is active, the fast-forward and rewind
+ buttons can be used to jump the playback position to the nearest
+ instant in either direction.</p>
+
+<p><img style="float:right;max-width:50%;padding-left:1em" src="images/params-timeinstants.png"/></p>
+
+<p>The Plot Type display property can be used to select between Instants
+ display, in which each instant is shown with a single vertical bar,
+ and Segmentation display, in which the regions between instants are
+ coloured in alternating shades.</p>
+
+<p>A time instants layer has a fundamental resolution, as a number of
+ audio sample frames.  Instants may only occur at multiples of this
+ resolution, and are displayed using bars of a width corresponding to
+ this resolution.  The default resolution is 1 audio sample frame and
+ this cannot currently be changed for any given layer, although layers
+ generated by certain plugin transformations may have different
+ resolutions.</p>
+
+<a name="timevalues"></a><h3>6.6. &nbsp;Time Values</h3>
+
+<p>The time values layer shows an editable sequence of points in time,
+ where each point has a value that determines its position on the Y
+ axis.  Each point may also have a label.</p>
+
+<p><div align="center"><img style="max-width:100%" src="images/pane-timevalue.png"/><br><i>A time values layer, with curve plot type.</i></div></p>
+
+<p>Points can be added by clicking with the draw tool <img src="images/icons/draw.png"/>, and edited by
+ dragging with the edit tool <img src="images/icons/move.png"/>.  You can also double-click on a point
+ with the edit or navigate tool <img src="images/icons/navigate.png"/> to open an edit dialog in which you can
+ change its label and finely adjust its timing and value.</p>
+
+<p>When selecting a region of time in a time values layer, the selection
+ will snap to the nearest instants on the layer (if any).  Hold the
+ Shift key at the start of selection to defeat this.</p>
+
+<p>When a time values layer is active, the fast-forward and rewind
+ buttons can be used to jump the playback position to the nearest
+ point in either direction.</p>
+
+<p><img style="float:right;max-width:50%;padding-left:1em" src="images/params-timevalue.png"/></p>
+
+<p>The Plot Type display property can be used to adjust the display of
+ points:</p>
+<ul>
+<li>Points: Each point will be displayed as a rectangle of width
+  corresponding to the layer's time resolution.  The points will not
+  be connected.
+
+</li><p><li>Stems: Each point will be displayed as a rectangle of width
+  corresponding to the layer's time resolution.  Each point will be
+  connected to the zero value on the Y axis by a vertical line.
+
+</li><p><li>Connected Points: Each point will be displayed as a rectangle of width
+  corresponding to the layer's time resolution.  Each point will be
+  connected to the next with a straight line.
+
+</li><p><li>Lines: The points themselves will not be drawn explicitly; instead
+  a straight line segment will be drawn between the centres of consecutive
+  points, resulting in a line graph.
+
+</li><p><li>Curve: The centres of consecutive points will be used as the control
+  points of a series of cubic splines, resulting in a smooth curve.  Note
+  that the curve will not pass through the actual point locations at
+  local peak high and low values.
+
+</li><p><li>Segmentation: The regions between the times of each pair of consecutive
+  points will be shaded in a colour corresponding to the value of the point
+  at the start of the region.
+</ul>
+<p>A time values layer may have a unit for the scale on the Y axis.
+ If two layers with the same unit appear on the same pane, they will by
+ default have vertical scales aligned with each other.  This behaviour
+ can be adjusted using the Vertical Scale display property.</p>
+
+<p>If Vertical Scale is set to Linear or Log Scale, the scale will cover
+ the range of values (or logs of values) present in the layer; if set
+ to "+/-1", it will cover the range from -1 to +1 and points with
+ values outside that range will be omitted.</p>
+
+<p>If the Vertical Scale for a layer is set to anything other than
+ Auto-Align, then any other layers in the same pane that have the same
+ unit and that have Vertical Scale set to Auto-Align will align
+ themselves to match it.</p>
+
+<p>You can change the scale unit for a layer by selecting from, or editing
+ the value in, the Scale Units property combo-box.</p>
+
+<p>A time values layer has a fundamental resolution, as a number of audio
+ sample frames.  Points may only occur at times that are multiples of
+ this resolution, and they may be displayed using boxes of a width
+ corresponding to this resolution.  The default resolution is 1 audio
+ sample frame and this cannot currently be changed for any given layer,
+ although layers generated by certain plugin transformations may have
+ different resolutions.</p>
+
+<a name="notes"></a><h3>6.7. &nbsp;Notes</h3>
+
+<p>The notes layer shows an editable sequence of notes, where each note
+ has a start time, a duration, and a value that determines its position
+ on the Y axis.  Each note may also have a label.</p>
+
+<p><div align="center"><img style="max-width:100%" src="images/pane-notes.png"/><br><i>A note layer.</i></div></p>
+
+<p>Notes can be added by clicking and dragging with the draw tool <img src="images/icons/draw.png"/>, and
+ edited by dragging with the edit tool <img src="images/icons/move.png"/>.  You can also double-click on a
+ note with the edit or navigate tool <img src="images/icons/navigate.png"/> to open an edit dialog in which
+ you can change its label and finely adjust its timing and value.</p>
+
+<p>When selecting a region of time in a notes layer, the selection will
+ snap to the start times of the nearest notes on the layer (if any).
+ Hold the Shift key at the start of selection to defeat this.</p>
+
+<p>A notes layer may have a unit for the scale on the Y axis.
+ If two layers with the same unit appear on the same pane, they will by
+ default have vertical scales aligned with each other.  This behaviour
+ can be adjusted using the Vertical Scale display property.</p>
+
+<p><img style="float:right;max-width:50%;padding-left:1em" src="images/params-notes.png"/></p>
+
+<p>If Vertical Scale is set to Linear or Log Scale, the scale will cover
+ the range of values (or logs of values) present in the layer; if set
+ to "MIDI Note Range", it will cover the range from MIDI notes 0 to 127
+ and values outside that range will be omitted.</p>
+
+<p>If the Vertical Scale for a layer is set to anything other than
+ Auto-Align, then any other layers in the same pane that have the same
+ unit and that have Vertical Scale set to Auto-Align will align
+ themselves to match it.</p>
+
+<p>You can change the scale unit for a layer by selecting from, or
+ editing the value in, the Pitch Units property combo-box.  However, if
+ the scale unit is anything other than "Hz", the layer will assume that
+ the values correspond to MIDI pitch and will convert them to Hz when
+ calculating display and alignment.</p>
+
+<p>A notes layer has a fundamental resolution, as a number of audio
+ sample frames.  Notes may only occur at times that are multiples of
+ this resolution.  The default resolution is 1 audio sample frame and
+ this cannot currently be changed for any given layer, although layers
+ generated by certain plugin transformations may have different
+ resolutions.</p>
+
+<a name="text"></a><h3>6.8. &nbsp;Text</h3>
+
+<p>The text layer shows text annotation labels.  Each label is fixed to a
+ particular position in time, and appears at a particular height on the
+ layer.  The text layer is intended for informal or descriptive
+ annotations that are not attached to other sorts of features (as the
+ other editable layer types allow their points to have labels as well).</p>
+
+<p>Labels can be added by clicking with the draw tool <img src="images/icons/draw.png"/>, and moved by
+ dragging with the edit tool <img src="images/icons/move.png"/>.  You can also double-click on a label
+ with the edit or navigate tool <img src="images/icons/navigate.png"/> to open an edit dialog.  (You may need
+ to click at the top-left corner of the text label for an edit to take
+ effect.)</p>
+
+<p>When selecting a region of time in a text layer, the selection will
+ snap to the nearest label on the layer (if any).  Hold the Shift key
+ at the start of selection to defeat this.</p>
+
+<a name="images"></a><h3>6.9. &nbsp;Images</h3>
+
+<p>The images layer shows images with optional labels.  These images
+are drawn from image files at a disk or network location; only the
+image location is stored in the session, not the whole image, so you
+should be careful to make sure images are stored at an accessible location or transmitted with your session files as appropriate.</p>
+
+<p>Images in a layer are fixed to a particular position in time under
+your control, but their Y coordinate on the pane is based entirely on
+their height and cannot be changed.</p>
+
+<p>Images can be added by clicking with the draw tool <img
+src="images/icons/draw.png"/>, and moved by dragging with the edit
+tool <img src="images/icons/move.png"/>.  You can also double-click on
+an image with the edit or navigate tool <img
+src="images/icons/navigate.png"/> to open an edit dialog from which
+you can set the label or change the image being displayed.</p>
+
+<a name="colour3dplot"></a><h3>6.10. &nbsp;Colour 3D Plot</h3>
+
+<p>The colour 3D plot layer displays a three-dimensional data set in a
+ grid.</p>
+
+<p><div align="center"><img style="max-width:100%" src="images/pane-colour3dplot.png"/><br><i>A colour 3D plot layer.</i></div></p>
+
+<p>It is used for data sets which have a discrete time axis, a set of
+bins at each time position, and a value in each bin.  (In this respect
+it resembles the <a href="#spectrogram">spectrogram</a>, except that the
+spectrogram also knows about frequencies, window sizes and so on.)
+The grid x and y coordinates correspond to the time and bin
+respectively, and each grid square is coloured according to the value
+in the corresponding bin.</p>
+
+<p><img style="float:right;max-width:50%;padding-left:1em"
+src="images/params-colour3dplot.png"/>You can change the colour map
+used for the value scale using the Colour property; adjust whether the
+colour is mapped to a linear or logarithmic scale using the Scale
+property; and also choose to normalise the individual columns
+of the plot (so that the highest value in each always receives the
+brightest available colour) or the visible area of the plot (so that
+the highest visible value receives the brightest available colour).</p>
+
+<p>The colour 3D plot layer is not editable.  For this reason, you
+cannot add an empty colour 3D plot layer using the Layer menu, because
+you would then be unable to do anything with it.  These layers only
+appeard when a <a href="#plugins">transform</a> whose output is
+appropriate for grid display is applied, or when <a
+href="#layerimport">importing</a> certain types of annotation
+data.</p>
+
+<a name="slice"></a><h4>6.10.1. &nbsp;Slices</h4>
+
+<p>A slice layer shows an instantaneous graph of the values present
+along the Y axis of a colour 3D plot layer, at the moment
+corresponding to the current centre frame.  A slice is to a colour 3D
+plot as a <a href="#spectrum">spectrum</a> is to a <a
+href="#spectrogram">spectrogram</a>.</p>
+
+<p>If you have a colour 3D plot layer present in Sonic Visualiser, you
+can add a slice layer for it using the Add Slice of Layer option in
+the Layer menu.</p>
+
+<a name="plugins"></a><h2>7. &nbsp;Transforms and Plugins</h2>
+
+<a name="transform"></a><h3>7.1. &nbsp;The Transform Menu</h3>
+
+<p>The Transform menu contains all of the available means of
+generating new layers with new data in them, using various kinds of
+binary plugin.  If the Transform menu is empty, then you need to get
+some plugins!</p>
+
+<p>Several types of plugin-based transform are available.</p>
+
+<a name="vampplugins"></a><h3>7.2. &nbsp;Analysis Plugins</h3>
+
+<p>Sonic Visualiser can generate layers using audio analysis and
+feature extraction plugins, which may be provided by third party
+developers or institutions.  The native plugin format is called Vamp
+(see <a
+href="http://www.vamp-plugins.org"><code>http://www.vamp-plugins.org</code></a>).
+Vamp plugins take audio inputs and can generate outputs suitable for
+display in any of Sonic Visualiser's standard types of layer.</p>
+
+<p>If you have any Vamp plugins installed, Sonic Visualiser will show
+them in the Analysis section of the Transform menu.  This section
+contains three menus, sorting the available plugin outputs according
+to plugin category, plugin name, or the maker of the plugin.  Category
+information is obtained from an optional <code>.cat</code> file
+associated with each plugin library; Vamp plugins that lack categories
+will appear in an Unclassified section.  (Advanced users may set up
+their own category hierarchy by making and installing their own
+<code>.cat</code> files: the file format is a simple textual one
+easily made by copy-paste and editing existing files.)</p>
+
+<p>Selecting an analysis plugin output will generate a new layer in
+the current pane, containing the output produced by that plugin from
+the main audio waveform.  If the plugin has any configurable
+parameters, you will be shown a configuration dialog before the plugin
+is run.  If you have more than one audio file or generated audio
+waveform present in Sonic Visualiser, this dialog will also allow you
+to select which of them will be used as the input to the plugin.</p>
+
+<p>The processing step and block sizes for Vamp plugins are set by
+negotiation with the plugin, with a default of 1024 audio sample
+frames in cases where the plugin does not have a preference.  You can
+change these sizes, and also adjust the behaviour of plugins that
+operate on single-channel audio when using a multi-channel audio file,
+from the Advanced options section of the plugin's configuration
+dialog.</p>
+
+<p>See the <a href="http://www.vamp-plugins.org/download.html">Vamp
+plugin download page</a> to find out about some of the available Vamp
+plugins and how to install them.  See the <a
+href="http://www.vamp-plugins.org/develop.html">Vamp API
+documentation</a> for details of the plugin format and how to develop
+new Vamp plugins.</p>
+
+<a name="ladspaplugins"></a><h3>7.3. &nbsp;Effects Plugins</h3>
+
+<p>Sonic Visualiser also supports effects plugins in the <a
+href="http://www.ladspa.org/">LADSPA</a> and <a
+href="http://dssi.sourceforge.net/">DSSI</a> formats.  These are
+originally Linux plugin formats, but are portable to other
+platforms as well, and many LADSPA effects in particular are available
+for most popular platforms.</p>
+
+<p>Effects plugins can be used to generate new layers in more than one
+way, and so if you have any installed, you will see up to three
+corresponding sections in the Transform menu.</p>
+
+<a name="effects"></a><h4>7.3.1. &nbsp;Effects</h4>
+
+<p>The Effects section of the Transform menu lists plugins that take
+audio as input and convert it to audio output.  This is the most usual mode
+of operation for an effects plugin.</p>
+
+<p>Selecting an effects plugin will generate a new layer in the
+current pane, containing the new audio waveform produced by that
+plugin.  If the plugin has any configurable parameters, you will be
+shown a configuration dialog before the plugin is run.  If you have
+more than one audio file or generated audio waveform present in Sonic
+Visualiser, this dialog will also allow you to select which of them
+will be used as the input to the plugin.</p>
+
+<p>The processing block size for effects plugins defaults to 1024 audio
+sample frames.  You can change this, and also adjust the behaviour of
+plugins that operate on single-channel audio when using a
+multi-channel audio file, from the Advanced options section of the
+plugin's configuration dialog.</p>
+
+<a name="effectsdata"></a><h4>7.3.2. &nbsp;Effects Data</h4>
+
+<p>Sonic Visualiser can also generate layers from "control-rate"
+outputs of effects plugins.  These are referred to as Effects Data.</p>
+
+<p>For example, a compressor plugin may (in addition to its audio
+outputs) have a control-rate output that returns the measured dB level
+of the audio.  Sonic Visualiser can use this output to create a new <a
+href="#timevalues">time values</a> layer, by running the compressor
+and effectively discarding its audio output, keeping only the
+control-rate output.  Other plugins may have other control-rate
+outputs with different uses.</p>
+
+<p>If you have any plugins installed that can be used in this way,
+they will appear in the Effects Data section of the Transform menu.
+In most cases, these will be the control-rate outputs of plugins whose
+audio outputs also appear under Effects.  Some plugins intended only
+for measurement use may have only control-rate outputs and no audio
+outputs; such a plugin will only appear under Effects Data and not
+under Effects.</p>
+
+<p>Selecting an effects plugin output from the Effects Data section
+will generate a new layer in the current pane, containing a time value
+layer showing the output produced by that plugin.  If the plugin has
+any configurable parameters, you will be shown a configuration dialog
+before the plugin is run.  If you have more than one audio file or
+generated audio waveform present in Sonic Visualiser, this dialog will
+also allow you to select which of them will be used as the input to
+the plugin.</p>
+
+<p>The processing block size for effects plugins defaults to 1024 audio
+sample frames.  You can change this, and also adjust the behaviour of
+plugins that operate on single-channel audio when using a
+multi-channel audio file, from the Advanced options section of the
+plugin's configuration dialog.</p>
+
+<a name="generators"></a><h4>7.3.3. &nbsp;Generators</h4>
+
+<p>Finally, some "effects" plugins have only audio outputs, and no
+inputs.  They generate new audio data usually based on various
+controlling parameters, and are referred to as Generators.  Useful
+examples include sine-wave tone generators, white and pink noise
+generators and so on.  These can be handy for generating comparative
+signals or signals to test processing algorithms for plugin
+development purposes.</p>
+
+<p>Sonic Visualiser does not support generating new layers from what
+are traditionally known as instrument or synth plugins, which create
+audio output from "note event" inputs.  It also does not support
+varying the control parameters of a generator plugin during operation.
+Finally, a current limitation is that generators can only be used to
+produce an additional waveform when you already have at least one
+audio file present &ndash; you cannot use a generator to create the
+only audio file in a previously empty Sonic Visualiser session.</p>
+
+<p>If you have any effects plugins installed that Sonic Visualiser can
+use in this way, they will appear in the Generators section of the
+Transform menu.</p>
+
+<p>Selecting a plugin output from the Generators section will generate
+a new layer in the current pane, containing the new audio waveform
+produced by that plugin.  If the plugin has any configurable
+parameters, you will be shown a configuration dialog before the plugin
+is run.</p>
+
+<p>The processing block size for effects plugins defaults to 1024
+audio sample frames.  You can change this from the Advanced options
+section of the plugin's configuration dialog.</p>
+
+<a name="measurements"></a><h2>8. &nbsp;Measurements</h2>
+
+<p><img
+style="float:right;max-width:50%;padding-left:1em;padding-bottom:0.5em"
+src="images/measurement.png"/>The measure tool <img
+src="images/icons/measure.png"/> enables you to obtain measurements in
+scale units (such as time in the X coordinate, or whatever the Y
+coordinate of the current layer represents) corresponding to certain
+pixel positions.  To measure a region, just click and drag a rectangle
+covering it, using the left mouse button with the measure tool selected.</p>
+
+<p>An example is shown above: the dragged rectangle
+(in green) covers an area corresponding to 1.26 seconds in the X axis,
+and 32.9 Hz (9 semitones minus 28 cents, in this context) in the Y
+axis.</p>
+
+<p>It's important to note that the measurements shown in this way are
+based entirely on the pixel coordinates of the measurement rectangle,
+not on properties of the data being displayed.  For example, in the
+spectrogram shown above the values are not snapped to bin boundaries
+in either axis.</p>
+
+<p>You can add any number of measurement rectangles to a layer.  They
+are saved and restored with the session file, but they are only
+displayed while the measure tool is selected, and are only highlighted
+and labelled when the mouse pointer is inside the rectangle.</p>
+
+<p>To remove a measurement rectangle, hover the mouse pointer inside
+it (so that it is highlighted) and press the Delete key.  You can also
+Undo the addition of measurement rectangles, just like other
+editing operations.</p>
+
+<a name="automeasurement"></a><h3>8.1. Automatic measurement in the spectrogram</h3>
+
+<p>The spectrogram layer has a further extension to the use of the
+measure tool.  With the measure tool selected, you can double-click on
+a feature that is visible in the spectrogram, and a measurement
+rectangle will be automatically drawn around that feature.</p>
+
+<p>The area enclosed by the rectangle is based on the extent of
+similarly-coloured pixels surrounding the click position: it is
+entirely graphical, involving no audio analysis, and so depends on the
+gain and colour scheme in use in the spectrogram.  The accuracy and
+usefulness of this capability obviously vary enormously depending on
+the data being displayed.</p>
+
+<a name="audioplayback"></a><h2>9. &nbsp;Audio Playback</h2>
+
+<p><img
+style="float:left;max-width:50%;padding-right:1em;padding-bottom:0.2em;padding-top:0.2em"
+src="images/transport.png"><img
+style="float:right;max-width:50%;padding-left:1em;padding-top:0.2em;padding-bottom:0.2em"
+src="images/params-playback.png">Playback in Sonic Visualiser is
+controlled using the transport controls in the toolbar and the
+fader/meter and playback speed controls in the bottom right of the
+main window.</p>
+
+<p>Use the <img src="images/icons/playpause.png"> Play / Pause button
+to start and stop playback.  Use the fader control in the bottom right
+of the main window to control the output volume level, and the rotary
+control next to it to control playback speed.  You can adjust playback
+speed from one-tenth to ten times the correct speed, without affecting
+playback pitch, although the sound quality will suffer and CPU load
+increase accordingly.</p>
+
+<p>Use <img
+src="images/icons/rewind-start.png"> Rewind to Start and <img
+src="images/icons/ffwd-end.png"> Fast Forward to End to jump to either
+end of the audio file.</p>
+
+<p>Use <img src="images/icons/rewind.png"> Rewind and <img
+src="images/icons/ffwd.png"> Fast Forward to jump to the nearest item
+in the appropriate direction in the current layer, if it is a <a
+href="#timeinstants">time instants</a> or <a href="#timevalue">time
+value</a> layer, or to the nearest numbered unit in the time ruler for
+the pane otherwise.</p>
+
+<p>You can also jump about during playback by simply dragging a pane
+using the <img src="images/icons/navigate.png"> navigate tool; by
+double-clicking with the navigate tool at any point in any pane; or by
+double-clicking on the small representation of the audio file at the
+bottom of Sonic Visualiser's main window.</p>
+
+<p>If the <img src="images/icons/playselection.png"/> Play Selection
+toggle button is depressed and there is a selection active, then when
+you ask to Play, Sonic Visualiser will play only the selected region.
+It is possible to have more than one separate region selected (see <a
+href="#selection">Selection</a>); playback will jump seamlessly from
+the end of one region to the start of the next if this is the
+case.</p>
+
+<p>If the <img src="images/icons/playloop.png"/> Play Loop toggle
+button is depressed, then playback will jump back to the start of the
+audio file or selection when it reaches the end.</p>
+
+<p>If the <img src="images/icons/solo.png"/> Play Solo toggle button
+is depressed, then only audio data from the currently active pane will
+be played.</p>
+
+<p>If the <img src="images/icons/align.png"/> Align File Timelines
+button is depressed, then playback pointers in panes other than the
+current one will be shown at times that correspond to the same
+location in their audio material as that being played in the current
+pane, where possible, instead of being shown at the same time in
+seconds as the current pane.  Using Align File Timelines will
+automatically enable Solo.  See <a href="alignment">Time
+Alignment</a>.</p>
+
+<p><img
+style="float:left;max-width:50%;padding-right:1em;padding-top:0.2em;padding-bottom:0.2em"
+src="images/params-layerplayback.png"> Besides playback of the source
+audio files, Sonic Visualiser will also play back some of the editable
+layers such as time instants and notes, using tapping or piano note
+sounds by default.  This behaviour, as well as the levels of
+individual audio sources, can be adjusted in the playback section of
+the layer properties for each layer.  That for a Notes layer is shown
+to the left.  Toggle the green LED control to switch playback off and
+on for this layer; use the red (left) dial for playback level, and the
+green (right) dial for stereo pan.  Clicking the "faders" button in
+the centre brings up a dialog in which you can select the playback
+sound sample and related parameters.</p>
+
+<a name="alignment"></a><h2>10. &nbsp;Time Alignment</h2>
+
+<p>Sonic Visualiser provides support for automatically aligning audio
+file timelines to one another.  This is useful when dealing with
+multiple audio files that represent the same source material, such as
+multiple performances of the same work or multiple "takes" of a
+recording.</p>
+
+<p>For this feature to be enabled, the MATCH Vamp plugin &ndash; a
+Vamp plugin implementation of Simon Dixon's MATCH algorithm for audio
+alignment &ndash; must be installed and available.  See <a
+href="http://www.vamp-plugins.org/download.html">the Vamp plugins
+download page</a> for details on how to obtain and install this
+plugin, and the <a
+href="http://www.elec.qmul.ac.uk/people/simond/match/index.html">MATCH
+home page</a> for more background and information about the methods
+used.  If the plugin is found to be installed when Sonic Visualiser
+starts, the <img src="images/icons/align.png"/> Align File Timelines
+toggle button will appear in the toolbar and the alignment feature
+will be enabled.</p>
+
+<p>To make use of the alignment feature, import two (or more) audio
+files that share some common source material into separate panes and
+click the <img src="images/icons/align.png"/> Align File Timelines
+button.  Sonic Visualiser will then take some time to calculate an
+alignment in time between the files.  The first file to be loaded will
+be treated as the reference, against which the other files are
+aligned; during alignment you will see a progress bar at the bottom
+left of each pane other than the reference.</p>
+
+<p>Once alignment is completed, when you scroll or play through one of
+the audio files, Sonic Visualiser will position the other files so as
+to align them by source material with the one you are scrolling.  For
+example, if one audio file contains a recording at twice the tempo of
+the other, you should expect the scrolling and playback pointer motion
+in the slower file to happen at twice the speed in terms of pixels,
+because the slower file takes up twice as many audio samples for the
+same period of the original score as the faster one.  (Although
+counter-intuitive when described, this makes sense in use!)</p>
+
+<p>You should also be able to switch from one pane to another during
+playback, with playback jumping from the source file to the target
+file at the same point relative to the underlying score or source
+material.</p>
+
+<p>Selection extents are also subject to alignment between panes; and
+if you cut and paste items from one layer to another layer that has a
+different underlying audio file, you will be offered the option of
+re-aligning the times of the items you are pasting.</p>
+
+<a name="fileimportandexport"></a><h2>11. &nbsp;File Import and Export</h2>
+
+<a name="audioimport"></a><h3>11.1. &nbsp;Audio File Import</h3>
+
+<p>Sonic Visualiser can import audio files in a number of formats,
+although the exact set of formats depends on the platform and
+supporting libraries that it was compiled against.  The standard
+packages available for download from the Sonic Visualiser project page
+support MP3 and WAV file import on all platforms, Ogg Vorbis on Linux
+and OS/X, and MP4/AAC on OS/X only.</p>
+
+<p>To import an audio file, use File -> Import Audio File if you want
+the new audio file to be your main audio file in this session,
+replacing any main audio file already present; use File -> Import
+Secondary Audio File if you want the new audio file to be opened in a
+new pane, in addition to any other audio files already present.</p>
+
+<p>You can also use the Open button <img
+src="images/icons/fileopen.png"/> on the toolbar to import audio
+files, as well as any other kind of file that Sonic Visualiser
+supports (such as session and layer files).  If you open an audio file
+this way while you already have one or more audio files in the
+session, Sonic Visualiser will ask whether you want to replace the
+main audio file or add the new one as a secondary file.</p>
+
+<a name="audioexport"></a><h3>11.2. &nbsp;Audio File Export</h3>
+
+<p>Sonic Visualiser can export the current audio file, or the selected
+region of it, as a WAV file in IEEE floating-point format.  Use File
+-> Export Audio File to do this.</p>
+
+<p>If there are multiple separate regions selected, you will be given
+the option to export them all spliced into a single audio file, or to
+export to a series of audio files distinguished by .1, .2 etc in their
+names.
+
+<a name="layerimport"></a><h3>11.3. &nbsp;Annotation Layer Import</h3>
+
+<p>Sonic Visualiser can import comma-separated (CSV) or tab-separated
+text data files as new annotation layers, whose type will depend on
+the format of data in the files and your preferences when importing
+the data.  Sonic Visualiser can currently import data to time
+instants, time values, and colour 3D plot layers.</p>
+
+<p>To import data from a text file, use the File -> Import Annotation Layer
+and specify the proper file type in the import dialog.</p>
+
+<p>You can also use this function to import data from Sonic
+Visualiser's own .svl layer file format, which is an XML format; any
+type of editable layer may be exported and imported to this
+format.</p>
+
+<p>Finally, you can also import Standard MIDI files as note layers.
+Only a single track can be imported at a time.</p>
+
+<a
+name="layerexport"></a><h3>11.4. &nbsp;Annotation Layer Export</h3>
+
+<p>Sonic Visualiser can export layers as its own .svl XML format, as
+comma-separated or tab-separated text data, or (from note layers) as
+Standard MIDI files.</p>
+
+<p>To export a layer, ensure that the layer is current, and use File
+-> Export Annotation Layer.  The file type will be determined from the
+extension you use to name the file: .csv for comma-separated files,
+.txt for tab-separated files, .svl for Sonic Visualiser layer files,
+and .mid for Standard MIDI files.</p>
+
+<a
+name="imageexport"></a><h3>11.5. &nbsp;Image File Export</h3>
+
+<p>You can use the File -> Export Image File function to export the
+current pane as an image file in PNG format.  This exports the full
+width of the pane, not just the currently visible area of it, and so
+it may create a very large file.</p>
+
+<a
+name="remote"></a><h3>11.6. &nbsp;Opening Remote Locations</h3>
+
+<p>Sonic Visualiser can open files obtained by download from remote
+HTTP and FTP locations.  Use File -> Open Location to do this,
+entering a standard http:// or ftp:// URL into the location dialog.
+Full sessions, single audio files, layer files, and even m3u playlist
+files may be opened in this way.</p>
+
+<p>If you open a session file from a remote location, Sonic Visualiser
+will use the same remote location to search for any audio or other
+dependent files that the session refers to and that can not be found
+at the literal locations recorded in the session file.</p>
+
+<a name="preferences"></a><h2>12. &nbsp;Application Preferences</h2>
+
+<p>The Application Preferences window (available through the
+Preferences option of the File menu) contains a number of things which
+may be adjusted to change the display or calculations carried out by
+Sonic Visualiser.</p>
+
+<ul><li>Property box layout: This preference controls how the layer <a
+href="#layeredits">display property boxes</a> are arranged on the
+right side of the Sonic Visualiser window.  If set to "Show boxes for
+all panes" (the default), each pane will have a set of display
+property boxes to its right.  If set to "Show box for current pane
+only", there will be only one set of property boxes, and each time the
+current pane changes, the property boxes will be updated to reflect
+that new pane.  This permits the panes to be smaller, because their
+sizes are not constrained by the sizes of the property boxes, and
+consequently allows you to fit more panes on the screen.</li>
+
+<p><li>Background colour preference (not available on OS/X): This
+preference controls whether Sonic Visualiser will start up with a dark
+background and light foreground for widgets and panes, with a light
+background and dark background, or (the default) follow whatever
+colour scheme is in use for the desktop as a whole.</li>
+
+<p><li>Font size for text overlays: This controls the fonts used for
+displaying text of various sorts in the pane areas.</li>
+
+<p><li>Location for cache file directory: Sonic Visualiser may cache a
+large amount of data in temporary files when doing spectral analysis.
+This preference allows you to choose where that data should be cached,
+for example to ensure it is on a large enough partition or disk.</li>
+
+<p><li>Resample mismatching files on import: If you load two audio
+files into the same session that have different sample rates, Sonic
+Visualiser will (by default) do nothing to compensate and will simply
+play the second of them at the wrong speed.  If this preference is
+set, Sonic Visualiser will instead resample the second one to match
+the rate of the first when it imports it.  It is off by default
+because resampling affects the display of the audio, as well as its
+playback.</li>
+
+<p><li>Playback resampler type: Selects the resampler that will be
+used during playback of audio files that need to be resampled for the
+current playback audio device.</li>
+
+
+<p><li>Frequency of concert A: This is the frequency that will be used
+as the reference for a "concert A" (the A above middle C) when drawing
+the vertical scale on log-frequency <a
+href="#spectrogram">spectrograms</a> or calculating automatic
+alignments between spectrogram and <a href="#notes">note layers</a>.</li>
+
+<p><li>Spectrogram y-axis interpolation: Selects the smoothing style
+for <a href="#spectrogram">spectrogram</a> bins that take up more than
+one vertical pixel.  When displaying a linear-frequency spectrogram
+with a relatively small FFT window size (i.e. a small number of
+vertical bins), or a log-frequency spectrogram in which a single bin
+at a low frequency occupies a relatively large space vertically, or
+when zoomed in close up to any spectrogram, the visible "blockiness"
+of the spectrogram can be reduced by applying smoothing.<br><br>The
+highest quality (but slowest) smoothing is provided by the "4x
+Oversampled" option, which uses a zero-padded FFT; the "Linear" option
+provides faster but lower quality smoothing using linear
+interpolation.<br><br>Be aware that although smoothing may make the
+"trend" of a spectrogram contour easier to perceive, it does not
+actually increase the meaningful resolution of the spectrogram:
+instead it just interpolates from the values that were there already.
+To raise the actual vertical resolution, you need to increase the
+spectrogram window size &ndash; with a consequent reduction in
+horizontal resolution, that can be compensated for to a certain degree
+by increasing the window overlap.</li>
+
+<p><li>Spectral analysis window shape: When calculating FFT data for
+spectral applications such as spectrogram or as frequency-domain input
+for Vamp plugins, Sonic Visualiser uses the standard practice of
+multiplying each block of time-domain audio data with a shaped window
+before passing it to the FFT.  The resulting spectral domain data
+contains artifacts corresponding to the FFT of the window shape; the
+shape of the window is chosen to reduce those artifacts in comparison
+to the effectively rectangular window that would apply if no other
+shape was used.<br><br>The window shape used for this procedure can be
+selected here.  The shape of the chosen window in the time domain (on
+the left) and frequency domain (on the right, the result of an FFT of
+the time-domain window shape) are displayed above the window shape
+selection menu.  The default Hann window is appropriate for most
+purposes.</li>
+
+</ul>
+
+<a name="keyboardandmousereference"></a><h2>13. &nbsp;Keyboard and Mouse Reference</h2>
+
+<p>This section describes some commonly used keys and mouse actions.</p>
+
+<p>You can call up a complete reference for keyboard controls from the
+Help menu in Sonic Visualiser, or by pressing F2 within the program.</p>
+
+<p>In addition to their normal mouse operation, you can double-click
+on many of the visual controls used in Sonic Visualiser (such as the
+rotary dials) to enter exact values for them directly in a text field.
+You can also click with the middle mouse button on these controls to
+reset them to their defaults.</p>
+
+<a name="toolselection"></a><h3>13.1. &nbsp;Tool selection</h3>
+
+<p>Press the keys 1 to 6 to change the current tool.<br>Press 1 for <img src="images/icons/navigate.png"/> the
+ navigate tool, 2 for <img src="images/icons/select.png"/> the select tool, 3 for <img src="images/icons/move.png"/> the edit tool, 4 for <img src="images/icons/draw.png"/>
+ the draw tool, 5 for <img src="images/icons/erase.png"/> the erase tool and 6 for <img src="images/icons/measure.png"> the measure tool.</p>
+
+<a name="displaylevel"></a><h3>13.2. &nbsp;Overlay display level</h3>
+
+<p>Press the keys 7, 8, 9, and 0 to change the text overlay display level.</p>
+
+<p>Press 7 to display all available text overlays, including centre frame and
+ time ruler markings, vertical scale information, and the names and
+ stacking order of layers in the panes.</p>
+
+<p>Press 8 to display basic textual information, omitting the
+layer names but retaining the vertical scale where appropriate.</p>
+
+<p>Press 9 to display only time information, with no scale or textual
+overlays.</p>
+
+<p>Press 0 to suppress all textual and timing information.</p>
+
+<a name="scrolling"></a><h3>13.3. &nbsp;Scrolling</h3>
+
+<p>With the navigate tool <img src="images/icons/navigate.png"/> selected, click and drag with the left or middle
+ mouse button in any pane to move the centre frame.</p>
+
+<p>When any other tool is selected, click and drag with the middle mouse
+ button in any pane to move the centre frame.</p>
+
+<p>Click and drag with any button in the navigation bar at the bottom of
+ the window to move quickly around the audio file.</p>
+
+<p>Press the Left and Right cursor keys to scroll the current pane by
+ small increments.  Press Ctrl and the Left and Right cursor keys to
+ scroll in larger, half-window increments.</p>
+
+<p>If you have more than one pane, press the square bracket keys "["
+and "]" to change which one is current.
+
+<a name="zoom"></a><h3>13.4. &nbsp;Zoom</h3>
+
+<p>Roll the mouse wheel up, or press the Up cursor key, to zoom in; roll
+ the wheel down or press the Down cursor key to zoom out.</p>
+
+<a name="playback"></a><h3>13.5. &nbsp;Playback</h3>
+
+<p>Press Space to start or stop playback.</p>
+
+<p>Press Page Up or Page Down to rewind or fast-forward to the next time
+ instant or point in the active layer, if there is a time instants or
+ time values layer active, or to the next step on the time ruler.</p>
+
+<p>Press Home or End to rewind or fast-forward to either end of the file.</p>
+
+<p>Double-click on the small representation of the audio file at the
+bottom of the window to jump straight to a particular time in the
+file.  With the navigate tool <img src="images/icons/navigate.png"/>
+selected, double-click on any pane to jump to that time.
+
+<p>Press the keypad Enter key, or the semicolon key ";", to insert a time
+instant at the current playback position, for real-time annotation.
+If the current layer is not a <a href="#timeinstants">time instant
+layer</a>, a new time instant layer will be created and added to the
+current pane and the new instant will be inserted into that.</p>
+
+<p></p>
+
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <link rel="stylesheet" media="screen" type="text/css" href="screen.css"/>
+    <link rel="icon" type="image/png" href="images/waveform.png"/>
+    <link rel="shortcut" type="image/png" href="images/waveform.png"/>
+      <title>Sonic Visualiser: Using selections when studying sections of a piece</title>
+    <meta name="robots" content="index"/>
+  </head>
+  <body>
+      <a href="http://www.sonicvisualiser.org"><h1 id="header"><span>Sonic Visualiser</span></h1></a>
+
+<h2>Using selections when studying sections of a piece</h2>
+
+<p>For this task we will be referring to <a
+href="../resources/Scythian-Suite-4excerpt.wav">this excerpt</a> from the fourth
+movement of Prokofiev's Scythian Suite (Désiré Defauw / Chicago Symphony Orchestra 1945, transferred
+from RCA Victor 78 by Bill Anderson).</p>
+
+<p>Open Sonic Visualiser, and import the audio file.</p>
+
+<div align=center><a href="images/selection-1.png"><img border=0 src="images/selection-1-small.png"></a></div>
+
+<p>Playing this piece from the start, you'll notice there are three
+"humps" visible on the waveform at around 11, 12.5 and 16.5 seconds
+that correspond to repetitions of a short wind motif.  We'll take a
+closer look at the first of these.</p>
+
+<div align=center><a href="images/selection-2.png"><img border=0 src="images/selection-2-small.png"></a></div>
+
+<p>Scroll so that the first hump is visible, and zoom in a few times
+using the mouse wheel or Up cursor key.  Then switch to the Select
+tool by clicking the arrow <img src="images/select.png"> button on the
+toolbar, and drag to select an area approximately from the start of
+the first hump to shortly before the second.</p>
+
+<div align=center><a href="images/selection-3.png"><img border=0 src="images/selection-3-small.png"></a></div>
+
+<p>As you see, the program is telling us that this selection covers a
+range from 10.617 seconds up to 12.498 seconds, or 1.88 seconds later.
+Your exact figures will probably vary, of course.</p>
+
+<p>You can adjust the extents of the selection after having initially
+selected it.  Just click-and-drag the left or right edge of the purple
+selection region (first making sure you have the Select tool active).</p>
+
+<p>Let's listen to the selected area.  Click the <img src="images/playselection.png"> toolbar
+button, and then play.  If the current playback point is in the middle
+of the selection, Sonic Visualiser will play from it to the end of the
+selection; if you then Play again, you'll hear the whole selection and
+nothing else.</p>
+
+<p>Adding a spectrogram view will give us another way to look at
+what's being played here.  Use Pane -> Add Peak Frequency
+Spectrogram:</p>
+
+<div align=center><a href="images/selection-6.png"><img border=0 src="images/selection-6-small.png"></a></div>
+
+<p>You might like to change some of the properties of this spectrogram
+for a clearer view.</p>
+
+<div align=center><a href="images/selection-7.png"><img border=0 src="images/selection-7-small.png"></a></div>
+
+<p>Here we've changed the Bin Display property from Frequencies to All
+Bins, changed the Colour Scale from Linear to Meter, switched off
+Normalize Columns, and increased the Gain dial to make quieter regions
+more distinguishable (at the cost of blowing-out the loud red areas).
+We also dragged the spectrogram pane downwards to admit a slightly
+higher frequency range.  (If you want to do that, first switch back to
+the Navigate tool <img src="images/navigate.png"> on the toolbar so
+that you can drag around the spectrogram without disturbing the
+selection.)</p>
+
+<p>Now click the <img src="images/playloop.png"> toolbar button to
+loop the selection, and then play again.  Playing a short loop like
+this for any length of time will probably drive you crazy, but try it
+anyway.</p>
+
+<p>While it's playing, let's slow it down and so listen more closely
+to what is actually being played.  To do this, use the playback speed
+dial at the bottom right of the Sonic
+Visualiser window.</p><div align=center><img src="images/playspeed.png"></div><p>Click on this dial and drag downwards or to the
+left to slow down playback.  You can also use the mouse wheel to
+change the speed (move the mouse over the dial and roll the wheel
+towards you) or double-click on the dial to enter a particular speed
+directly.</p>
+
+<div align=center><a href="images/selection-8.png"><img border=0 src="images/selection-8-small.png"></a></div>
+
+<p>Sonic Visualiser can slow the music to any speed right down to a
+tenth of its original speed, which is likely to be too slow to follow
+the notes properly.  About a quarter speed (with the dial pointing
+roughly left) is likely to be clearer.</p>
+
+<p>Although a selection is just a temporary thing -- when you select a
+region, any previous selection is forgotten -- Sonic Visualiser is
+able to refer to annotated time instants when making a selection, so
+you can recall a precise area on demand.</p>
+
+<p>Let's add some time instants at the extents of this selection, and
+then use them to recall it later.  Click on the top pane (the
+waveform) and invoke Edit -> Insert Instants at Selection Boundaries.
+Then press Escape to clear the selection.</p>
+
+<div align=center><a href="images/selection-9.png"><img border=0 src="images/selection-9-small.png"></a></div>
+
+<p>You'll see the new Time Instants layer, and the two new (purple)
+vertical lines labelled 1 and 2 which are positioned at the extents of
+the selection you had.  Unlike the transient selection, these instants
+can be edited or relabelled, can have their positions exported to a
+text file, and so on.</p>
+
+<p>If you now switch back to the Select tool <img
+src="images/select.png"> and click anywhere between these two lines in
+the top pane, you'll see that the whole region between the lines is
+selected, restoring the selection you had previously.</p>
+
+<div align=center><a href="images/selection-10.png"><img border=0 src="images/selection-10-small.png"></a></div>
+
+<p>A selection always "snaps" to the positions of any features in the
+topmost layer you drag the selection out on.  Thus, if you want to
+select a region that doesn't snap to these points, you should raise
+the waveform or ruler layer to the top first by clicking on its tab in
+the layer properties area.</p><div align=center><img src="images/waveformtab.png"></div><p>You can
+then freely drag out a new selection.</p>
+
+<div align=center><a href="images/selection-11.png"><img border=0 src="images/selection-11-small.png"></a></div>
+
+<p>That's all we're covering in this short tutorial.</p>
+
+</body>
+</html>
