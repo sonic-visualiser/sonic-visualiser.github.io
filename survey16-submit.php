@@ -48,7 +48,7 @@ if ($file) {
    fclose($file);
 }
 
-sleep(2);
+sleep(1);
 
 }
 ?>
