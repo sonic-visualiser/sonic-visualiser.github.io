@@ -5,6 +5,7 @@
     <link rel="icon" type="image/png" href="images/waveform.png"/>
     <link rel="shortcut" type="image/png" href="images/waveform.png"/>
     <title>Sonic Visualiser - User Survey</title>
+    <style type="text/css">input#misc { display: none; width: 2px; }</style>
     <meta name="robots" content="noindex"/>
   </head>
   <body>
@@ -23,27 +24,103 @@
 
       <h2 id="firstpara">Sonic Visualiser &mdash; A User Survey</h2>
 
-      <p><table border=0 cellpadding=0 cellspacing=0><tr><td>Whether you are a regular or occasional user of Sonic Visualiser, experienced or a complete beginner, we'd love to know why you use it and what you think of it.<br><br>Please take just a few minutes to fill in and submit this survey form, and help us to improve Sonic Visualiser and other software we publish.<br><br><i>Thanks!</i></td><td>&nbsp;</td><td valign=top align=center><div style="border: 2px solid black; padding: 1em; padding-top: 0"><a href="http://www.elec.qmul.ac.uk/digitalmusic/"><img src="images/qm-logo.png" width="224" height="95" alt="Queen Mary logo" border=0/></a><br><small><nobr>Software and survey brought to you</nobr><br>by the Centre for Digital Music,<br>Queen Mary, University of London</small></div></td></tr></table>
+      <p><table border=0 cellpadding=0 cellspacing=0><tr><td>Whether
+      you are a regular or occasional user of Sonic Visualiser,
+      experienced or a complete beginner, we'd love to know why you
+      use it and what you think of it.<br><br>Please take just a few
+      minutes to fill in and submit this survey form, and help us to
+      improve Sonic Visualiser and other software we
+      publish.<br><br>All of the questions are optional.<br><br><i><b>Thanks!</b></i></td><td>&nbsp;</td><td
+      valign=top align=center><div style="border: 2px solid black;
+      padding: 1em; padding-top: 0"><a
+      href="http://www.elec.qmul.ac.uk/digitalmusic/"><img
+      src="images/qm-logo.png" width="224" height="95" alt="Queen Mary
+      logo" border=0/></a><br><small><nobr>Software and survey brought
+      to you</nobr><br>by the Centre for Digital Music,<br>Queen Mary,
+      University of London</small></div></td></tr></table>
 
       <br>
       <form action="survey16-submit.php" method="post">
       <ol>
-      <li>I am<br>
-      <input type="radio" name="iam" value="musicstudent"> A student, researcher, or academic in music<br>
-      <input type="radio" name="iam" value="engstudent"> A student, researcher, or academic in audio engineering, audio analysis, multimedia, or a related discipline<br>
-      <input type="radio" name="iam" value="employed"> In some other employment that is related to my use of Sonic Visualiser<br>
-      <input type="radio" name="iam" value="none"> None of the above<br>
-      <li>I first found out about about Sonic Visualiser<br>
+
+      <li>How did you first find out about Sonic Visualiser?<br>
       <input type="radio" value="search" name="hearabout"/> Through an Internet search<br>
-      <input type="radio" value="website" name="hearabout"/> From an article or comment on a website &ndash; <i>please give name or URL of site if possible:</i> <input type="text" name="hereabout-site"/><br>
-      <input type="radio" value="teacher" name="hearabout"/> From my teacher, lecturer, or supervisor<br>
+      <input type="radio" value="website" name="hearabout"/> From an article or comment on a website<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&mdash;&nbsp;<i>please give name or URL of site if possible:</i> <input type="text" name="hereabout-site" size="40"/><br>
+      <input type="radio" value="teacher" name="hearabout"/> From a teacher, lecturer, or supervisor<br>
       <input type="radio" value="conference" name="hearabout"/> From a conference presentation<br>
       <input type="radio" value="wom" name="hearabout"/> From a friend or colleague<br>
-      <input type="radio" value="other" name="hearabout"/> Other &ndash; please describe: <input type="text" name="hereabout-other"/><br>
-
+      <input type="radio" value="other" name="hearabout"/> Other &ndash; please describe: <input type="text" name="hearabout-other" size="60"/><br>
       </li>
 
+      <br>
+
+      <li>How did you obtain Sonic Visualiser?<br>
+      <input type="radio" name="obtain" value="website"/> From the Sonic Visualiser website<br>
+      <input type="radio" name="obtain" value="friend"/> I copied it from a friend or colleague<br>
+      <input type="radio" name="obtain" value="friend"/> It was provided by my educational institution<br>
+      <input type="radio" name="obtain" value="distro"/> I installed it using a Linux distribution package manager<br>
+      <input type="radio" name="obtain" value="other"/> Other &ndash; please describe: <input type="text" name="obtain-other" size="60"/><br>
+      </li>
+
+      <br>
+
+      <li>Which of the following best describes your position?<br>
+      <input type="radio" name="iam" value="musicstudent"> A student, researcher, or academic in music<br>
+      <input type="radio" name="iam" value="engstudent"> A student, researcher, or academic in audio engineering, audio analysis, multimedia, or a related discipline<br>
+      <input type="radio" name="iam" value="employed"> I am employed in some field that is related to my use of Sonic Visualiser<br>
+      <input type="radio" name="iam" value="personal"> I use Sonic Visualiser solely for personal purposes<br>
+      <input type="radio" name="iam" value="none"> None of the above<br>
+      </li>
+
+      <br>
+      <li>Do you enjoy using Sonic Visualiser?<br>
+      <input type="radio" name="happy" value="happy"> Yes, I do!<br>
+      <input type="radio" name="happy" value="soso"> I have no strong feelings about it<br>
+      <input type="radio" name="happy" value="nochoice"> I don't enjoy using it, but I haven't found any other software to replace it<br>
+      <input type="radio" name="happy" value="coerced"> I don't enjoy using it, I just use it because I've been told to<br>
+      </li>
+
+      <br>
+
+      <li>How easy do you find Sonic Visualiser to use?<br>
+      <input type="radio" name="easy" value="quite"> I find it straightforward to use<br>
+      <input type="radio" name="easy" value="learningcurve"> Getting started was tricky, but I'm OK with it now<br>
+      <input type="radio" name="easy" value="bits"> I can use a few features fine, but I don't understand most of it<br>
+      <input type="radio" name="easy" value="not"> I don't understand it at all<br>
+      </li>
+
+      <br>
+
+      <li>Which of the following features of Sonic Visualiser have you used?  (Please select all that apply, or none.)<br>
+      <input type="checkbox" name="feature-svfiles"> Saving and reloading complete sessions<br>
+      <input type="checkbox" name="feature-vamp"> Running Vamp plugins<br>
+      <input type="checkbox" name="feature-stretch"> Speeding up or slowing down playback<br>
+      <input type="checkbox" name="feature-tapping"> Annotation by tapping using the computer keyboard<br>
+      <input type="checkbox" name="feature-tappingmidi"> Annotation by tapping using a MIDI keyboard<br> 
+      <input type="checkbox" name="feature-rdf"> Data import or export using RDF formats<br>
+      <input type="checkbox" name="feature-alignment"> Audio alignment using the MATCH plugin<br>
+      <input type="checkbox" name="feature-notesregions"> Editing note or region layers<br>
+      <input type="checkbox" name="feature-images"> Image layers<br>
+      </li>
+
+      <br>
+
+      <input type="text" id="misc" name=""/>
+
       </ol>
+
+      <p><small><b>Note:</b> The purpose of this survey is to learn
+      more about users' opinions of Sonic Visualiser, a free, open
+      source software application, so that its developers can make
+      better-informed decisions about their future plans for it.
+      There is no commercial purpose to the survey.  Survey results
+      will be stored and may be collated by IP address, but no other
+      personally identifying information will be retained.  The survey
+      does not contain any information that could be used to contact
+      you.  Survey results may be published in aggregate; individual
+      records will not be published.  In submitting the survey you
+      indicate your acceptance of these terms.</small></p>
+
       <button type="submit">Submit My Survey!</button>
       </form>
 
