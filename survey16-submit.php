@@ -6,9 +6,9 @@ $trap = $_POST['misc'];
 
 $d = time();
 if ($trap == "") {
-   $filename = "/var/survey/$d";
+   $filename = "/var/surveys/sv16/$d";
 } else {
-   $filename = "/var/survey/dubious/$d";
+   $filename = "/var/surveys/sv16/dubious/$d";
 }
 
 $file = fopen($filename, "w");
