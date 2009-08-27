@@ -38,7 +38,12 @@ $file = fopen($filename, "w");
 
 if ($file) {
    $i = 0;
-   fwrite($file, "ip: " . $_SERVER['REMOTE_ADDR'] . "\n");
+   $ip = $_SERVER['REMOTE_ADDR'];
+   if ($ip == '127.0.0.1') {
+       # local reverse proxy
+       $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+   }
+   fwrite($file, "ip: $ip\n");
       foreach (array_keys($_POST) as $key) {
           $value = $_POST[$key];
 	  if ($value == "") continue;
