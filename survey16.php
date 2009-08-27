@@ -43,6 +43,10 @@
       <form action="survey16-submit.php" method="post">
       <ol>
 
+      <input type="hidden" name="sv-version" value="<?php echo htmlentities($_GET['sv']); ?>">
+      <input type="hidden" name="sv-plugs" value="<?php echo htmlentities($_GET['plugs']); ?>">
+      <input type="hidden" name="sv-platform" value="<?php echo htmlentities($_GET['platform']); ?>">
+
       <input type="hidden" name="survey-version" value="1"/>
 
       <li>Which of the following best describes your position?<br>
