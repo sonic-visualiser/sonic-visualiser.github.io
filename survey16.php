@@ -112,17 +112,17 @@
 
       <br>
 
-      <li>Which (if any) computer programming languages are you familiar with programming in?
+      <li>Which (if any) computer programming languages are you familiar with programming?
       <table border=0 width="90%">
       <tr>
       <td><input type="checkbox" name="prog-python">&nbsp;Python</td>
-      <td><input type="checkbox" name="prog-c">&nbsp;C</td>
-      <td><input type="checkbox" name="prog-cpp">&nbsp;C++</td>
+      <td><input type="checkbox" name="prog-c">&nbsp;C/C++</td>
       <td><input type="checkbox" name="prog-csharp">&nbsp;C#/.NET</td>
       <td><input type="checkbox" name="prog-matlab">&nbsp;MATLAB</td>
       <td><input type="checkbox" name="prog-java">&nbsp;Java</td>
       <td><input type="checkbox" name="prog-js">&nbsp;JavaScript</td>
-      <td><input type="checkbox" name="prog-lisp">&nbsp;Lisp/Scheme</td>
+      <td><input type="checkbox" name="prog-php">&nbsp;PHP</td>
+      <td><input type="checkbox" name="prog-lisp">&nbsp;Lisp</td>
       </tr>
       <tr>
       <td colspan=8><input type="checkbox" name="prog-other"> Other(s) &ndash; please specify: <input type="text" name="prog-langs-other" size="60"/></td>
