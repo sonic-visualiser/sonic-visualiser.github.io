@@ -43,13 +43,15 @@ if ($file) {
        # local reverse proxy
        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
    }
+   $ua = $_SERVER['HTTP_USER_AGENT'];
    fwrite($file, "ip: $ip\n");
-      foreach (array_keys($_POST) as $key) {
-          $value = $_POST[$key];
-	  if ($value == "") continue;
-	  fwrite($file, "$key: $value\n");
-	  $i = $i + 1;
-      }
+   fwrite($file, "ua: $ua\n");
+   foreach (array_keys($_POST) as $key) {
+       $value = $_POST[$key];
+       if ($value == "") continue;
+       fwrite($file, "$key: $value\n");
+       $i = $i + 1;
+   }
    fclose($file);
 }
 

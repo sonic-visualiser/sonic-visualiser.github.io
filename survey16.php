@@ -25,7 +25,7 @@
       <h2 id="firstpara">Sonic Visualiser &mdash; A User Survey</h2>
 
       <p><table border=0 cellpadding=0 cellspacing=0><tr><td>Whether
-      you are a regular or occasional user of Sonic Visualiser,
+      you are a regular or occasional user of <a href="http://sonicvisualiser.org/" target="_new">Sonic Visualiser</a>,
       experienced or a complete beginner, we'd love to know why you
       use it and what you think of it.<br><br>Please take just a few
       minutes to fill in and submit this survey form, and help us to
@@ -42,6 +42,50 @@
       <br>
       <form action="survey16-submit.php" method="post">
       <ol>
+
+      <input type="hidden" name="survey-version" value="1"/>
+
+      <li>Which of the following best describes your position?<br>
+      <input type="radio" name="iam" value="musicstudent"> A student, researcher, or academic in music<br>
+      <input type="radio" name="iam" value="engstudent"> A student, researcher, or academic in audio engineering, audio analysis, multimedia, or a related discipline<br>
+      <input type="radio" name="iam" value="employed"> I am employed in some field that is related to my use of Sonic Visualiser<br>
+      <input type="radio" name="iam" value="personal"> I use Sonic Visualiser solely for personal purposes<br>
+      <input type="radio" name="iam" value="none"> None of the above<br>
+      </li>
+
+      <br>
+      <li>Do you enjoy using Sonic Visualiser?<br>
+      <input type="radio" name="happy" value="happy"> Yes, I do!<br>
+      <input type="radio" name="happy" value="soso"> I have no strong feelings about it<br>
+      <input type="radio" name="happy" value="nochoice"> I don't enjoy using it, but I haven't found any other software to replace it<br>
+      <input type="radio" name="happy" value="coerced"> I don't enjoy using it, I use it because I've been told to (by a teacher, for example)<br>
+      </li>
+
+      <br>
+
+      <li>How easy do you find Sonic Visualiser to use?<br>
+      <input type="radio" name="easy" value="quite"> I find it straightforward to use<br>
+      <input type="radio" name="easy" value="learningcurve"> Getting started was tricky, but I'm OK with it now<br>
+      <input type="radio" name="easy" value="pitfalls"> I can get things done, but it's frustrating and I'm often caught out by unexpected behaviour<br>
+      <input type="radio" name="easy" value="bits"> I can use a few features, but I don't understand most of it<br>
+      <input type="radio" name="easy" value="not"> I don't understand it at all<br>
+      </li>
+
+      <br>
+
+      <li>Which of the following features of Sonic Visualiser have you used?  (Please select all that apply, or none.)<br>
+      <input type="checkbox" name="feature-svfiles"> Saving and reloading complete sessions<br>
+      <input type="checkbox" name="feature-vamp"> Running Vamp plugins<br>
+      <input type="checkbox" name="feature-stretch"> Speeding up or slowing down playback<br>
+      <input type="checkbox" name="feature-tapping"> Annotation by tapping using the computer keyboard<br>
+      <input type="checkbox" name="feature-tappingmidi"> Annotation by tapping using a MIDI keyboard<br> 
+      <input type="checkbox" name="feature-rdf"> Data import or export using RDF formats<br>
+      <input type="checkbox" name="feature-alignment"> Audio alignment using the MATCH plugin<br>
+      <input type="checkbox" name="feature-notesregions"> Editing note or region layers<br>
+      <input type="checkbox" name="feature-images"> Image layers<br>
+      </li>
+
+      <br>
 
       <li>How did you first find out about Sonic Visualiser?<br>
       <input type="radio" value="search" name="hearabout"/> Through an Internet search<br>
@@ -64,50 +108,39 @@
 
       <br>
 
-      <li>Which of the following best describes your position?<br>
-      <input type="radio" name="iam" value="musicstudent"> A student, researcher, or academic in music<br>
-      <input type="radio" name="iam" value="engstudent"> A student, researcher, or academic in audio engineering, audio analysis, multimedia, or a related discipline<br>
-      <input type="radio" name="iam" value="employed"> I am employed in some field that is related to my use of Sonic Visualiser<br>
-      <input type="radio" name="iam" value="personal"> I use Sonic Visualiser solely for personal purposes<br>
-      <input type="radio" name="iam" value="none"> None of the above<br>
-      </li>
-
-      <br>
-      <li>Do you enjoy using Sonic Visualiser?<br>
-      <input type="radio" name="happy" value="happy"> Yes, I do!<br>
-      <input type="radio" name="happy" value="soso"> I have no strong feelings about it<br>
-      <input type="radio" name="happy" value="nochoice"> I don't enjoy using it, but I haven't found any other software to replace it<br>
-      <input type="radio" name="happy" value="coerced"> I don't enjoy using it, I just use it because I've been told to<br>
-      </li>
-
-      <br>
-
-      <li>How easy do you find Sonic Visualiser to use?<br>
-      <input type="radio" name="easy" value="quite"> I find it straightforward to use<br>
-      <input type="radio" name="easy" value="learningcurve"> Getting started was tricky, but I'm OK with it now<br>
-      <input type="radio" name="easy" value="pitfalls"> I can do everything I need to, but it's frustrating and I'm often caught out by unexpected behaviour<br>
-      <input type="radio" name="easy" value="bits"> I can use a few features fine, but I don't understand most of it<br>
-      <input type="radio" name="easy" value="not"> I don't understand it at all<br>
+      <li>Which (if any) computer programming languages are you familiar with programming in?
+      <table border=0 width="90%">
+      <tr>
+      <td><input type="checkbox" name="prog-python">&nbsp;Python</td>
+      <td><input type="checkbox" name="prog-c">&nbsp;C</td>
+      <td><input type="checkbox" name="prog-cpp">&nbsp;C++</td>
+      <td><input type="checkbox" name="prog-csharp">&nbsp;C#/.NET</td>
+      <td><input type="checkbox" name="prog-matlab">&nbsp;MATLAB</td>
+      <td><input type="checkbox" name="prog-java">&nbsp;Java</td>
+      <td><input type="checkbox" name="prog-js">&nbsp;JavaScript</td>
+      <td><input type="checkbox" name="prog-lisp">&nbsp;Lisp/Scheme</td>
+      </tr>
+      <tr>
+      <td colspan=8><input type="checkbox" name="prog-other"> Other(s) &ndash; please specify: <input type="text" name="prog-langs-other" size="60"/></td>
+      </table>
       </li>
 
       <br>
 
-      <li>Which of the following features of Sonic Visualiser have you used?  (Please select all that apply, or none.)<br>
-      <input type="checkbox" name="feature-svfiles"> Saving and reloading complete sessions<br>
-      <input type="checkbox" name="feature-vamp"> Running Vamp plugins<br>
-      <input type="checkbox" name="feature-stretch"> Speeding up or slowing down playback<br>
-      <input type="checkbox" name="feature-tapping"> Annotation by tapping using the computer keyboard<br>
-      <input type="checkbox" name="feature-tappingmidi"> Annotation by tapping using a MIDI keyboard<br> 
-      <input type="checkbox" name="feature-rdf"> Data import or export using RDF formats<br>
-      <input type="checkbox" name="feature-alignment"> Audio alignment using the MATCH plugin<br>
-      <input type="checkbox" name="feature-notesregions"> Editing note or region layers<br>
-      <input type="checkbox" name="feature-images"> Image layers<br>
+      <li>Have you ever considered writing <a href="http://vamp-plugins.org/" target="_new">Vamp plugins</a> for use in Sonic Visualiser or any other host application?<br>
+      <input type="radio" name="vamp" value="yes"> Yes, I have written some plugins already<br>
+      <input type="radio" name="vamp" value="interested"> Yes, I'm interested in the idea<br>
+      <input type="radio" name="vamp" value="not-developer"> No, I wouldn't be technically capable<br>
+      <input type="radio" name="vamp" value="not-interested"> No, I don't see any reason to<br>
+      <input type="radio" name="vamp" value="vamp-sux"> No, I've looked at Vamp and found the format unsatisfactory in some way<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&mdash;&nbsp;<i>if so, unsatisfactory in what way?</i> <input type="text" name="sux-why" size="50"/><br>
       </li>
-
+      
       <br>
 
-      <li>Anything else we should know?  Tell us here:<br>
-      <textarea id="message" name="message" rows="8" cols="60"></textarea></li>
+      <li>Is there anything else you'd like us to know about your
+      experiences with Sonic Visualiser, or how it might be improved?
+      Please, tell us here:<br> <textarea id="message" name="message" rows="8"
+      cols="70"></textarea></li>
 
       <input type="text" id="misc" name=""/>
 
