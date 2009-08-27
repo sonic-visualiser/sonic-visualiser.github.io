@@ -112,6 +112,42 @@
 
       <br>
 
+      <li>Which (if any) of the following websites, all associated with the Centre for Digital Music, have you visited in the past?<br>
+      <table border=0 width="90%">
+      <tr>
+      <td><input type="checkbox" name="www-isophonics">&nbsp;<a href="http://isophonics.net/" target="_new">isophonics.net</a></td>
+      <td><input type="checkbox" name="www-omras2">&nbsp;<a href="http://omras2.org/" target="_new">omras2.org</a></td>
+      <td><input type="checkbox" name="www-c4dmpresents">&nbsp;<a href="http://c4dmpresents.org/" target="_new">c4dmpresents.org</a></td>
+      <td><input type="checkbox" name="www-vamp-plugins">&nbsp;<a href="http://vamp-plugins.org/" target="_new">vamp-plugins.org</a></td>
+      <td><input type="checkbox" name="www-dbtune">&nbsp;<a href="http://dbtune.org/" target="_new">dbtune.org</a></td>
+      </tr>
+      </table>
+      </li>
+      
+      <br>
+
+      <li>Which of the following software or systems do you use regularly?<br>
+      <table border=0 width="90%">
+      <tr>
+      <td><input type="checkbox" name="soft-audacity">&nbsp;Audacity</td>
+      <td><input type="checkbox" name="soft-praat">&nbsp;Praat</td>
+      <td><input type="checkbox" name="soft-wavesurfer">&nbsp;WaveSurfer</td>
+      <td><input type="checkbox" name="soft-clam">&nbsp;CLAM Annotator</td>
+      <td><input type="checkbox" name="soft-marsyas">&nbsp;MARSYAS</td>
+      </tr><tr>
+      <td><input type="checkbox" name="soft-jmusic">&nbsp;jMusic</td>
+      <td><input type="checkbox" name="soft-echonest">&nbsp;EchoNest APIs</td>
+      <td><input type="checkbox" name="soft-mbz">&nbsp;MusicBrainz</td>
+      <td colspan=3><input type="checkbox" name="soft-tabulator">&nbsp;Tabulator and other RDF explorers</td>
+      </tr>
+      <tr>
+      <td colspan=5>Others you think we might find interesting: <input type="text" name="soft-other" size="60"/></td>
+      </tr>
+      </table>
+      </li>
+
+      <br>
+
       <li>Which (if any) computer programming languages are you familiar with programming?
       <table border=0 width="90%">
       <tr>
@@ -125,7 +161,7 @@
       <td><input type="checkbox" name="prog-lisp">&nbsp;Lisp</td>
       </tr>
       <tr>
-      <td colspan=8><input type="checkbox" name="prog-other"> Other(s) &ndash; please specify: <input type="text" name="prog-langs-other" size="60"/></td>
+      <td colspan=8>Others &ndash; please specify: <input type="text" name="prog-langs-other" size="60"/></td>
       </table>
       </li>
 
