@@ -177,6 +177,15 @@
       
       <br>
 
+      <li>Are there any existing features in Sonic Visualiser that you would particularly like to see tutorials or other documentation for?<br> <textarea id="tutorials" name="tutorials" rows="8" cols="70"></textarea></li>
+
+      <br>
+
+      <li>Are there any new features that you would really like to see added to Sonic Visualiser?<br> <textarea id="newfeatures" name="newfeatures" rows="8"
+      cols="70"></textarea></li>
+
+      <br>
+
       <li>Is there anything else you'd like us to know about your
       experiences with Sonic Visualiser, or how it might be improved?
       Please, tell us here:<br> <textarea id="message" name="message" rows="8"
