@@ -29,7 +29,13 @@
       <p>Sonic Visualiser is available ready-to-run for multiple
       platforms.</p>
 
-      <p>The current release is 1.9.  Read the <a href="https://code.soundsoftware.ac.uk/projects/sonic-visualiser/repository/entry/CHANGELOG">release notes</a>.</p>
+      <p>The current release is 2.0.  Read the <a href="https://code.soundsoftware.ac.uk/projects/sonic-visualiser/repository/entry/CHANGELOG">release notes</a>.<br>Despite the major version increment, this is a maintenance release: 2.0 just happened to be the most suitable version number after 1.9.</p>
+
+      <p><small><b>Warning!</b> The default OS/X build is now a 64-bit
+      one. This means it will only load 64-bit/universal builds of
+      plugins. Many Vamp plugins include 64-bit builds, but you may
+      prefer to stick with the alternative 32-bit Sonic Visualiser if
+      you have particular plugins you need to use.</p>
 
       <table align=center border=1 cellpadding=5 style="clear:right">
       <tr><th>&nbsp;</th>
@@ -39,36 +45,33 @@
       </tr>
       <tr>
 
-      <td align=center>Version<br><big><b>1.9</b></big></td>
+      <td align=center>Version<br><big><b>2.0</b></big></td>
 
       <td align=center><br>
       <a
-      href="http://code.soundsoftware.ac.uk/attachments/download/196/sonic-visualiser_1.9cc-1_i386.deb"><img src="images/linux.png" valign=middle style="padding-right:8px" border=0>32-bit</a> or <a
-      href="http://code.soundsoftware.ac.uk/attachments/download/197/sonic-visualiser_1.9cc-1_amd64.deb">64-bit</a><br><br>
-      <span style="font-size: 0.9em">Linux package<br>for Ubuntu or Debian</span>
-	<br><br>
+      href="http://code.soundsoftware.ac.uk/attachments/download/537/sonic-visualiser_2.0cc-1_i386.deb"><img src="images/linux.png" valign=middle style="padding-right:8px" border=0>32-bit</a> or <a
+      href="http://code.soundsoftware.ac.uk/attachments/download/538/sonic-visualiser_2.0cc-1_amd64.deb">64-bit</a><br><br>
+      <span style="font-size: 0.9em">Linux package</span>
+	<br><br><br>
       </td>
 
       <td align=center><br><a
-      href="http://code.soundsoftware.ac.uk/attachments/download/192/Sonic_Visualiser-1.9.dmg"><img src="images/mac.png" valign=middle style="padding-right:8px" border=0>Download</a><br><br>
-      <span style="font-size: 0.9em">32-bit universal binary<br>for OS/X 10.4 or newer</span><br><br>
+      href="http://code.soundsoftware.ac.uk/attachments/download/535/Sonic%20Visualiser-2.0.dmg"><img src="images/mac.png" valign=middle style="padding-right:8px" border=0>Download</a><br><br>
+      <span style="font-size: 0.9em">64-bit Intel binary<br>for OS/X 10.6 or newer</span><br><br>
+      <small>or <a href="http://code.soundsoftware.ac.uk/attachments/download/536/Sonic%20Visualiser-2.0-32bit.dmg">32-bit</a> for OS/X 10.4 or newer<br></small>
       </td>
 
       <td align=center><br><a
-      href="http://code.soundsoftware.ac.uk/attachments/download/195/sonic-visualiser-1.9-win32.zip"><img src="images/win.png" valign=middle style="padding-right:8px" border=0>Download</a><br><br>
+      href="http://code.soundsoftware.ac.uk/attachments/download/534/sonic-visualiser-2.0-win32.zip"><img src="images/win.png" valign=middle style="padding-right:8px" border=0>Download</a><br><br>
       <span style="font-size: 0.9em">32-bit Windows executable<br>&nbsp;</span><br><br>
       </td>
 
       </tr><tr>
       <td align=center><b>Source code</b></td>
-      <td colspan=4 align=center valign=middle><a href="http://code.soundsoftware.ac.uk/attachments/download/194/sonic-visualiser-1.9.tar.gz"><img src="images/source.png" valign=middle style="padding-right:8px" border=0>Download</a> or <a href="https://code.soundsoftware.ac.uk/projects/sonic-visualiser/repository">Browse</a></td>
+      <td colspan=4 align=center valign=middle><a href="http://code.soundsoftware.ac.uk/attachments/download/539/sonic-visualiser-2.0.tar.gz"><img src="images/source.png" valign=middle style="padding-right:8px" border=0>Download</a> or <a href="https://code.soundsoftware.ac.uk/projects/sonic-visualiser/repository">Browse</a></td>
 
 
-      </tr><tr>
-      <td align=center>Older versions</td>
-      <td colspan=4 align=center>See the SourceForge <a href="https://sourceforge.net/project/showfiles.php?group_id=162924">downloads page</a>.</td>
       </tr>
-
       </table>
 
       <br>
@@ -77,7 +80,7 @@
       <ul>
       <li><b>Analysis plugins:</b>  Oh yes, you'll want some of those.  Go to the <a href="http://www.vamp-plugins.org/download.html">Vamp plugin download page</a>.<br>No plugins are included with Sonic Visualiser itself.</li><br>
       <li><b>Effects plugins:</b> Sonic Visualiser can use <a href="http://www.ladspa.org/">LADSPA</a> and <a href="http://dssi.sourceforge.net/">DSSI</a> effects plugins.<br>Windows users can download some LADSPA plugins from the <a href="http://audacity.sourceforge.net/download/plugins">Audacity plugin page</a>.<br>OS/X users can get some from the <a href="http://www.ardour.org/requirements_osx">Ardour website</a>.<br>Linux users will hopefully have plenty already.</li><br>
-      <li><b>VST, AudioUnits?</b> Sonic Visualiser cannot support VST plugins directly because Steinberg's VST license is incompatible with Sonic Visualiser's GPL license.<br>Windows and OS/X users can get limited support using the <a href="http://audacityteam.org/vst/">Audacity VST Enabler</a>, and Linux users can try <a href="http://sourceforge.net/project/showfiles.php?group_id=104230&package_id=127571">dssi-vst</a>.<br>There is no such problem with AudioUnits; we just haven't got around to supporting it yet.</li>
+      <li><b>VST, AudioUnits?</b> Sonic Visualiser cannot support VST plugins directly because Steinberg's VST license is incompatible with Sonic Visualiser's GPL license.<br>Windows and OS/X users can get limited support using the <a href="http://audacityteam.org/vst/">Audacity VST Enabler</a>, and Linux users can try <a href="http://breakfastquay.com/dssi-vst/">dssi-vst</a>.<br>There is no such problem with AudioUnit; we just haven't got around to supporting it yet.</li>
       </ul>
 
       <br>
