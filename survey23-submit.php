@@ -18,20 +18,20 @@ foreach (array_keys($_POST) as $key) {
 
 if (!$have) {
 
-header("Location: survey16.html");
+header("Location: survey23.html");
 
 } else {
 
-header("Location: survey16-thanks.html");
+header("Location: survey23-thanks.html");
 
 $trap = $_POST['misc'];
 
 $d = time();
 $r = rand();
 if ($trap == "") {
-   $filename = "/var/surveys/sv16/$d.$r";
+   $filename = "/var/surveys/sv23/$d.$r";
 } else {
-   $filename = "/var/surveys/sv16/dubious/$d.$r";
+   $filename = "/var/surveys/sv23/dubious/$d.$r";
 }
 
 $file = fopen($filename, "w");
