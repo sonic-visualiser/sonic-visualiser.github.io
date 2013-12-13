@@ -105,7 +105,7 @@
 
       <br>
 
-      <li>Which of the following features of Sonic Visualiser do you consider <i>most</i> important for your own work? Please choose only one!<br>
+      <li>Which of the following features of Sonic Visualiser do you consider <i>most</i> important for your own work?<br>
       <input type="radio" name="important" value="spectrogram"> The built-in spectrogram visualisations<br>
       <input type="radio" name="important" value="plugins"> The ability to run Vamp audio feature extraction plugins<br>
       <input type="radio" name="important" value="annotation"> The ability to create and edit annotations of recordings by "tapping" or manual editing<br>
@@ -119,36 +119,34 @@
       <li>Which of the following would you be <i>most</i> likely to
       use, if all of them were available as alternatives to Sonic Visualiser?<br>
 
-	<input type="radio" name="alternative" value="simple"> A simpler program, without editing or annotation facilities, that made it easy to get at the most common visualisations<br>
-	<input type="radio" name="alternative" value="pitchedit"> A program that placed more emphasis on editing and playback for pitch and note layers<br>
+	<input type="radio" name="alternative" value="simple"> A simpler program, without editing or annotation facilities, that made it easy to see the most common visualisations<br>
+	<input type="radio" name="alternative" value="pitchedit"> A program that focused more on editing and synthesis of pitch tracks and note annotations<br>
+	<input type="radio" name="alternative" value="detail"> A program designed for very detailed inspection, such as sub-sample audio reconstruction<br>
 	<input type="radio" name="alternative" value="align"> A program designed to be most useful for visualisation of many related audio files at once<br>
-	<input type="radio" name="alternative" value="mobile"> A program like Sonic Visualiser that could be used on iPad or other tablet devices<br>
-	<input type="radio" name="alternative" value="none"> None of the above: the current set of features in Sonic Visualiser is preferable<br>
+	<input type="radio" name="alternative" value="none"> None of the above<br>
 	</li>
 
       <br>
 
-      <li>Is there anything about Sonic Visualiser that you find particularly annoying or incomprehensible?
-      Please, tell us here:<br> <textarea id="annoyance" name="annoyance"
+      <li>Is there anything about Sonic Visualiser that you find particularly annoying or incomprehensible?<br> <textarea id="annoyance" name="annoyance"
       rows="8" cols="70"></textarea></li>
 
       <br>
 
       <li>Is there anything else you'd like us to know about your
-      experiences with Sonic Visualiser?  Please, tell us
-      here:<br> <textarea id="message" name="message" rows="8"
+      experiences with Sonic Visualiser?<br> <textarea id="message" name="message" rows="8"
       cols="70"></textarea></li>
 
       <br>
 
       <li>If you wish, please help us continue to develop Sonic
       Visualiser by leaving contact details such as your name and
-      email address below. We would like to use this to ask you in
-      future about how to you have used Sonic Visualiser. We will not
-      pass your details on to any other organization.<br>(Being able
-      to demonstrate a wide range of uses will help us to show our
-      funders that Sonic Visualiser is relevant and useful, and will
-      help us to continue to fund future development.)
+      email address below.<br>We may use this to ask you about how to
+      you have used Sonic Visualiser. We will not pass your details on
+      to any other organization.<br>(Being able to demonstrate a wide
+      range of uses will help us to show our funders that Sonic
+      Visualiser is relevant and useful, and will help us to continue
+      to fund future development.)
 	<br>
 	<textarea id="contact" name="contact" rows="8" cols="70"></textarea>
       </li>
@@ -157,10 +155,10 @@
 
       </ol>
 
-      <p><small><b>Note:</b> The purpose of this survey is to learn
-      more about users' opinions of Sonic Visualiser, a free, open
-      source software application, so that its developers can make
-      better-informed decisions about their future plans for it.
+      <p><small><b>The small print:</b> The purpose of this survey is
+      to learn more about users' opinions of Sonic Visualiser, a free,
+      open source software application, so that its developers can
+      make better-informed decisions about their future plans for it.
       There is no commercial purpose to the survey.  Results will be
       stored and may be collated by IP address. Apart from any contact
       details you have explicitly provided, the survey contains no
