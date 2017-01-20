@@ -38,11 +38,11 @@ body {
     padding-left: 2em;
     padding-right: 2em;
     color: #303030;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 }
 p,td,ul,ol,li,blockquote { 
     font-size: 1em;
     font-style: normal;
-    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 }
 h2 { 
     margin-top: 1.2em;
@@ -57,9 +57,6 @@ h3 {
     border-top-width: 1px;
     border-top-style: solid;
     border-top-color: #ef6a35;
-}
-h1,h2,h3,h4 { 
-    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 }
 #firstpara {
     border-top-width: 2px;
