@@ -129,9 +129,12 @@ a:hover {
     padding-bottom: 2em;
     overflow-y: auto;
     overflow-x: hidden;
+    border-right-width: 2px;
+    border-right-style: solid;
+    border-right-color: #ef6a35;
 }
 #reference-content {
-    margin-left: 27%;
+    margin-left: 27.5%;
 }
 .toc1,.toc2,.toc3,.toc4 { 
     font-size: 0.8em;
