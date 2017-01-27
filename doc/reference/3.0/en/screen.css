@@ -149,3 +149,30 @@ a:hover {
     padding-left: 6em;
     display: none;
 }
+img.icon {
+    margin-bottom: -0.4em;
+    margin-top: -0.2em;
+    margin-left: -0.2em;
+    margin-right: -0.2em;
+}
+img.left-modest {
+    float: left;
+    max-width: 40%;
+    padding-right: 1em;
+    margin-bottom: 0.5em;
+}
+img.right-modest {
+    float: right;
+    max-width: 40%;
+    padding-left: 1em;
+    margin-bottom: 0.5em;
+}
+img.right-wider {
+    float: right;
+    max-width: 55%;
+    padding-left: 1em;
+    margin-bottom: 0.5em;
+}
+img.banner {
+    max-width: 100%;
+}

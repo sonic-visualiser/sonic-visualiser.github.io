@@ -110,7 +110,7 @@ several different kinds of layer, which differ in the types of data
 they can represent: instants, curves (time-value plots), and so
 on.</p>
 
-<p><div align="center"><img style="max-width:100%" src="images/pane-layers.png"/><br><i>A pane with four layers: <a href="#waveform">waveform</a> in black, <a href="#timeruler">time ruler</a> in grey, <a href="#timevalues">time values</a> in purple and <a href="#timeinstants">time instants</a> in blue.</i></div></p>
+<p><div align="center"><img class="banner" src="images/pane-layers.png"/><br><i>A pane with four layers: <a href="#waveform">waveform</a> in black, <a href="#timeruler">time ruler</a> in grey, <a href="#timevalues">time values</a> in purple and <a href="#timeinstants">time instants</a> in blue.</i></div></p>
 
 <p>Layers that are stacked on the same pane will always share the same
  magnification and alignment on the x (time) axis.  However, they do
@@ -176,7 +176,7 @@ href="#layerimport">importing</a> an existing set of annotation data from a file
 
 <a name="layeredits"></a><h3>1.3 &nbsp;Display Properties</h3>
 
-<p><img style="float:right;max-width:50%;padding-left:1em" src="images/params-spectrogram.png"/>Each layer, whether editable or not, has a set of adjustable
+<p><img class="right-modest" src="images/params-spectrogram.png"/>Each layer, whether editable or not, has a set of adjustable
 display properties.  These are shown in a corresponding stack to the
 right of the pane.  To save space, not all of the names of the
 properties are shown; you can hold the mouse pointer over a control to
@@ -187,7 +187,7 @@ layer to the front of the pane and adjust its properties.  The available
 properties for the different layer types are discussed in the sections
 about those layers, below.</p>
 
-<p><img style="float:left;max-width:50%;padding-right:1em" src="images/params-pane.png"/>There is also a tab corresponding to the pane itself, which can
+<p><img class="left-modest" src="images/params-pane.png"/>There is also a tab corresponding to the pane itself, which can
 be used to control the way the pane tracks during playback and its
 alignment with other panes.</p><p>The Global Scroll and Global Zoom settings (both on by default) make the pane follow any horizontal scrolling and zooming that happens in other panes that also have these settings on, so that when you scroll or zoom in one of them, they all scroll or zoom.</p><p>The Follow Playback control allows you to choose whether the pane will track playback using a playback cursor, paging when it reaches the edge of the pane (Page); or whether it will scroll along with the playback (Scroll); or neither.</p>
 
@@ -220,22 +220,22 @@ alignment with other panes.</p><p>The Global Scroll and Global Zoom settings (bo
 <p>Sonic Visualiser has six "tools", which control the way mouse actions interact with
  the panes.  These can be activated using the tool icons on the toolbar:</p>
 <ul>
-<li><img src="images/icons/navigate.png"/> Navigate tool. Used for basic viewing and navigating.  With
+<li><img class="icon" src="images/icons/navigate.svg"/> Navigate tool. Used for basic viewing and navigating.  With
   this tool active, you can just click and drag anywhere on a pane
   to move the view of the audio data around.  This tool is active by
   default, except when a new empty editable layer has just been added, when the draw tool (below) is made active.
 
-</li><p><li><img src="images/icons/select.png"/> Select tool. Used for selecting areas.
+</li><p><li><img class="icon" src="images/icons/select.svg"/> Select tool. Used for selecting areas.
   Click and drag in any pane to select a region in time.  See also
   <a href="#selection">Selection</a>, below.
 
-</li><p><li><img src="images/icons/move.png"/> Edit tool. Used for moving items in editable layers.
+</li><p><li><img class="icon" src="images/icons/move.svg"/> Edit tool. Used for moving items in editable layers.
 
-</li><p><li><img src="images/icons/draw.png"/> Draw tool. Used for adding items to editable layers.
+</li><p><li><img class="icon" src="images/icons/draw.svg"/> Draw tool. Used for adding items to editable layers.
 
-</li><p><li><img src="images/icons/erase.png"/> Erase tool. Used for removing items from editable layers.
+</li><p><li><img class="icon" src="images/icons/erase.svg"/> Erase tool. Used for removing items from editable layers.
 
-</li><p><li><img src="images/icons/measure.png"/> Measure tool. Used
+</li><p><li><img class="icon" src="images/icons/measure.svg"/> Measure tool. Used
 to make measurements of pixel regions, in terms of time and scale
 values.  See <a href="#measurements">Measurements</a>.
 
@@ -244,7 +244,7 @@ values.  See <a href="#measurements">Measurements</a>.
 </ul>
 <a name="selection"></a><h2>4 &nbsp;Selection</h2>
 
-<p>With the select tool <img src="images/icons/select.png"/> active, click and drag
+<p>With the select tool <img class="icon" src="images/icons/select.svg"/> active, click and drag
  within any pane to select a region.</p>
 
 <p>The selection boundaries will snap to the resolution or features
@@ -298,7 +298,7 @@ values.  See <a href="#measurements">Measurements</a>.
  and spectrogram layers) are not editable.  Sonic Visualiser is not an audio editor.</p>
 
 <p>To move an individual item in a layer, make sure the
- edit tool <img src="images/icons/move.png"/> is active and then click on and drag
+ edit tool <img class="icon" src="images/icons/move.svg"/> is active and then click on and drag
  the item.  If the item is relatively wide on the screen, you may have
  to click and drag its left hand edge for the drag to take effect.</p>
 
@@ -309,14 +309,14 @@ values.  See <a href="#measurements">Measurements</a>.
  correction.</p>
 
 <p>You can also edit the details of an item directly, by double-clicking
- on it with either the navigate <img src="images/icons/navigate.png"/> or edit <img src="images/icons/move.png"/> tool selected.  (The advantage
+ on it with either the navigate <img class="icon" src="images/icons/navigate.svg"/> or edit <img class="icon" src="images/icons/move.svg"/> tool selected.  (The advantage
  of using the navigate tool is that it removes the risk of
  accidentally editing the point while double-clicking on it.)</p>
 
-<p>To move a set of items at once, <a href="#selection">select</a> the region around them, then switch to the edit tool <img src="images/icons/move.png"/> and drag the selected
+<p>To move a set of items at once, <a href="#selection">select</a> the region around them, then switch to the edit tool <img class="icon" src="images/icons/move.svg"/> and drag the selected
  region.</p>
 
-<p>To delete one or more items click on them with the erase <img src="images/icons/erase.png"/> tool selected, or <a href="#selection">select</a> the region around them and use Edit -> Delete Selected Items.
+<p>To delete one or more items click on them with the erase <img class="icon" src="images/icons/erase.svg"/> tool selected, or <a href="#selection">select</a> the region around them and use Edit -> Delete Selected Items.
 
 <a name="cutandpaste"></a><h3>5.1 &nbsp;Cut and Paste</h3>
 
@@ -360,8 +360,8 @@ one of the real-time values in the first column, enter the new value
 in seconds.  Undo applies to any edits made in this window.</p>
 
 <p>By default, this window will scroll to keep time with playback.
-You can toggle this behaviour using the <img
-src="images/icons/playfollow.png"> Track Playback button in the
+You can toggle this behaviour using the <img class="icon"
+src="images/icons/playfollow.svg"> Track Playback button in the
 toolbar.</p>
 
 <p>Although you can select items in the data editor window and delete
@@ -376,7 +376,7 @@ main window.</p>
 <p>The waveform layer shows audio data in a traditional waveform peak
  display.</p>
 
-<p><div align="center"><img style="max-width:100%" src="images/pane-waveform.png"/><br><i>A waveform layer.</i></div></p>
+<p><div align="center"><img class="banner" src="images/pane-waveform.png"/><br><i>A waveform layer.</i></div></p>
 
 <p>Each pixel on the horizontal axis shows the peak and mean positive and
  negative values found in samples falling within that pixel's range at
@@ -384,7 +384,7 @@ main window.</p>
  in multiples of sqrt(2) using the mouse wheel or the Up and Down
  cursor keys.</p>
 
-<p><img style="float:right;max-width:50%;padding-left:1em" src="images/params-waveform.png"/></p>
+<p><img class="right-modest" src="images/params-waveform.png"/></p>
 
 <p>The Y axis scale can be adjusted using the Scale display properties:</p>
 <ul>
@@ -420,7 +420,7 @@ main window.</p>
 <p>The time ruler layer simply displays a series of labelled time
  divisions.</p>
 
-<p><div align="center"><img style="max-width:100%" src="images/pane-timeruler.png"/><br><i>A time ruler layer.  The centre line is not part of the layer, but is built in to the pane.</i></div></p>
+<p><div align="center"><img class="banner" src="images/pane-timeruler.png"/><br><i>A time ruler layer.  The centre line is not part of the layer, but is built in to the pane.</i></div></p>
 
 <p>Each new pane has a time ruler layer in it by default,
  although you can remove or hide it.  The time ruler layer is not editable.</p>
@@ -439,11 +439,11 @@ properties</a> the layer is set up with.  You can always turn any kind
 of spectrogram into any other kind by adjusting its properties after
 it has been created.</p>
 
-<p><div align="center"><img style="max-width:100%" src="images/pane-spectrogram.png"/><br><i>A spectrogram layer.</i></div></p>
+<p><div align="center"><img class="banner" src="images/pane-spectrogram.png"/><br><i>A spectrogram layer.</i></div></p>
 
 <!-- !!! update params image with new icons -->
 
-<p><img style="float:right;max-width:50%;padding-left:1em" src="images/params-spectrogram.png"/></p>
+<p><img class="right-modest" src="images/params-spectrogram.png"/></p>
 <p>The colour scheme used for the spectrogram can be adjusted using
 the Colour properties (Colour, Threshold, and Colour Rotation).  The
 Colour option allows you to select different colour maps; while most
@@ -464,13 +464,13 @@ proportional to the log of the square of the bin value.  The special setting Pha
 colours corresponding to the phase angle instead of power of each
 frequency bin.
 
-</li><p><li>The Normalize Columns switch <img src="images/icons/normalise-columns.png"/> will cause the colours in all
+</li><p><li>The Normalize Columns switch <img class="icon" src="images/icons/normalise-columns.svg"/> will cause the colours in all
 bins to be adjusted so that the frequency bin with the highest value
 in a given time frame receives the brightest available colour.  This
 will increase the overall brightness for quiet frames and may decrease
 it for loud frames.
 
-</li><p><li>The Normalize Visible Area switch <img src="images/icons/normalise.png"/> will cause the colours
+</li><p><li>The Normalize Visible Area switch <img class="icon" src="images/icons/normalise.svg"/> will cause the colours
 in all bins to be adjusted so that the frequency bin with the highest
 value within the visible region of the spectrogram receives the
 brightest available colour.
@@ -497,8 +497,7 @@ of the window size the processing frames will overlap.  Using a larger
 overlap will help to compensate for the reduced time
 resolution of a large window size.</li>
 
-<!-- !!! update following image with Hann -->
-<p><li><img style="float:right;max-width:50%;padding-left:1em"
+<p><li><img class="right-wider"
 src="images/params-windowpreference.png"/>The shape of the window
 applied to each section of audio data is not adjustable from the
 spectrogram properties, but can be adjusted globally in the <a
@@ -534,8 +533,8 @@ as its vertical scale, with the C in each octave shaded in grey.
 
 <a name="spectrogramharmonic"></a><p><img
 style="float:right;max-width:50%;padding-left:1em;padding-bottom:0.5em"
-src="images/harmonic-cursor.png"/>If you switch to the <img
-src="images/icons/measure.png"/> measure tool and move the mouse over
+src="images/harmonic-cursor.png"/>If you switch to the <img class="icon"
+src="images/icons/measure.svg"/> measure tool and move the mouse over
 the spectrogram, it will show the "harmonic cursor" (see right).  This
 is a vertical line with tick marks at the frequencies of the second
 harmonic, third harmonic and so on of the frequency that the mouse is
@@ -600,7 +599,7 @@ individual tone.</p>
 
 <p>The spectrum layer shows a frequency analysis of the audio at a given point in time, like a vertical slice through a <a href="#spectrogram">spectrogram layer</a>.
 
-<p><div align="center"><img style="max-width:100%" src="images/pane-spectrum.png"/><br><i>A spectrum layer.</i></div></p>
+<p><div align="center"><img class="banner" src="images/pane-spectrum.png"/><br><i>A spectrum layer.</i></div></p>
 
 <p>In contrast to almost all of the other layer types, the x axis of a
 spectrum layer does not measure time.  Instead, the spectrum's x axis
@@ -616,7 +615,7 @@ bin, corresponding to the colour scale of the spectrogram.</p>
 
 <!-- !!! update params with new icons and show peaks property -->
 
-<p><img style="float:right;max-width:50%;padding-left:1em"
+<p><img class="right-modest"
 src="images/params-spectrum.png"/>You can adjust the FFT window size
 and overlap using the Window properties, just as in the spectrogram;
 and you can select the y axis scale (linear or dB), gain and
@@ -631,7 +630,7 @@ normalisation using the Scale properties.</p>
 <li>Colours: Each bin will be drawn with a coloured rectangular block whose colour is based on the same colour mapping scheme as used in the spectrogram.<br>If this option is selected, the Colour property may be used to select between the available colour maps, instead of showing single colours only.</li><p>
 </ul>
 
-<p>If the Show Peak Frequencies <img
+<p>If the Show Peak Frequencies <img class="icon"
 src="images/icons/show-peaks.png"/> property is set, a vertical line
 will be drawn through the estimated frequency of each spectral peak.</p>
 
@@ -639,7 +638,7 @@ will be drawn through the estimated frequency of each spectral peak.</p>
 property, which selects the mapping between frequency and x coordinate
 for the plot.</p>
 
-<p>If you switch to the <img src="images/icons/measure.png"/> measure
+<p>If you switch to the <img class="icon" src="images/icons/measure.svg"/> measure
 tool and move the mouse over the spectrum, it will show a "harmonic
 cursor" like that in the <a
 href="#spectrogramharmonic">spectrogram</a>.  See <a
@@ -653,12 +652,12 @@ tool.</p>
  full height of the layer.  Each instant may have a label, which will
  be displayed near the top of the instant.</p>
 
-<p><div align="center"><img style="max-width:100%" src="images/pane-timeinstants.png"/><br><i>A time instants layer.</i></div></p>
+<p><div align="center"><img class="banner" src="images/pane-timeinstants.png"/><br><i>A time instants layer.</i></div></p>
 
-<p>Instants can be added by clicking with the draw tool <img src="images/icons/draw.png"/>, and edited by
- dragging with the edit tool <img src="images/icons/move.png"/>.  You can also
+<p>Instants can be added by clicking with the draw tool <img class="icon" src="images/icons/draw.svg"/>, and edited by
+ dragging with the edit tool <img class="icon" src="images/icons/move.svg"/>.  You can also
  double-click on an instant with the edit or navigate tool
- <img src="images/icons/navigate.png"/>to open an edit dialog in which you can change
+ <img class="icon" src="images/icons/navigate.svg"/>to open an edit dialog in which you can change
  its label and finely adjust its timing.</p>
 
 <p>When selecting a region of time in a time instants layer, the
@@ -669,7 +668,7 @@ tool.</p>
  buttons can be used to jump the playback position to the nearest
  instant in either direction.</p>
 
-<p><img style="float:right;max-width:50%;padding-left:1em" src="images/params-timeinstants.png"/></p>
+<p><img class="right-modest" src="images/params-timeinstants.png"/></p>
 
 <p>The Plot Type display property can be used to select between Instants
  display, in which each instant is shown with a single vertical bar,
@@ -690,11 +689,11 @@ tool.</p>
  where each point has a value that determines its position on the Y
  axis.  Each point may also have a label.</p>
 
-<p><div align="center"><img style="max-width:100%" src="images/pane-timevalue.png"/><br><i>A time values layer, with curve plot type.</i></div></p>
+<p><div align="center"><img class="banner" src="images/pane-timevalue.png"/><br><i>A time values layer, with curve plot type.</i></div></p>
 
-<p>Points can be added by clicking with the draw tool <img src="images/icons/draw.png"/>, and edited by
- dragging with the edit tool <img src="images/icons/move.png"/>.  You can also double-click on a point
- with the edit or navigate tool <img src="images/icons/navigate.png"/> to open an edit dialog in which you can
+<p>Points can be added by clicking with the draw tool <img class="icon" src="images/icons/draw.svg"/>, and edited by
+ dragging with the edit tool <img class="icon" src="images/icons/move.svg"/>.  You can also double-click on a point
+ with the edit or navigate tool <img class="icon" src="images/icons/navigate.svg"/> to open an edit dialog in which you can
  change its label and finely adjust its timing and value.</p>
 
 <p>When selecting a region of time in a time values layer, the selection
@@ -705,7 +704,7 @@ tool.</p>
  buttons can be used to jump the playback position to the nearest
  point in either direction.</p>
 
-<p><img style="float:right;max-width:50%;padding-left:1em" src="images/params-timevalue.png"/></p>
+<p><img class="right-modest" src="images/params-timevalue.png"/></p>
 
 <p>The Plot Type display property can be used to adjust the display of
  points:</p>
@@ -767,11 +766,11 @@ tool.</p>
  has a start time, a duration, and a value that determines its position
  on the Y axis.  Each note may also have a label.</p>
 
-<p><div align="center"><img style="max-width:100%" src="images/pane-notes.png"/><br><i>A note layer.</i></div></p>
+<p><div align="center"><img class="banner" src="images/pane-notes.png"/><br><i>A note layer.</i></div></p>
 
-<p>Notes can be added by clicking and dragging with the draw tool <img src="images/icons/draw.png"/>, and
- edited by dragging with the edit tool <img src="images/icons/move.png"/>.  You can also double-click on a
- note with the edit or navigate tool <img src="images/icons/navigate.png"/> to open an edit dialog in which
+<p>Notes can be added by clicking and dragging with the draw tool <img class="icon" src="images/icons/draw.svg"/>, and
+ edited by dragging with the edit tool <img class="icon" src="images/icons/move.svg"/>.  You can also double-click on a
+ note with the edit or navigate tool <img class="icon" src="images/icons/navigate.svg"/> to open an edit dialog in which
  you can change its label and finely adjust its timing and value.</p>
 
 <p>When selecting a region of time in a notes layer, the selection will
@@ -783,7 +782,7 @@ tool.</p>
  default have vertical scales aligned with each other.  This behaviour
  can be adjusted using the Vertical Scale display property.</p>
 
-<p><img style="float:right;max-width:50%;padding-left:1em" src="images/params-notes.png"/></p>
+<p><img class="right-modest" src="images/params-notes.png"/></p>
 
 <p>If Vertical Scale is set to Linear or Log Scale, the scale will cover
  the range of values (or logs of values) present in the layer; if set
@@ -817,9 +816,9 @@ also have a label.  A regions layer is used (for example) to display
 the result features returned by a plugin transform that associates a
 duration with each of its values.</p>
 
-<p>Regions can be added by clicking with the draw tool <img src="images/icons/draw.png"/>, and moved by
- dragging with the edit tool <img src="images/icons/move.png"/>.  You can also double-click on a region
- with the edit or navigate tool <img src="images/icons/navigate.png"/> to open an edit dialog.  (You may need
+<p>Regions can be added by clicking with the draw tool <img class="icon" src="images/icons/draw.svg"/>, and moved by
+ dragging with the edit tool <img class="icon" src="images/icons/move.svg"/>.  You can also double-click on a region
+ with the edit or navigate tool <img class="icon" src="images/icons/navigate.svg"/> to open an edit dialog.  (You may need
  to click near the left edge of the region for an edit to take
  effect.)</p>
 
@@ -835,9 +834,9 @@ duration with each of its values.</p>
  annotations that are not attached to other sorts of features (as the
  other editable layer types allow their points to have labels as well).</p>
 
-<p>Labels can be added by clicking with the draw tool <img src="images/icons/draw.png"/>, and moved by
- dragging with the edit tool <img src="images/icons/move.png"/>.  You can also double-click on a label
- with the edit or navigate tool <img src="images/icons/navigate.png"/> to open an edit dialog.  (You may need
+<p>Labels can be added by clicking with the draw tool <img class="icon" src="images/icons/draw.svg"/>, and moved by
+ dragging with the edit tool <img class="icon" src="images/icons/move.svg"/>.  You can also double-click on a label
+ with the edit or navigate tool <img class="icon" src="images/icons/navigate.svg"/> to open an edit dialog.  (You may need
  to click at the top-left corner of the text label for an edit to take
  effect.)</p>
 
@@ -856,11 +855,11 @@ should be careful to make sure images are stored at an accessible location or tr
 your control, but their Y coordinate on the pane is based entirely on
 their height and cannot be changed.</p>
 
-<p>Images can be added by clicking with the draw tool <img
-src="images/icons/draw.png"/>, and moved by dragging with the edit
-tool <img src="images/icons/move.png"/>.  You can also double-click on
-an image with the edit or navigate tool <img
-src="images/icons/navigate.png"/> to open an edit dialog from which
+<p>Images can be added by clicking with the draw tool <img class="icon"
+src="images/icons/draw.svg"/>, and moved by dragging with the edit
+tool <img class="icon" src="images/icons/move.svg"/>.  You can also double-click on
+an image with the edit or navigate tool <img class="icon"
+src="images/icons/navigate.svg"/> to open an edit dialog from which
 you can set the label or change the image being displayed.</p>
 
 <a name="colour3dplot"></a><h3>6.11 &nbsp;Colour 3D Plot</h3>
@@ -868,7 +867,7 @@ you can set the label or change the image being displayed.</p>
 <p>The colour 3D plot layer displays a three-dimensional data set in a
  grid.</p>
 
-<p><div align="center"><img style="max-width:100%" src="images/pane-colour3dplot.png"/><br><i>A colour 3D plot layer.</i></div></p>
+<p><div align="center"><img class="banner" src="images/pane-colour3dplot.png"/><br><i>A colour 3D plot layer.</i></div></p>
 
 <p>It is used for data sets which have a discrete time axis, a set of
 bins at each time position, and a value in each bin.  (In this respect
@@ -878,7 +877,7 @@ The grid x and y coordinates correspond to the time and bin
 respectively, and each grid square is coloured according to the value
 in the corresponding bin.</p>
 
-<p><img style="float:right;max-width:50%;padding-left:1em"
+<p><img class="right-modest"
 src="images/params-colour3dplot.png"/>You can change the colour map
 used for the value scale using the Colour property; adjust whether the
 colour is mapped to a linear or logarithmic scale using the Scale
@@ -1096,14 +1095,14 @@ plugin installation method.</p>
 
 <a name="measurements"></a><h2>8 &nbsp;Measurements</h2>
 
-<p><img
-style="float:right;max-width:50%;padding-left:1em;padding-bottom:0.5em"
-src="images/measurement.png"/>The measure tool <img
-src="images/icons/measure.png"/> enables you to obtain measurements in
+<p><img style="float:right;max-width:50%;padding-left:1em;padding-bottom:0.5em"
+src="images/measurement.png"/>The measure tool <img class="icon"
+src="images/icons/measure.svg"/> enables you to obtain measurements in
 scale units (such as time in the X coordinate, or whatever the Y
 coordinate of the current layer represents) corresponding to certain
-pixel positions.  To measure a region, just click and drag a rectangle
-covering it, using the left mouse button with the measure tool selected.</p>
+pixel positions.  To measure a region, click and drag a rectangle
+covering it, using the left mouse button with the measure tool
+selected.</p>
 
 <p>An example is shown above: the dragged rectangle
 (in green) covers an area corresponding to 1.26 seconds in the X axis,
@@ -1142,16 +1141,14 @@ the data being displayed.</p>
 
 <a name="audioplayback"></a><h2>9 &nbsp;Audio Playback</h2>
 
-<p><img
-style="float:left;max-width:50%;padding-right:1em;padding-bottom:0.2em;padding-top:0.2em"
-src="images/transport.png"><img
-style="float:right;max-width:50%;padding-left:1em;padding-top:0.2em;padding-bottom:0.2em"
-src="images/params-playback.png">Playback in Sonic Visualiser is
+<p><img class="left-modest"
+src="images/transport.png"><img class="right-modest"
+src="images/params-playback.png"></p><p style="clear:both">Playback in Sonic Visualiser is
 controlled using the transport controls in the toolbar and the
 fader/meter and playback speed controls in the bottom right of the
 main window.</p>
 
-<p>Use the <img src="images/icons/playpause.png"> Play / Pause button
+<p>Use the <img class="icon" src="images/icons/playpause.svg"> Play / Pause button
 to start and stop playback.  Use the fader control in the bottom right
 of the main window to control the output volume level, and the rotary
 control next to it to control playback speed.  You can adjust playback
@@ -1159,25 +1156,25 @@ speed from one-tenth to ten times the correct speed, without affecting
 playback pitch, although the sound quality will suffer and CPU load
 increase accordingly.</p>
 
-<p>Use <img
-src="images/icons/rewind-start.png"> Rewind to Start and <img
-src="images/icons/ffwd-end.png"> Fast Forward to End to jump to either
+<p>Use <img class="icon"
+src="images/icons/rewind-start.svg"> Rewind to Start and <img class="icon"
+src="images/icons/ffwd-end.svg"> Fast Forward to End to jump to either
 end of the audio file.</p>
 
-<p>Use <img src="images/icons/rewind.png"> Rewind and <img
-src="images/icons/ffwd.png"> Fast Forward to jump to the nearest item
+<p>Use <img class="icon" src="images/icons/rewind.svg"> Rewind and <img class="icon"
+src="images/icons/ffwd.svg"> Fast Forward to jump to the nearest item
 in the appropriate direction in the current layer, if it is a <a
 href="#timeinstants">time instants</a> or <a href="#timevalue">time
 value</a> layer, or to the nearest numbered unit in the time ruler for
 the pane otherwise.</p>
 
 <p>You can also jump about during playback by simply dragging a pane
-using the <img src="images/icons/navigate.png"> navigate tool; by
+using the <img class="icon" src="images/icons/navigate.svg"> navigate tool; by
 double-clicking with the navigate tool at any point in any pane; or by
 double-clicking on the small representation of the audio file at the
 bottom of Sonic Visualiser's main window.</p>
 
-<p>If the <img src="images/icons/playselection.png"/> Play Selection
+<p>If the <img class="icon" src="images/icons/playselection.svg"/> Play Selection
 toggle button is depressed and there is a selection active, then when
 you ask to Play, Sonic Visualiser will play only the selected region.
 It is possible to have more than one separate region selected (see <a
@@ -1185,15 +1182,15 @@ href="#selection">Selection</a>); playback will jump seamlessly from
 the end of one region to the start of the next if this is the
 case.</p>
 
-<p>If the <img src="images/icons/playloop.png"/> Play Loop toggle
+<p>If the <img class="icon" src="images/icons/playloop.svg"/> Play Loop toggle
 button is depressed, then playback will jump back to the start of the
 audio file or selection when it reaches the end.</p>
 
-<p>If the <img src="images/icons/solo.png"/> Play Solo toggle button
+<p>If the <img class="icon" src="images/icons/solo.svg"/> Play Solo toggle button
 is depressed, then only audio data from the currently active pane will
 be played.</p>
 
-<p>If the <img src="images/icons/align.png"/> Align File Timelines
+<p>If the <img class="icon" src="images/icons/align.svg"/> Align File Timelines
 button is depressed, then playback pointers in panes other than the
 current one will be shown at times that correspond to the same
 location in their audio material as that being played in the current
@@ -1202,8 +1199,7 @@ seconds as the current pane.  Using Align File Timelines will
 automatically enable Solo.  See <a href="alignment">Time
 Alignment</a>.</p>
 
-<p><img
-style="float:left;max-width:50%;padding-right:1em;padding-top:0.2em;padding-bottom:0.2em"
+<p><img class="left-modest"
 src="images/params-layerplayback.png"> Besides playback of the source
 audio files, Sonic Visualiser will also play back some of the editable
 layers such as time instants and notes, using tapping or piano note
@@ -1246,7 +1242,7 @@ to record notes into a note layer.  Tapping using a MIDI keyboard will
 normally give better timing resolution and accuracy than doing so
 using the PC keyboard.</p>
 
-<p>To tap instants using a MIDI keyboard, just <a
+<p>To tap instants using a MIDI keyboard, <a
 href="#audioplayback">play the audio</a> and, at each moment where you
 want a point to be added, tap a key on the MIDI keyboard. If a time
 instants layer is active, a point will be added to it at the time at
@@ -1282,13 +1278,13 @@ plugin, and the <a
 href="http://www.elec.qmul.ac.uk/people/simond/match/index.html">MATCH
 home page</a> for more background and information about the methods
 used.  If the plugin is found to be installed when Sonic Visualiser
-starts, the <img src="images/icons/align.png"/> Align File Timelines
+starts, the <img class="icon" src="images/icons/align.svg"/> Align File Timelines
 toggle button will appear in the toolbar and the alignment feature
 will be enabled.</p>
 
 <p>To make use of the alignment feature, import two (or more) audio
 files that share some common source material into separate panes and
-click the <img src="images/icons/align.png"/> Align File Timelines
+click the <img class="icon" src="images/icons/align.svg"/> Align File Timelines
 button.  Sonic Visualiser will then take some time to calculate an
 alignment in time between the files.  The first file to be loaded will
 be treated as the reference, against which the other files are
@@ -1328,7 +1324,7 @@ and OS/X, and MP4/AAC on OS/X only.</p>
 
 <p>To open an audio file, or any other kind of file that Sonic
 Visualiser supports (including session and layer files), use File ->
-Open... or the Open button <img src="images/icons/fileopen.png"/> on
+Open... or the Open button <img class="icon" src="images/icons/fileopen.svg"/> on
 the toolbar.  You can open more than one audio file at once: if you
 already have one open and you want to add another, use File -> Import
 More Audio...</p>
@@ -1530,9 +1526,9 @@ reset them to their defaults.</p>
 
 <a name="toolselection"></a><h3>14.1 &nbsp;Tool selection</h3>
 
-<p>Press the keys 1 to 6 to change the current tool.<br>Press 1 for <img src="images/icons/navigate.png"/> the
- navigate tool, 2 for <img src="images/icons/select.png"/> the select tool, 3 for <img src="images/icons/move.png"/> the edit tool, 4 for <img src="images/icons/draw.png"/>
- the draw tool, 5 for <img src="images/icons/erase.png"/> the erase tool and 6 for <img src="images/icons/measure.png"> the measure tool.</p>
+<p>Press the keys 1 to 6 to change the current tool.<br>Press 1 for <img class="icon" src="images/icons/navigate.svg"/> the
+ navigate tool, 2 for <img class="icon" src="images/icons/select.svg"/> the select tool, 3 for <img class="icon" src="images/icons/move.svg"/> the edit tool, 4 for <img class="icon" src="images/icons/draw.svg"/>
+ the draw tool, 5 for <img class="icon" src="images/icons/erase.svg"/> the erase tool and 6 for <img class="icon" src="images/icons/measure.svg"> the measure tool.</p>
 
 <a name="displaylevel"></a><h3>14.2 &nbsp;Overlay display level</h3>
 
@@ -1552,7 +1548,7 @@ overlays.</p>
 
 <a name="scrolling"></a><h3>14.3 &nbsp;Scrolling</h3>
 
-<p>With the navigate tool <img src="images/icons/navigate.png"/> selected, click and drag with the left or middle
+<p>With the navigate tool <img class="icon" src="images/icons/navigate.svg"/> selected, click and drag with the left or middle
  mouse button in any pane to move the centre frame.</p>
 
 <p>When any other tool is selected, click and drag with the middle mouse
@@ -1585,7 +1581,7 @@ and "]" to change which one is current.
 
 <p>Double-click on the small representation of the audio file at the
 bottom of the window to jump straight to a particular time in the
-file.  With the navigate tool <img src="images/icons/navigate.png"/>
+file.  With the navigate tool <img class="icon" src="images/icons/navigate.svg"/>
 selected, double-click on any pane to jump to that time.
 
 <p>Press the keypad Enter key, or the semicolon key ";", to insert a time
