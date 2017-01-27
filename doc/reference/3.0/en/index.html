@@ -56,13 +56,14 @@
       <div class="toc4">12.5 &nbsp;<a href="#imageexport">Image File Export</a></div>
       <div class="toc4">12.6 &nbsp;<a href="#remote">Opening Remote Locations</a></div>
       <div class="toc4">12.7 &nbsp;<a href="#templates">Session Templates</a></div>
-      <div class="toc2">13 &nbsp;<a href="#preferences">Application Preferences</a></div>
-      <div class="toc2">14 &nbsp;<a href="#keyboardandmousereference">Keyboard and Mouse Reference</a></div>
-      <div class="toc4">14.1 &nbsp;<a href="#toolselection">Tool selection</a></div>
-      <div class="toc4">14.2 &nbsp;<a href="#displaylevel">Display level</a></div>
-      <div class="toc4">14.3 &nbsp;<a href="#scrolling">Scrolling</a></div>
-      <div class="toc4">14.4 &nbsp;<a href="#zoom">Zoom</a></div>
-      <div class="toc4">14.5 &nbsp;<a href="#playback">Playback</a></div>
+      <div class="toc2">13 &nbsp;<a href="#unitconverter">The Unit Converter</a></div>
+      <div class="toc2">14 &nbsp;<a href="#preferences">Application Preferences</a></div>
+      <div class="toc2">15 &nbsp;<a href="#keyboardandmousereference">Keyboard and Mouse Reference</a></div>
+      <div class="toc4">15.1 &nbsp;<a href="#toolselection">Tool selection</a></div>
+      <div class="toc4">15.2 &nbsp;<a href="#displaylevel">Display level</a></div>
+      <div class="toc4">15.3 &nbsp;<a href="#scrolling">Scrolling</a></div>
+      <div class="toc4">15.4 &nbsp;<a href="#zoom">Zoom</a></div>
+      <div class="toc4">15.5 &nbsp;<a href="#playback">Playback</a></div>
       </div>
 
       <div id="reference-content">
@@ -113,21 +114,22 @@ on.</p>
 <p><div align="center"><img class="banner" src="images/pane-layers.png"/><br><i>A pane with four layers: <a href="#waveform">waveform</a> in black, <a href="#timeruler">time ruler</a> in grey, <a href="#timevalues">time values</a> in purple and <a href="#timeinstants">time instants</a> in blue.</i></div></p>
 
 <p>Layers that are stacked on the same pane will always share the same
- magnification and alignment on the x (time) axis.  However, they do
- not have to have identical scales on the y axis &ndash; although Sonic Visualiser will
- attempt to align them by default if their scale units match.</p>
+ magnification (or zoom) and alignment on the x (time) axis.  However,
+ they do not have to have identical scales on the y axis &ndash;
+ although Sonic Visualiser will attempt to align them vertically by
+ default if their scale units match.</p>
 
-<p style="clear:left"><img style="float:left;padding-top:0.3em;max-width:50%;padding-right:1em" src="images/active.png"/>
+<p style="clear:left"><img style="float:left;padding-top:0.3em;padding-right:1em"
+src="images/active.png"/> One pane is always the "active" pane, and
+this one is marked with a black vertical bar to its left, like the one
+by this paragraph.  The front layer on that pane is the active layer.
+Any menu or keyboard function in Sonic Visualiser that works on a
+single layer will always operate on the active layer.</p>
 
-One pane is always the "active" pane, and this one is marked with a
- black vertical bar to its left.  The front layer on that pane is the
- active layer.  Any menu operation in Sonic Visualiser that works on a single layer
- will always operate on the active layer.</p>
-
-<p>While most
- of the annotation layer types are interactively editable on the pane
- itself, layers corresponding directly to audio data (such as waveform
- and spectrogram layers) are not.</p>
+<p>Many of the annotation layer types are interactively editable on
+ the pane itself. The exceptions are those layers corresponding
+ directly to audio data (such as waveform and spectrogram layers), and
+ those showing dense information such as grids.</p>
 
 <a name="paneadding"></a><h3>1.2 &nbsp;Adding Panes and Layers</h3>
 
@@ -153,21 +155,23 @@ also add an empty pane and add layers to it afterwards.</li><p>
 <li>The Layer menu contains the same functions as the Pane menu.  When
 invoked from the Layer menu, they add a new layer to the current pane
 instead of adding a whole new pane.<br>The Layer menu also contains
-functions to add empty layers of each of the editable layer types: <a
-href="#timeinstants">time instants</a>, <a href="#timevalues">time
-values</a>, <a href="#notes">notes</a>, <a
-href="#regions">regions</a>, <a href="#text">text</a>, and <a
-href="#images">images</a>.<br>You can also add an existing layer to
-another pane, thus displaying the same thing more than once, or add a
+functions to add empty layers of each of the editable layer
+types: <a href="#timeinstants">time
+instants</a>, <a href="#timevalues">time
+values</a>, <a href="#notes">notes</a>, <a href="#regions">regions</a>, <a href="#text">text</a>,
+and <a href="#images">images</a>.<br>You can also add an existing
+layer (one that is already shown in a different pane) to the current
+pane, thus displaying the same thing more than once, or add a
 <a href="#slice">slice</a> of an existing <a
 href="#colour3dplot">colour 3D plot</a> layer.</li><p>
 
-<li>The <a href="#transform">Transform menu</a> lists things you can do
-to your audio in order to produce new layers with data in them.
-Transforms include applying audio effects plugins to produce different
-audio data, and applying feature extraction plugins to extract other
-kinds of data from the audio.  See <a href="#plugins">Transforms and
-Plugins</a>.</li>
+<li>The <a href="#transform">Transform menu</a> lists things you can
+do to your audio in order to produce new layers with data in them. You
+will have to have some plugins installed in order for this menu to
+show anything useful.  Transforms include feature extractors, which
+produce annotation or visualisation data from audio inputs, and
+effects, which produce more audio by processing audio inputs.
+See <a href="#plugins">Transforms and Plugins</a>.</li>
 
 </ul>
 
@@ -176,20 +180,34 @@ href="#layerimport">importing</a> an existing set of annotation data from a file
 
 <a name="layeredits"></a><h3>1.3 &nbsp;Display Properties</h3>
 
-<p><img class="right-modest" src="images/params-spectrogram.png"/>Each layer, whether editable or not, has a set of adjustable
-display properties.  These are shown in a corresponding stack to the
-right of the pane.  To save space, not all of the names of the
-properties are shown; you can hold the mouse pointer over a control to
-see the name of its property in a tooltip.</p>
+<p><img class="right-modest" src="images/params-spectrogram.png"/>Each
+layer, whether editable or not, has a set of adjustable display
+properties.  These are shown in a tabbed box to the right of the pane,
+with one tab for each layer in the pane. Clicking on the numbered tab
+brings the corresponding layer to the front of the pane and makes it
+the active layer.
 
-<p>Click on the numbered tab for a layer in this stack to "raise" that
-layer to the front of the pane and adjust its properties.  The available
-properties for the different layer types are discussed in the sections
-about those layers, below.</p>
+<p>To save space, not all of the names of the properties are shown;
+you can hold the mouse pointer over a control to see the name of its
+property in a tooltip or the status line at the bottom of the main
+window.</p>
 
-<p><img class="left-very-modest" src="images/params-pane.png"/>There is also a tab corresponding to the pane itself, which can
-be used to control the way the pane tracks during playback and its
-alignment with other panes.</p><p>The Global Scroll and Global Zoom settings (both on by default) make the pane follow any horizontal scrolling and zooming that happens in other panes that also have these settings on, so that when you scroll or zoom in one of them, they all scroll or zoom.</p><p>The Follow Playback control allows you to choose whether the pane will track playback using a playback cursor, paging when it reaches the edge of the pane (Page); or whether it will scroll along with the playback (Scroll); or neither.</p>
+<p>The available properties for the each type of layer are discussed
+in the sections about the individual layer types, later in this
+reference. There are also <a href="#sonification">audio playback
+controls</a> at the bottom of the boxes for many layer types.</p>
+
+<p><img class="left-very-modest" src="images/params-pane.png"/>There
+is also a tab corresponding to the pane itself, which can be used to
+control the way the pane scrolls during playback and whether it moves
+and zooms in sync with other panes.</p><p>The Global Scroll and Global
+Zoom settings (both on by default) make the pane follow any horizontal
+scrolling and zooming that happens in other panes that also have these
+settings on, so that when you scroll or zoom in one of them, they all
+scroll or zoom.</p><p>The Follow Playback control allows you to choose
+whether the pane will track playback using a playback cursor, paging
+when it reaches the edge of the pane (Page); or whether it will scroll
+along with the playback (Scroll); or neither.</p>
 
 <a name="sessionsandundo"></a><h2 style="clear:both">2 &nbsp;Sessions and Undo</h2>
 
@@ -1141,20 +1159,12 @@ the data being displayed.</p>
 
 <a name="audioplayback"></a><h2>9 &nbsp;Audio Playback</h2>
 
-<p><img class="left-modest"
-src="images/transport.png"><img class="right-modest"
-src="images/params-playback.png"></p><p style="clear:both">Playback in Sonic Visualiser is
-controlled using the transport controls in the toolbar and the
-fader/meter and playback speed controls in the bottom right of the
-main window.</p>
+<p><img class="left-modest" src="images/transport.png">Playback in
+Sonic Visualiser is controlled using the transport controls in the
+toolbar.</p>
 
-<p>Use the <img class="icon" src="images/icons/playpause.svg"> Play / Pause button
-to start and stop playback.  Use the fader control in the bottom right
-of the main window to control the output volume level, and the rotary
-control next to it to control playback speed.  You can adjust playback
-speed from one-tenth to ten times the correct speed, without affecting
-playback pitch, although the sound quality will suffer and CPU load
-increase accordingly.</p>
+<p>Use the <img class="icon" src="images/icons/playpause.svg"> Play /
+Pause button, or press the Space key, to start and stop playback.</p>
 
 <p>Use <img class="icon"
 src="images/icons/rewind-start.svg"> Rewind to Start and <img class="icon"
@@ -1168,19 +1178,26 @@ href="#timeinstants">time instants</a> or <a href="#timevalue">time
 value</a> layer, or to the nearest numbered unit in the time ruler for
 the pane otherwise.</p>
 
-<p>You can also jump about during playback by simply dragging a pane
-using the <img class="icon" src="images/icons/navigate.svg"> navigate tool; by
-double-clicking with the navigate tool at any point in any pane; or by
-double-clicking on the small representation of the audio file at the
-bottom of Sonic Visualiser's main window.</p>
+<p>You can also jump about during playback by dragging a pane using
+the <img class="icon" src="images/icons/navigate.svg"> navigate tool;
+by double-clicking with the navigate tool at any point in any pane; or
+by double-clicking on the small representation of the audio file at
+the bottom of Sonic Visualiser's main window.</p>
 
-<p>If the <img class="icon" src="images/icons/playselection.svg"/> Play Selection
-toggle button is depressed and there is a selection active, then when
-you ask to Play, Sonic Visualiser will play only the selected region.
-It is possible to have more than one separate region selected (see <a
-href="#selection">Selection</a>); playback will jump seamlessly from
-the end of one region to the start of the next if this is the
-case.</p>
+<p>Use Record <img class="icon" src="images/icons/record.svg"> to
+start recording a new audio file from the microphone or another
+input. You can select the record source from the system's audio inputs
+in Sonic Visualiser's Preferences. Click Record again or press the
+Space key to stop recording.
+
+<p>There are four further playback controls on the toolbar. If the
+<img class="icon" src="images/icons/playselection.svg"/> Play
+Selection toggle button is depressed and there is a selection active,
+then when you ask to Play, Sonic Visualiser will play only the
+selected region.  It is possible to have more than one separate region
+selected (see <a href="#selection">Selection</a>); playback will jump
+seamlessly from the end of one region to the start of the next if this
+is the case.</p>
 
 <p>If the <img class="icon" src="images/icons/playloop.svg"/> Play Loop toggle
 button is depressed, then playback will jump back to the start of the
@@ -1199,18 +1216,42 @@ seconds as the current pane.  Using Align File Timelines will
 automatically enable Solo.  See <a href="alignment">Time
 Alignment</a>.</p>
 
-<p><img class="left-modest"
-src="images/params-layerplayback.png"> Besides playback of the source
-audio files, Sonic Visualiser will also play back some of the editable
-layers such as time instants and notes, using tapping or piano note
-sounds by default.  This behaviour, as well as the levels of
-individual audio sources, can be adjusted in the playback section of
-the layer properties for each layer.  That for a Notes layer is shown
-to the left.  Toggle the green LED control to switch playback off and
-on for this layer; use the red (left) dial for playback level, and the
-green (right) dial for stereo pan.  Clicking the "faders" button in
-the centre brings up a dialog in which you can select the playback
-sound sample and related parameters.</p>
+<p><img class="right-modest" src="images/params-playback.png">At the
+bottom-right of the main window, you can see two controls for playback
+speed and volume level/pan. The dial control can be used to speed up
+or slow down playback: you can adjust playback speed from one-tenth to
+ten times the original speed without affecting its pitch, although the
+sound quality will suffer. The level/pan button shows both volume
+level and overall stereo balance and can be used to adjust both, in
+the same manner as described for the layer playback parameters below.
+
+<a name="sonification"></a><h3>9.1 &nbsp;Sonification</h3>
+
+<p>Besides playback of the source audio files, Sonic Visualiser can
+also play some of the editable layers using tapping or note
+sounds. Time instants, note layers, and curve layers with Hz units can
+be played in this way. (Time instants and note layers have playback
+switched on by default, but for curves you need to enable it.)</p>
+
+<p><img class="right-modest" src="images/params-layerplayback.png">
+This behaviour, as well as the levels of individual audio sources, can
+be adjusted in the playback section of the layer properties for each
+layer. An example for a Notes layer is shown to the right, where the
+three buttons on the left control the playback settings.</p>
+
+<p><img style="float:left; max-width: 10%; padding-right: 1em"
+src="images/params-layerplayback-popup.png">The leftmost "matrix"
+button shows the current playback level (or volume) and pan or balance
+(stereo placement) for this layer. Click this control to pop up a
+larger version on which you can set the level and pan by clicking and
+dragging the level bar. To switch playback on and off completely,
+toggle the "loudspeaker" <img class="icon"
+src="images/icons/speaker.svg"/> button.</p>
+
+<p>For some layers, you can set a particular sound sample to be used
+in playback. Click the rightmost "faders" button to bring up a dialog
+in which you can select the playback sound sample and any related
+parameters.</p>
 
 <a name="tapping"></a><h2>10 &nbsp;Annotation by Tapping</h2>
 
@@ -1422,7 +1463,14 @@ prefix, in your local Sonic Visualiser templates directory.  To rename
 or delete any of them, use File -> Manage Exported Templates to open
 the templates directory in your system file manager.</p>
 
-<a name="preferences"></a><h2>13 &nbsp;Application Preferences</h2>
+<a name="unitconverter"></a><h2>14 &nbsp;The Unit Converter</h2>
+
+<p><img class="left-wider" src="images/unit-converter-frequency.png"></p>
+<p><img class="right-wider" src="images/unit-converter-tempo.png"></p>
+
+<p style="clear:both"></p>
+
+<a name="preferences"></a><h2>14 &nbsp;Application Preferences</h2>
 
 <p>The Application Preferences window (available through the
 Preferences option of the File menu) contains a number of things which
@@ -1511,7 +1559,7 @@ purposes.</li>
 
 </ul>
 
-<a name="keyboardandmousereference"></a><h2>14 &nbsp;Keyboard and Mouse Reference</h2>
+<a name="keyboardandmousereference"></a><h2>15 &nbsp;Keyboard and Mouse Reference</h2>
 
 <p>This section describes some commonly used keys and mouse actions.</p>
 
@@ -1524,29 +1572,28 @@ rotary dials) to enter exact values for them directly in a text field.
 You can also click with the middle mouse button on these controls to
 reset them to their defaults.</p>
 
-<a name="toolselection"></a><h3>14.1 &nbsp;Tool selection</h3>
+<a name="toolselection"></a><h3>15.1 &nbsp;Tool selection</h3>
 
 <p>Press the keys 1 to 6 to change the current tool.<br>Press 1 for <img class="icon" src="images/icons/navigate.svg"/> the
  navigate tool, 2 for <img class="icon" src="images/icons/select.svg"/> the select tool, 3 for <img class="icon" src="images/icons/move.svg"/> the edit tool, 4 for <img class="icon" src="images/icons/draw.svg"/>
  the draw tool, 5 for <img class="icon" src="images/icons/erase.svg"/> the erase tool and 6 for <img class="icon" src="images/icons/measure.svg"> the measure tool.</p>
 
-<a name="displaylevel"></a><h3>14.2 &nbsp;Overlay display level</h3>
+<a name="displaylevel"></a><h3>15.2 &nbsp;Overlay display level</h3>
 
-<p>Press the keys 7, 8, 9, and 0 to change the text overlay display level.</p>
+<p>Press the keys 8, 9, and 0 to change the text overlay display level.</p>
 
-<p>Press 7 to display all available text overlays, including centre frame and
- time ruler markings, vertical scale information, and the names and
- stacking order of layers in the panes.</p>
+<p>Press 8 to display all available text overlays, including centre
+frame and time ruler markings, vertical scale and colour scale
+information, and the names and stacking order of layers in the
+panes.</p>
 
-<p>Press 8 to display basic textual information, omitting the
-layer names but retaining the vertical scale where appropriate.</p>
-
-<p>Press 9 to display only time information, with no scale or textual
-overlays.</p>
+<p>Press 9 to display basic textual information, omitting the layer
+names and colour scales but retaining the vertical scale where
+appropriate.</p>
 
 <p>Press 0 to suppress all textual and timing information.</p>
 
-<a name="scrolling"></a><h3>14.3 &nbsp;Scrolling</h3>
+<a name="scrolling"></a><h3>15.3 &nbsp;Scrolling</h3>
 
 <p>With the navigate tool <img class="icon" src="images/icons/navigate.svg"/> selected, click and drag with the left or middle
  mouse button in any pane to move the centre frame.</p>
@@ -1564,12 +1611,13 @@ overlays.</p>
 <p>If you have more than one pane, press the square bracket keys "["
 and "]" to change which one is current.
 
-<a name="zoom"></a><h3>14.4 &nbsp;Zoom</h3>
+<a name="zoom"></a><h3>15.4 &nbsp;Zoom</h3>
 
-<p>Roll the mouse wheel up, or press the Up cursor key, to zoom in; roll
- the wheel down or press the Down cursor key to zoom out.</p>
+<p>Roll the mouse wheel (or use two-finger trackpad scrolling) upwards
+ or press the Up cursor key to zoom in; roll the wheel down or press
+ the Down cursor key to zoom out.</p>
 
-<a name="playback"></a><h3>14.5 &nbsp;Playback</h3>
+<a name="playback"></a><h3>15.5 &nbsp;Playback</h3>
 
 <p>Press Space to start or stop playback.</p>
 

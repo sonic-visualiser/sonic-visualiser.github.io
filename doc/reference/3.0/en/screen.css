@@ -171,6 +171,13 @@ img.left-very-modest {
     padding-right: 1em;
     margin-bottom: 0.5em;
 }
+img.left-wider {
+    float: left;
+    clear: both;
+    max-width: 55%;
+    padding-right: 1em;
+    margin-bottom: 0.5em;
+}
 img.right-modest {
     float: right;
     max-width: 40%;
@@ -179,6 +186,7 @@ img.right-modest {
 }
 img.right-wider {
     float: right;
+    clear: both;
     max-width: 55%;
     padding-left: 1em;
     margin-bottom: 0.5em;
