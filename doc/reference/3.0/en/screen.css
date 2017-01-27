@@ -139,6 +139,10 @@ a:hover {
     font-weight: bold;
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 }
+code {
+    font-family: 'Lucida Console', 'Lucida Sans Typewriter', 'Fira Mono', 'Andale Mono', monospace;
+    font-size: 0.9em;
+}
 .toc2 { 
     padding-left: 2em;
 }
@@ -158,6 +162,12 @@ img.icon {
 img.left-modest {
     float: left;
     max-width: 40%;
+    padding-right: 1em;
+    margin-bottom: 0.5em;
+}
+img.left-very-modest {
+    float: left;
+    max-width: 32%;
     padding-right: 1em;
     margin-bottom: 0.5em;
 }
