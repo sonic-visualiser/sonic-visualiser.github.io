@@ -1465,8 +1465,37 @@ the templates directory in your system file manager.</p>
 
 <a name="unitconverter"></a><h2>14 &nbsp;The Unit Converter</h2>
 
-<p><img class="left-wider" src="images/unit-converter-frequency.png"></p>
-<p><img class="right-wider" src="images/unit-converter-tempo.png"></p>
+<p><img class="left-wider"
+src="images/unit-converter-frequency.png"></p>The Unit Converter
+window, accessible through View -> Show Unit Converter, is a helper
+utility for conversions between frequency and simple musical pitch
+measurements, and between beat duration and tempo. It has two tabs
+containing form fields for conversion: pitch (see left) and tempo
+(below).</p>
+
+<p>The pitch converter has fields in which you can enter a fundamental
+frequency value, MIDI pitch, or note name; whenever you change the
+value in any field, all of the other fields are updated so that the
+displayed frequency and displayed pitch match up. (For example, if you
+enter 261Hz, the other fields will update to show middle C, with a
+small rounding error reflected as an offset in the cents field at the
+right.) All conversions simplistically assume 12-tone equal
+temperament, so that it makes no difference which key is in effect,
+and are carried out relative to the reference tuning frequency and
+MIDI octave numbering currently set in the application
+preferences.</p>
+
+<p><img class="right-wider" src="images/unit-converter-tempo.png">The
+tempo converter has fields in which you can specify a beat period (the
+length of time between consecutive beats) in either milliseconds or
+audio samples, or a tempo value in either beats per second or beats
+per minute (bpm). There is also a sample rate field, which gives the
+number of samples per second used for the audio sample timing
+field. As with the pitch converter, when you change any value, the
+others are updated so that they all show the same effective
+tempo. (For example, if you enter 180bpm, the other fields will show 3
+beats per second, 333&frac13;ms, and a third of whatever sample rate
+has been entered.)</p>
 
 <p style="clear:both"></p>
 
