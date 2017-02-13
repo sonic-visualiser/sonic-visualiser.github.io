@@ -116,7 +116,7 @@ on.</p>
 
 <p>Layers that are stacked on the same pane will always share the same
  magnification (or zoom) and alignment on the x (time) axis.  However,
- they do not have to have identical scales on the y axis &ndash;
+ they do not have to have identical scales on the y axis &mdash;
  although Sonic Visualiser will attempt to align them vertically by
  default if their scale units match.</p>
 
@@ -227,14 +227,14 @@ along with the playback (Scroll); or neither.</p>
       <p>
 
       <li>Press the Up or Down cursor keys to zoom in or out
-      respectively, or hit the F key (a shortcut for View -> Zoom to
+      respectively, or hit the F key (a shortcut for View &rarr; Zoom to
       Fit) to zoom out so that the whole file is visible;</li>
       <p>
       
       <li><img class="right-teeny"
       src="images/pane-zoomwheels.png"/>Use the zoom wheels, which
       appear in the bottom-right corner of the pane. (If they aren't
-      visible, go to View -> Show Zoom Wheels or press the Z key.)
+      visible, go to View &rarr; Show Zoom Wheels or press the Z key.)
       These are loosely intended to resemble thumbwheels "set into"
       the display.<br>The horizontal wheel can be dragged left or
       right to adjust the horizontal zoom, that is, zoom in the time
@@ -308,8 +308,8 @@ along with the playback (Scroll); or neither.</p>
  session file.)</p>
 
 <p>Sonic Visualiser provides full multi-level Undo and Redo.  Almost all actions that
- change the session you see in front of you &ndash; with the exception of
- scrolling and zooming &ndash; can be undone.  This includes adding and
+ change the session you see in front of you &mdash; with the exception of
+ scrolling and zooming &mdash; can be undone.  This includes adding and
  removing layers and panes and changing the display properties for a
  layer, as well as more conventional edits.</p>
 
@@ -381,11 +381,11 @@ values.  See <a href="#measurements">Measurements</a>.
 </li><p><li>If you make a selection in one layer and
   then make a different layer active before carrying out an editing
   action that operates on the active layer, it will operate on the new
-  active layer &ndash; not on the items in the layer you originally made
+  active layer &mdash; not on the items in the layer you originally made
   the selection in.
 </ul>
 <p>An advantage of this is that it is very easy to select all the items
- in one layer that fall between certain items in another layer &ndash; make
+ in one layer that fall between certain items in another layer &mdash; make
  the second layer active, make a selection (which will snap to the item
  positions on that layer), then make the first layer active again.</p>
 
@@ -414,7 +414,7 @@ values.  See <a href="#measurements">Measurements</a>.
 <p>To move a set of items at once, <a href="#selection">select</a> the region around them, then switch to the edit tool <img class="icon" src="images/icons/move.svg"/> and drag the selected
  region.</p>
 
-<p>To delete one or more items click on them with the erase <img class="icon" src="images/icons/erase.svg"/> tool selected, or <a href="#selection">select</a> the region around them and use Edit -> Delete Selected Items.
+<p>To delete one or more items click on them with the erase <img class="icon" src="images/icons/erase.svg"/> tool selected, or <a href="#selection">select</a> the region around them and use Edit &rarr; Delete Selected Items.
 
 <a name="cutandpaste"></a><h3>5.1 &nbsp;Cut and Paste</h3>
 
@@ -428,15 +428,15 @@ values.  See <a href="#measurements">Measurements</a>.
  found in the source layer.</p>
 
 <p>If the target layer is of a type that represents less information
-than the source &ndash; for example if you are pasting to a time
-instant layer from a time/value curve &ndash; then the relevant
+than the source &mdash; for example if you are pasting to a time
+instant layer from a time/value curve &mdash; then the relevant
 information (in this case time positions) will be retained, and the
 rest discarded.</p>
 
 <p>
 If the target layer represents more information than the source,
 you will be offered various options for how to make up the values that
-are not present in the pasted items (as shown to the right). <!-- !!! update this image -->
+are not present in the pasted items (as shown to the right).
 
 <p>If no suitable target layer is selected at all (for example, if the
 layer that is active when you ask to paste is not of an editable
@@ -538,8 +538,6 @@ of spectrogram into any other kind by adjusting its properties after
 it has been created.</p>
 
 <p><div align="center"><img class="banner" src="images/pane-spectrogram.png"/><br><i>A spectrogram layer.</i></div></p>
-
-<!-- !!! update params image with new icons -->
 
 <p><img class="right-modest" src="images/params-spectrogram.png"/></p>
 <p>The colour scheme used for the spectrogram can be adjusted using
@@ -711,8 +709,6 @@ href="#colour3dplot">colour 3D plot</a>.)</p>
 <p>The y axis of a spectrum plot shows the value of each frequency
 bin, corresponding to the colour scale of the spectrogram.</p>
 
-<!-- !!! update params with new icons and show peaks property -->
-
 <p><img class="right-modest"
 src="images/params-spectrum.png"/>You can adjust the FFT window size
 and overlap using the Window properties, just as in the spectrogram;
@@ -830,7 +826,17 @@ tool.</p>
 
 </li><p><li>Segmentation: The regions between the times of each pair of consecutive
   points will be shaded in a colour corresponding to the value of the point
-  at the start of the region.
+      at the start of the region.
+
+</li><p><li>Discrete Curves: Intended for displaying curve data with
+gaps in it. The points are connected with a smooth curve, but whenever
+two consecutive (non-zero) values have a gap between them of more than
+double the model resolution, the curve will be interrupted between
+those points.
+
+    </li>
+
+      
 </ul>
 <p>A time values layer may have a unit for the scale on the Y axis.
  If two layers with the same unit appear on the same pane, they will by
@@ -1144,7 +1150,7 @@ audio output from "note event" inputs.  It also does not support
 varying the control parameters of a generator plugin during operation.
 Finally, a current limitation is that generators can only be used to
 produce an additional waveform when you already have at least one
-audio file present &ndash; you cannot use a generator to create the
+audio file present &mdash; you cannot use a generator to create the
 only audio file in a previously empty Sonic Visualiser session.</p>
 
 <p>If you have any effects plugins installed that Sonic Visualiser can
@@ -1267,12 +1273,12 @@ the bottom of Sonic Visualiser's main window.</p>
 <p>Use Record <img class="icon" src="images/icons/record.svg"> to
 start recording a new audio file from the microphone or another
 input. You can select the record source from the system's audio inputs
-in Sonic Visualiser's Preferences. Click Record again or press the
-Space key to stop recording. Recorded audio files are saved in a
-folder beneath your home directory, and are left there after Sonic
-Visualiser exits (closing a session does not delete them). Go to File
--> Browse Recorded Audio Folder to open the recorded audio folder in
-your system's file explorer window.
+in Sonic Visualiser's Preferences. Press Record again, or the Space
+key, to stop recording. Recorded audio files are saved in a folder
+beneath your home directory, and remain there after Sonic Visualiser
+exits: closing a session does not delete them. Go to File &rarr; Browse
+Recorded Audio Folder to open the recorded audio folder in your
+system's file explorer window.
 
 <p>There are four further playback controls on the toolbar. If the
 <img class="icon" src="images/icons/playselection.svg"/> Play
@@ -1394,9 +1400,9 @@ multiple audio files that represent the same source material, such as
 multiple performances of the same work or multiple "takes" of a
 recording.</p>
 
-<p>For this feature to be enabled, the MATCH Vamp plugin &ndash; a
+<p>For this feature to be enabled, the MATCH Vamp plugin &mdash; a
 Vamp plugin implementation of Simon Dixon's MATCH algorithm for audio
-alignment &ndash; must be installed and available.  See <a
+alignment &mdash; must be installed and available.  See <a
 href="http://www.vamp-plugins.org/download.html">the Vamp plugins
 download page</a> for details on how to obtain and install this
 plugin, and the <a
@@ -1448,17 +1454,17 @@ support MP3 and WAV file import on all platforms, Ogg Vorbis on Linux
 and OS/X, and MP4/AAC on OS/X only.</p>
 
 <p>To open an audio file, or any other kind of file that Sonic
-Visualiser supports (including session and layer files), use File ->
+Visualiser supports (including session and layer files), use File &rarr;
 Open... or the Open button <img class="icon" src="images/icons/fileopen.svg"/> on
 the toolbar.  You can open more than one audio file at once: if you
-already have one open and you want to add another, use File -> Import
+already have one open and you want to add another, use File &rarr; Import
 More Audio...</p>
 
 <a name="audioexport"></a><h3>12.2 &nbsp;Audio File Export</h3>
 
 <p>Sonic Visualiser can export the current audio file, or the selected
 region of it, as a WAV file in IEEE floating-point format.  Use File
--> Export Audio File to do this.</p>
+&rarr; Export Audio File to do this.</p>
 
 <p>If there are multiple separate regions selected, you will be given
 the option to export them all spliced into a single audio file, or to
@@ -1473,7 +1479,7 @@ the format of data in the files and your preferences when importing
 the data.  Sonic Visualiser can currently import data to time
 instants, time values, and colour 3D plot layers.</p>
 
-<p>To import data from a text file, use the File -> Import Annotation Layer
+<p>To import data from a text file, use the File &rarr; Import Annotation Layer
 and specify the proper file type in the import dialog.</p>
 
 <p>You can also use this function to import data from Sonic
@@ -1499,7 +1505,7 @@ href="http://omras2.org/AudioFeatures">Audio Features ontology RDF</a>
 in Turtle syntax, or (from note layers) as Standard MIDI files.</p>
 
 <p>To export a layer, ensure that the layer is current, and use File
--> Export Annotation Layer.  The file type will be determined from the
+&rarr; Export Annotation Layer.  The file type will be determined from the
 extension you use to name the file: .csv for comma-separated files,
 .txt for tab-separated files, .svl for Sonic Visualiser layer files,
 .ttl for RDF/Turtle files, and .mid for Standard MIDI files.</p>
@@ -1507,7 +1513,7 @@ extension you use to name the file: .csv for comma-separated files,
 <a
 name="imageexport"></a><h3>12.5 &nbsp;Image File Export</h3>
 
-<p>You can use the File -> Export Image File function to export the
+<p>You can use the File &rarr; Export Image File function to export the
 current pane as an image file in PNG format.  This exports the full
 width of the pane, not just the currently visible area of it, and so
 it may create a very large file.</p>
@@ -1516,7 +1522,7 @@ it may create a very large file.</p>
 name="remote"></a><h3>12.6 &nbsp;Opening Remote Locations</h3>
 
 <p>Sonic Visualiser can open files obtained by download from remote
-HTTP and FTP locations.  Use File -> Open Location to do this,
+HTTP and FTP locations.  Use File &rarr; Open Location to do this,
 entering a standard http:// or ftp:// URL into the location dialog.
 Full sessions, single audio files, layer files, and even m3u playlist
 files may be opened in this way.</p>
@@ -1531,11 +1537,11 @@ name="templates"></a><h3>12.7 &nbsp;Session Templates</h3>
 
 <p>Once you have a session set up with a useful set of layers and
 panes, you can save it as a template and use it with other audio files
-in the future.  To do this, use File -> Export Session as Template and
+in the future.  To do this, use File &rarr; Export Session as Template and
 choose a name for the new template.</p>
 
 <p>Templates you have exported will appear in the menu found at File
--> Apply Session Template.  This menu also contains some standard
+&rarr; Apply Session Template.  This menu also contains some standard
 templates which are bundled with Sonic Visualiser.  Selecting a
 template from this menu will replace the current session with the
 template you have selected, using the current audio file as its main
@@ -1544,14 +1550,14 @@ audio file, in the Session Template tab of the Application Preferences.</p>
 
 <p>Exported templates are simply stored as session files with a .svt
 prefix, in your local Sonic Visualiser templates directory.  To rename
-or delete any of them, use File -> Manage Exported Templates to open
+or delete any of them, use File &rarr; Manage Exported Templates to open
 the templates directory in your system file manager.</p>
 
 <a name="unitconverter"></a><h2>14 &nbsp;The Unit Converter</h2>
 
 <p><img class="left-wider"
 src="images/unit-converter-frequency.png"></p>The Unit Converter
-window, accessible through View -> Show Unit Converter, is a helper
+window, accessible through View &rarr; Show Unit Converter, is a helper
 utility for conversions between frequency and simple musical pitch
 measurements, and between beat duration and tempo. It has two tabs
 containing form fields for conversion: pitch (see left) and tempo
@@ -1651,7 +1657,7 @@ interpolation.<br><br>Be aware that although smoothing may make the
 actually increase the meaningful resolution of the spectrogram:
 instead it just interpolates from the values that were there already.
 To raise the actual vertical resolution, you need to increase the
-spectrogram window size &ndash; with a consequent reduction in
+spectrogram window size &mdash; with a consequent reduction in
 horizontal resolution, that can be compensated for to a certain degree
 by increasing the window overlap.</li>
 
