@@ -184,6 +184,18 @@ img.right-modest {
     padding-left: 1em;
     margin-bottom: 0.5em;
 }
+img.right-very-modest {
+    float: right;
+    max-width: 32%;
+    padding-left: 1em;
+    margin-bottom: 0.5em;
+}
+img.right-teeny {
+    float: right;
+    max-width: 20%;
+    padding-left: 1em;
+    margin-bottom: 0.5em;
+}
 img.right-wider {
     float: right;
     clear: both;
