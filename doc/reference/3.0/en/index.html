@@ -216,6 +216,9 @@ along with the playback (Scroll); or neither.</p>
       control the zoom (i.e. level of magnification) and scrolling
       (i.e. left/right or up/down positioning) of the current pane.</p>
 
+
+    <a name="layerzoomzoom"></a><h4>1.4.1 &nbsp;Zoom</h4>
+
     <p>To adjust the zoom level, you can:</p>
 
     <ul>
@@ -232,24 +235,60 @@ along with the playback (Scroll); or neither.</p>
       src="images/pane-zoomwheels.png"/>Use the zoom wheels, which
       appear in the bottom-right corner of the pane. (If they aren't
       visible, go to View -> Show Zoom Wheels or press the Z key.)
-      These are intended to resemble thumbwheels "set into" the
-      display.<br>The horizontal wheel can be dragged left or right to
-      adjust the horizontal zoom, i.e. that in the time axis.<br>The
-      vertical wheel, and the vertical panner control next to it, only
-      appear if the current layer is one which can also be zoomed in
-      the vertical axis: then the wheel controls the vertical zoom
-      level, and you can drag the panner thumb to scroll
+      These are loosely intended to resemble thumbwheels "set into"
+      the display.<br>The horizontal wheel can be dragged left or
+      right to adjust the horizontal zoom, that is, zoom in the time
+      axis.<br>The vertical wheel, and the vertical panner control
+      next to it, only appear if the current layer is one which can
+      also be zoomed in the vertical axis: then the wheel controls the
+      vertical zoom level, and you can drag the panner thumb to scroll
       vertically.<br>Click the small empty box at the bottom-right
       corner to reset both zoom levels to their defaults.<br>As with
       many of the controls in Sonic Visualiser, you can double-click
-      the zoom wheels to type a new value directly, or click with the
-      Ctrl button pressed or using the middle mouse button to reset to
-      the default.
+      the zoom wheels to type a new value directly, and click with the
+      Ctrl button pressed or using the middle mouse button to reset
+      them to the default.
 	
       </li>
     </ul>
+
+    <p>Generally when you change the zoom level in any one pane, all
+    of the other panes zoom to match. But you can also uncheck the
+    "Global Zoom" option in a pane's <a href="#layeredits">display
+    properties</a> to switch it to zooming independently from the
+    rest.</p>
     
-      
+    <a name="layerzoomscroll"></a><h4>1.4.2 &nbsp;Scrolling</h4>
+
+    <p>To scroll along the time axis within the current file, you can:</p>
+
+    <ul><li>Use two-finger horizontal trackpad scrolling;</li>
+      <p>
+	<li>Scroll with the mouse wheel, or use vertical trackpad
+	scrolling, while holding the Alt key;</li>
+      <p>
+	<li>Click and drag the pane, while
+	the <a href="#tools">Navigate tool</a> is active;</li>
+      <p>
+	<li>Press the Left or Right cursor keys to move a small step at a time, or with Ctrl pressed as well to move a larger step.</li>
+    </ul>
+    
+    <p>All of the above scrolling methods move the playback position
+    (keeping it in the centre of the pane) as well as scrolling the
+    pane. But you can also scroll only the current pane while leaving
+    the playback position unchanged, by holding the Alt key while
+    using the left and right cursor keys. This is referred to in the
+      View menu as "peek"ing left or right.</p>
+
+    <p>Finally, you can click and drag in the small overview waveform
+    shown at the bottom of the main window, to scroll all of the panes
+    without moving the playback position.</p>
+
+    <p>As with zooming, you can also uncheck the "Global Scroll"
+    option in a pane's <a href="#layeredits">display properties</a> to
+    switch that pane so that it no longer follows the rest when you
+    scroll one of them.</p>
+
 <a name="sessionsandundo"></a><h2 style="clear:both">2 &nbsp;Sessions and Undo</h2>
 
 <p>A Sonic Visualiser "session" is a record of almost everything you see
