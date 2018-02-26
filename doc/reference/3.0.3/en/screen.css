@@ -1,7 +1,7 @@
 #header {
     width: 596px;
     height: 35px;
-    background: url(images/sv-title.png) no-repeat;
+    background: url(/images/sv-title.png) no-repeat;
     overflow: hidden;
 }
 #header span {
@@ -14,7 +14,7 @@
     width: 476px;
     height: 35px;
     position: relative;
-    background: url(images/vamp-title.png) no-repeat;
+    background: url(/images/vamp-title.png) no-repeat;
 }
 #vampheader span {
     display: block;
