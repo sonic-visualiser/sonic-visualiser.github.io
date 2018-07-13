@@ -130,3 +130,10 @@ a:hover {
 .toc4 { 
   padding-left: 6em;
 }
+table, th, td {
+    border: 1px solid #505050;
+    padding: 0.7em;
+}
+table {
+  border-collapse: collapse;
+}
