@@ -131,8 +131,11 @@ a:hover {
   padding-left: 6em;
 }
 table, th, td {
-    border: 1px solid #505050;
-    padding: 0.7em;
+  border: 1px solid #505050;
+  padding: 0.7em;
+}
+table.borderless, table.borderless th, table.borderless td {
+  border: 0px;
 }
 table {
   border-collapse: collapse;
