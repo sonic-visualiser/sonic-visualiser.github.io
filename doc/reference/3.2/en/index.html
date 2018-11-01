@@ -537,22 +537,21 @@ main window.</p>
     <p><div align="center"><img class="banner" src="images/waveform-interpolating.png"/></div></p>
 
     <p>The lines in this view represent the result of interpolating
-    the signal based on the assumption that the points represent a
-    sampling of a signal bandlimited in frequency to twice the
-    sampling rate. Although there may be an infinite number of ways to
-    draw a path through all the points, there is only one way to do so
-    with a signal that doesn't contain any components of higher
-    frequencies, and Sonic Visualiser aims to represent that. (Any
-    digital-to-analog audio converter tries to approximate the same
-    behaviour.)</p>
+    between the samples in such a way that the resulting signal is
+    bandlimited in frequency to twice the sampling rate. Although
+    there may be an infinite number of ways to draw a path through all
+    the points, there is only one way to do so with a signal that
+    doesn't contain any components of higher frequencies, and Sonic
+    Visualiser aims to represent that. (A digital-to-analog audio
+    converter tries to approximate the same behaviour.)</p>
 
     <p><img class="right-wider" src="images/waveform-sinc.png"/>For
     example, if you load a file of all zeroes except for a single
     sample of value 1, then zoom in very closely, you will see a shape
-    like that shown on the right. This curve, known as the sinc
-    function, is the shape of a signal that passes through all the
-    sampled points while being "smooth" enough not to contain any
-    frequencies above twice the sampling rate.
+    like that shown on the right. This particular curve, known as the
+    sinc function, is the shape of a signal that passes through these
+    points while being "smooth" enough not to contain any frequencies
+    above twice the sampling rate.
       </p>
 
 <p style="clear:both">
