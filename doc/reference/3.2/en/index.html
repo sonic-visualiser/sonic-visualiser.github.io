@@ -539,22 +539,27 @@ main window.</p>
     <p>The lines in this view represent the result of interpolating
     between the samples in such a way that the resulting signal is
     bandlimited in frequency to twice the sampling rate. Although
-    there may be an infinite number of ways to draw a path through all
-    the points, there is only one way to do so with a signal that
-    doesn't contain any components of higher frequencies, and Sonic
-    Visualiser aims to represent that. (A digital-to-analog audio
-    converter tries to approximate the same behaviour.)</p>
+    there are infinitely many ways to draw a path through all the
+    points, there is only one way to do so with a signal that doesn't
+    contain any components of higher frequencies, and Sonic Visualiser
+    aims to represent that. (A digital-to-analogue audio converter
+    also approximates the same behaviour.)</p>
 
     <p><img class="right-wider" src="images/waveform-sinc.png"/>For
-    example, if you load a file of all zeroes except for a single
-    sample of value 1, then zoom in very closely, you will see a shape
-    like that shown on the right. This particular curve, known as the
-    sinc function, is the shape of a signal that passes through these
-    points while being "smooth" enough not to contain any frequencies
+    example, if you load a file that contains all zeros except for a
+    single sample of value 1, then zoom in very closely, you will see
+    a shape like that shown on the right. This particular curve, known
+    as the sinc function, is the shape of a signal that passes through
+    these points "smoothly" enough not to contain any frequencies
     above twice the sampling rate.
-      </p>
+    </p>
 
-<p style="clear:both">
+    <p style="clear:both">Note that this interpolation only happens
+    when the layer is zoomed in far enough to show the individual
+    sample points. The rest of the time, the displayed peak heights
+    are based on sample values alone. A signal may have peaks in
+    between samples that exceed any of the individual sample values,
+    but such extremes will not be visible until you zoom in.</p>
 
 <a name="timeruler"></a><h3>6.2 &nbsp;Time Ruler</h3>
 
