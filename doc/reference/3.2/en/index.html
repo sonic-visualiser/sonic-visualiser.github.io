@@ -52,11 +52,12 @@
       <div class="toc2">12 &nbsp;<a href="#fileimportandexport">File Import and Export</a></div>
       <div class="toc4">12.1 &nbsp;<a href="#audioimport">Audio File Import</a></div>
       <div class="toc4">12.2 &nbsp;<a href="#audioexport">Audio File Export</a></div>
-      <div class="toc4">12.3 &nbsp;<a href="#layerimport">Annotation Layer Import</a></div>
-      <div class="toc4">12.4 &nbsp;<a href="#layerexport">Annotation Layer Export</a></div>
-      <div class="toc4">12.5 &nbsp;<a href="#imageexport">Image File Export</a></div>
-      <div class="toc4">12.6 &nbsp;<a href="#remote">Opening Remote Locations</a></div>
-      <div class="toc4">12.7 &nbsp;<a href="#templates">Session Templates</a></div>
+      <div class="toc4">12.3 &nbsp;<a href="#audiodata">Converting Audio and Data Files</a></div>
+      <div class="toc4">12.4 &nbsp;<a href="#layerimport">Annotation Layer Import</a></div>
+      <div class="toc4">12.5 &nbsp;<a href="#layerexport">Annotation Layer Export</a></div>
+      <div class="toc4">12.6 &nbsp;<a href="#imageexport">Image File Export</a></div>
+      <div class="toc4">12.7 &nbsp;<a href="#remote">Opening Remote Locations</a></div>
+      <div class="toc4">12.8 &nbsp;<a href="#templates">Session Templates</a></div>
       <div class="toc2">13 &nbsp;<a href="#unitconverter">The Unit Converter</a></div>
       <div class="toc2">14 &nbsp;<a href="#preferences">Application Preferences</a></div>
       <div class="toc2">15 &nbsp;<a href="#keyboardandmousereference">Keyboard and Mouse Reference</a></div>
@@ -1324,9 +1325,9 @@ input. You can select the record source from the system's audio inputs
 in Sonic Visualiser's Preferences. Press Record again, or the Space
 key, to stop recording. Recorded audio files are saved in a folder
 beneath your home directory, and remain there after Sonic Visualiser
-exits: closing a session does not delete them. Go to File &rarr; Browse
-Recorded Audio Folder to open the recorded audio folder in your
-system's file explorer window.
+exits: closing a session does not delete them. Go to File &rarr;
+Browse Recorded And Converted Audio to open the recorded audio folder
+in your system's file explorer window.
 
 <p>There are four further playback controls on the toolbar. If the
 <img class="icon" src="images/icons/playselection.svg"/> Play
@@ -1496,10 +1497,10 @@ re-aligning the times of the items you are pasting.</p>
 
 <p>Sonic Visualiser can open audio files in a number of formats,
 although the exact set of formats depends on the platform and
-supporting libraries that it was compiled against.  The standard
-packages available for download from the Sonic Visualiser project page
-support MP3 and WAV file import on all platforms, Ogg Vorbis on Linux
-and OS/X, and MP4/AAC on OS/X only.</p>
+supporting libraries that it was compiled with.  The standard packages
+available for download from the Sonic Visualiser project page support
+MP3 and WAV file import on all platforms, Ogg Vorbis on Linux and
+OS/X, and MP4/AAC on OS/X only.</p>
 
 <p>To open an audio file, or any other kind of file that Sonic
 Visualiser supports (including session and layer files), use File &rarr;
@@ -1519,7 +1520,26 @@ the option to export them all spliced into a single audio file, or to
 export to a series of audio files distinguished by .1, .2 etc in their
 names.
 
-<a name="layerimport"></a><h3>12.3 &nbsp;Annotation Layer Import</h3>
+<a
+name="audiodata"></a><h3>12.3 &nbsp;Converting Audio and Data Files</h3>
+
+    <p>In addition to loading and saving audio file formats, Sonic
+    Visualiser can read audio signals from, and export to,
+    comma-separated value (CSV) and similar textual data files. Use
+    File &rarr; Convert Audio From Data File... to read audio data
+    from a CSV file or similar, and File &rarr; Export Audio To Data
+    File... to save audio data into a CSV file. When importing, you
+    will be asked to confirm the file column layout, sample range, and
+    sampling rate.</p>
+
+    <p>When converting audio from a data file, Sonic Visualiser
+    creates an audio file on disc to hold the converted signal. This
+    file will be saved in the <code>converted</code> folder within the
+    recorded-audio location, and will remain there after Sonic
+    Visualiser exits. Use File &rarr; Browse Recorded And Converted
+    Audio to review such files.</p>
+
+<a name="layerimport"></a><h3>12.4 &nbsp;Annotation Layer Import</h3>
 
 <p>Sonic Visualiser can import comma-separated (CSV) or tab-separated
 text data files as new annotation layers, whose type will depend on
@@ -1545,7 +1565,7 @@ batch audio feature extraction program.)</p>
 Only a single track can be imported at a time.</p>
 
 <a
-name="layerexport"></a><h3>12.4 &nbsp;Annotation Layer Export</h3>
+name="layerexport"></a><h3>12.5 &nbsp;Annotation Layer Export</h3>
 
 <p>Sonic Visualiser can export layers as its own .svl XML format, as
 comma-separated or tab-separated text data, as <a
@@ -1556,10 +1576,15 @@ in Turtle syntax, or (from note layers) as Standard MIDI files.</p>
 &rarr; Export Annotation Layer.  The file type will be determined from the
 extension you use to name the file: .csv for comma-separated files,
 .txt for tab-separated files, .svl for Sonic Visualiser layer files,
-.ttl for RDF/Turtle files, and .mid for Standard MIDI files.</p>
+  .ttl for RDF/Turtle files, and .mid for Standard MIDI files.</p>
+
+<p>All of the editable annotation layer types can be exported: Time
+Instants, Time Values, Notes, Regions, Text, Images, and Colour 3D
+Plot. The Spectrogram and Spectrum layers cannot be exported into data
+files.</p>
 
 <a
-name="imageexport"></a><h3>12.5 &nbsp;Image File Export</h3>
+name="imageexport"></a><h3>12.6 &nbsp;Image File Export</h3>
 
 <p>You can use the File &rarr; Export Image File function to export the
 current pane as an image file in PNG format.  This exports the full
@@ -1567,7 +1592,7 @@ width of the pane, not just the currently visible area of it, and so
 it may create a very large file.</p>
 
 <a
-name="remote"></a><h3>12.6 &nbsp;Opening Remote Locations</h3>
+name="remote"></a><h3>12.7 &nbsp;Opening Remote Locations</h3>
 
 <p>Sonic Visualiser can open files obtained by download from remote
 HTTP and FTP locations.  Use File &rarr; Open Location to do this,
@@ -1581,7 +1606,7 @@ dependent files that the session refers to and that can not be found
 at the literal locations recorded in the session file.</p>
 
 <a
-name="templates"></a><h3>12.7 &nbsp;Session Templates</h3>
+name="templates"></a><h3>12.8 &nbsp;Session Templates</h3>
 
 <p>Once you have a session set up with a useful set of layers and
 panes, you can save it as a template and use it with other audio files
