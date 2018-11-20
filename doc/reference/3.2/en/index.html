@@ -590,13 +590,12 @@ it has been created.</p>
 
 <p><img class="right-modest" src="images/params-spectrogram.png"/></p>
 <p>The colour scheme used for the spectrogram can be adjusted using
-the Colour properties (Colour, Threshold, and Colour Rotation).  The
+the Colour properties (Colour, Threshold, and Colour Rotation). The
 Colour option allows you to select different colour maps; while most
 of these are smooth gradients from one colour to another, there are
 also two colour maps (Banded and Highlight) that employ sudden
 transitions of colour.  These can be useful with the Colour Rotation
 control to isolate areas with similar levels.</p>
-
 
 <p>The type of values displayed, and the way the colour scale for the
 spectrogram is calculated can be adjusted using the Scale display
@@ -630,11 +629,11 @@ The parameters of these transforms can be adjusted using the Window
 display properties:</p>
 
 <ul>
-<p><li>The size of the window can be adjusted using the Window Size property.
-  This value is critical, as it directly controls the number of
-  available frequency bins in the resulting spectrogram.  Smaller values
-  will give a finer resolution in time; larger values will give a finer
-  resolution in frequency.
+<p><li>The size of the window can be adjusted using the Window Size
+  property.  This value is critical, as it directly controls the
+  time-frequency discriminative ability of the resulting spectrogram.
+  Smaller values will give a finer resolution in time; larger values
+  will give a finer resolution in frequency.
 
 </li><p><li>The overlap between consecutive windows can be adjusted
 using the Window Overlap property, which determines by what proportion
@@ -642,6 +641,20 @@ of the window size the processing frames will overlap.  Using a larger
 overlap will help to compensate for the reduced time
 resolution of a large window size.</li>
 
+<p><li>The length of the Fourier transform can be extended beyond the
+window size using the Oversampling property, which applies
+zero-padding in the time domain to oversample the frequency-domain
+signal. The default setting of 1x simply means that the Fourier
+transform length and window length are the same. The settings 2x, 4x,
+and 8x cause the contents of the window to be padded with zeros to the
+given multiple of the window length before applying the
+transform. This increases the visual smoothness of the spectrogram and
+the precision with which frequency content is shown, but unlike
+changing the window size, it has no effect on time-frequency
+discriminative ability (such as the ability to separate frequency
+components in a mix). Do not mistake the increased visual resolution
+for higher-resolution frequency analysis.</li>
+    
 <p><li><img class="right-wider"
 src="images/params-windowpreference.png"/>The shape of the window
 applied to each section of audio data is not adjustable from the
@@ -699,33 +712,34 @@ for other uses of the Measure tool.</p>
 three kinds of spectrogram.  These are all the same type of layer, but
 starting with different display properties.</p>
 
-<h5>Spectrogram</h5>
+<a name="fullrangespectrogram"></a><h5>Spectrogram</h5>
 
 <p>The plain spectrogram option creates a spectrogram that displays
 the full frequency range up to half of the audio file's sampling rate,
 with the vertical Frequency Scale set Linear, with Colour Scale set to
-dBV, and using the default, fairly gentle green-yellow-red colour scheme.</p>
+dBV, and using a fairly gentle green colour scheme by default,
+although this can be changed in the application preferences.</p>
 
 <p>This is a general overview of the content of the file, in
 which background noise and overall equalisation trends may be fairly
 evident but individual musical features are not usually easy to make out.</p>
 
-<h5>Melodic Range Spectrogram</h5>
+<a name="melodicspectrogram"></a><h5>Melodic Range Spectrogram</h5>
 
 <p>The melodic range spectrogram aims to make it easier to discern
 individual musically meaningful features.</p>
 
-<p>It shows by default a
-frequency range from approx 40Hz to 1.5KHz, covering around 5.5
-octaves that most usually contain melodic content.  The FFT windows
-are fairly large for better frequency resolution, and heavily overlapped.
-The vertical Frequency Scale is logarithmic in frequency, and
-therefore linear in perceived musical pitch.  The Colour Scale is
-Linear, making noise and lower-level content invisible but making it
-easier to pick out salient musical events, and a crisp colour scheme
-is used.</p>
+<p>It shows by default a frequency range from approx 40Hz to 1.5KHz,
+covering around 5.5 octaves that most usually contain melodic content.
+The FFT windows are fairly large for better frequency resolution, and
+heavily overlapped.  The vertical Frequency Scale is logarithmic in
+frequency, and therefore linear in perceived musical pitch.  The
+Colour Scale is Linear, making noise and lower-level content invisible
+but making it easier to pick out salient musical events, and a crisp
+colour scheme is used by default, although this can be changed in the
+application preferences.</p>
 
-<h5>Peak Frequency Spectrogram</h5>
+<a name="peakfreqspectrogram"></a><h5>Peak Frequency Spectrogram</h5>
 
 <p>The peak frequency spectrogram is similar to the melodic range
 spectrogram, but it aims to make it possible to pick out precise
@@ -758,11 +772,12 @@ href="#colour3dplot">colour 3D plot</a>.)</p>
 <p>The y axis of a spectrum plot shows the value of each frequency
 bin, corresponding to the colour scale of the spectrogram.</p>
 
-<p><img class="right-modest"
-src="images/params-spectrum.png"/>You can adjust the FFT window size
-and overlap using the Window properties, just as in the spectrogram;
-and you can select the y axis scale (linear or dB), gain and
-normalisation using the Scale properties.</p>
+<p><img class="right-modest" src="images/params-spectrum.png"/>You can
+adjust the window size, overlap, and oversampling level (corresponding
+to zero-padding the time-domain signal for a longer FFT) using the
+Window properties, just as in the spectrogram; and you can select the
+y axis scale (linear or dB), gain and normalisation using the Scale
+properties.</p>
 
 <p>The type of plot used to show the spectrum can be adjusted using the Plot Type property:</p>
 
@@ -774,8 +789,13 @@ normalisation using the Scale properties.</p>
 </ul>
 
 <p>If the Show Peak Frequencies <img class="icon"
-src="images/icons/show-peaks.png"/> property is set, a vertical line
-will be drawn through the estimated frequency of each spectral peak.</p>
+src="images/icons/show-peaks.svg"/> property is set, a vertical line
+will be drawn through the estimated frequency of each spectral
+peak. If you move the mouse pointer over one of these lines, the
+estimated frequency will be shown. The frequency is calculated based
+on phase information on the assumption that a stable frequency is
+present; this is the same mechanism as used for
+the <a href="#peakfreqspectrogram">Peak Frequency Spectrogram</a>.</p>
 
 <p>The horizontal extent of each bin depends on the Plot X Scale
 property, which selects the mapping between frequency and x coordinate
