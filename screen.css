@@ -1,22 +1,13 @@
 #header {
-  width: 596px;
-  height: 35px;
-  position: relative;
-  background: url(images/sv-title.png) no-repeat;
+    width: 70%;
+    padding-bottom: 3.6%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    background: url(images/sv-title.svg) no-repeat;
+    background-size: contain;
 }
 #header span {
-  display: block;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-}
-#vampheader {
-  width: 476px;
-  height: 35px;
-  position: relative;
-  background: url(images/vamp-title.png) no-repeat;
-}
-#vampheader span {
   display: block;
   width: 0;
   height: 0;
@@ -43,6 +34,9 @@ p,td,ul,ol,li,blockquote {
     font-size: 0.95em;
     font-style: normal;
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 th { 
     font-size: 0.9em;
@@ -61,7 +55,18 @@ h5 {
   border-top-width: 2px;
   border-top-style: solid;
   border-top-color: #ef6a35;
+  text-align: center;
   padding-top: 1em;
+}
+#main-image {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#main-image-image {
+    width: 100%;
 }
 #logoblock {
   border-top-width: 2px;

@@ -2,8 +2,8 @@
 <html>
   <head>
     <link rel="stylesheet" media="screen" type="text/css" href="screen.css"/>
-    <link rel="icon" type="image/png" href="images/waveform.png"/>
-    <link rel="shortcut" type="image/png" href="images/waveform.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/waveform.png"/>
+    <link rel="icon" type="image/svg" href="images/sv-icon.svg"/>
     <title>Sonic Visualiser</title>
     <meta name="robots" content="index"/>
     <meta name="keywords" content="sonic visualiser visualizer visualise visualize audio music spectrogram feature extraction"/>
@@ -11,6 +11,40 @@
   </head>
   <body>
       <h1 id="header"><span>Sonic Visualiser</span></h1>
+
+      <h4 id="firstpara">An application for viewing and analysing the
+      contents of music audio recordings</h4>
+
+      <div id="main-image"><a href="screenshots.html"><img id="main-image-image" src="images/sv-3.0-win.png" alt="Sonic Visualiser screen shot" border=0></a></div>
+
+      <p>Sonic Visualiser is a free, open-source application for
+      Windows, Linux, and macOS, designed to be the first program you
+      reach for when want to study a music recording closely. It's
+      designed for musicologists, archivists, signal-processing
+      researchers and anyone else looking for a friendly way to look
+      at what lies inside the audio file.</p>
+
+      <p>Sonic Visualiser is one of a family of four applications:</p>
+
+      <ul><li>Sonic Visualiser is the most general, a program for
+      highly configurable detailed visualisation, analysis, and
+      annotation of audio recordings.</li>
+
+      <li><a href="sonic-lineup.html">Sonic Lineup</a> is for quick
+      time-aligned comparative visualisation of groups of related
+      audio files, such as different performances of the same score,
+      or different takes of an instrumental part.</li>
+
+      <li><a href="tony.html">Tony</a> is for close analysis and
+      interactive annotation of pitch in unaccompanied
+      singing.</li>
+
+      <li><a href="https://vamp-plugins.org/sonic-annotator/">Sonic
+      Annotator</a> is a non-interactive command-line application for
+      batch audio feature extraction, using some of the same methods
+      as are available in Sonic Visualiser.</li></ul>
+
+      <p><b>21st May 2019:</b> Sonic Visualiser 3.3 has been released.<br><a href="download.html">Download it here</a>!</p>
 
       <div id="nav">
       <ul>
@@ -23,22 +57,6 @@
       <li><a href="videos.html">Videos</a></li>
       <li><a href="http://www.vamp-plugins.org/">Vamp Plugins</a></li>
       </ul></div>
-
-      <h4 id="firstpara">Sonic Visualiser is an application for viewing
-      and analysing the contents of music audio files.</h4>
-
-      <a href="screenshots.html"><img src="images/sv-3.0-win-thumb.png" alt="Sonic Visualiser screen shot" border=0 style="float:left;padding-top:0;padding-bottom:2em;padding-right:2em;max-width:35%"/></a>
-
-      <p><b>21st May 2019:</b> Sonic Visualiser 3.3 has been released.<br><a href="download.html">Download it here</a>!</p>
-
-      <p>The aim of Sonic Visualiser is to be the first program you
-      reach for when want to study a musical recording rather than
-      simply listen to it.</p>
-
-      <p>We hope Sonic Visualiser will be of particular interest to
-      musicologists, archivists, signal-processing researchers and anyone else
-      looking for a friendly way to take a look at what lies inside
-      the audio file.</p>
 
       <p>Sonic Visualiser is Free Software,
       distributed under the <a
@@ -55,20 +73,13 @@
 	<div id="logoblock">
 	<table class="borderless" width="100%" border="0" cellpadding="0" cellspacing="10"/>
 	<tr>
-	<td align=center><a href="http://www.elec.qmul.ac.uk/digitalmusic/"><img src="images/qm-logo.png" width="224" height="95" alt="Queen Mary logo" border=0/></a></td>
-	<td>Developed at the Centre for Digital Music, Queen Mary, University of London.</td>
-	<td align=right>Partially funded by the EPSRC through the OMRAS2 project EP/E017614/1.</td>
-	<td align=center><a href="http://www.omras2.org/"><img src="images/omras2-logo.png" width="265" height="46" alt="OMRAS2 logo" border=0/></a></td>
+	<td align=center><a href="http://c4dm.eecs.qmul.ac.uk/"><img src="images/qm-logo.png" width="224" height="95" alt="Queen Mary logo" border=0/></a></td>
+	<td align=center>Developed in the Centre for Digital Music at Queen Mary, University of London.</td>
+	<td align=center><a href="http://c4dm.eecs.qmul.ac.uk/"><img src="images/c4dm-logo.png" width="224" height="34" alt="C4DM logo" border=0/></a></td>
 	</tr><tr>
-	<td align=center><a href="http://mtg.upf.edu/simac/"><img src="images/simac-logo.png" width="232" height="96" alt="SIMAC logo" border=0/></a></td>
-	<td>Partially funded by the European Commission through the SIMAC project IST-FP6-507142.</td>
-	<td align=right>Partially funded by the European Commission through the EASAIER project IST-FP6-033902.</td>
-	<td align=center><a href="http://www.eecs.qmul.ac.uk/legacy/easaier/"><img src="images/easaier-logo.png" width="232" height="71" alt="EASAIER logo" border=0/></a></td>
-	</tr><tr>
-	<td align=center>Partially funded by the EPSRC through the SeMMA project GR/S84743/01.</td>
-	<td colspan=2 align=right>Partially funded by the Arts and Humanities Research Council through the Research Centre for the History and Analysis of Recorded Music.</td>
-	<td align=center><a href="http://www.charm.rhul.ac.uk/"><img src="images/charm-logo.png" width="300" height="100" alt="CHARM logo" border=0/></a></td>
-	</tr>
+	<td align=right><small><i>Partially funded by the EPSRC through the OMRAS2 project EP/E017614/1 and the SeMMA project GR/S84743/01.</i></small></td>
+	<td align=center><small><i>Partially funded by the European Commission through the SIMAC project IST-FP6-507142 and the EASAIER project IST-FP6-033902.</i></small></td>
+	<td align=left><small><i>Partially funded by the Arts and Humanities Research Council through the Research Centre for the History and Analysis of Recorded Music.</i></small></td>
 	</tr>
 	</table>
 	</div>
