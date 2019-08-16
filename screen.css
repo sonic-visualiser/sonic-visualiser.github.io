@@ -68,6 +68,40 @@ h5 {
 #main-image-image {
     width: 100%;
 }
+#main-image-left {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3%;
+    padding-bottom: 0;
+    padding-left: 1%;
+    float: left;
+}
+#main-image-left-image {
+    width: 100%;
+}
+#main-image-centre {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#main-image-centre-image {
+    width: 100%;
+}
+#main-image-right {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3%;
+    padding-bottom: 0;
+    padding-right: 1%;
+    float: right;
+}
+#main-image-right-image {
+    width: 100%;
+}
 #logoblock {
   border-top-width: 2px;
   border-top-style: solid;
