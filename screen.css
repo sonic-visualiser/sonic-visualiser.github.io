@@ -51,6 +51,14 @@ h5 {
     font-style: bold;
     margin-bottom: 0;
 }
+figcaption { 
+    font-size: 0.9em;
+    font-style: italic;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
 #firstpara {
   border-top-width: 2px;
   border-top-style: solid;
@@ -72,7 +80,7 @@ h5 {
     width: 25%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 3%;
+    padding-top: 5%;
     padding-bottom: 0;
     padding-left: 1%;
     float: left;
@@ -94,7 +102,7 @@ h5 {
     width: 25%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 3%;
+    padding-top: 5%;
     padding-bottom: 0;
     padding-right: 1%;
     float: right;
@@ -178,4 +186,8 @@ table.borderless, table.borderless th, table.borderless td {
 }
 table {
   border-collapse: collapse;
+}
+figure {
+    margin: 0;
+    padding: 0;
 }
