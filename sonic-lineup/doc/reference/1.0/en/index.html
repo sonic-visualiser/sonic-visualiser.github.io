@@ -51,8 +51,8 @@ for details.</p>
       <p>This could mean they are recordings of different performances
         of the same work; different recordings of the same
         performance; different "takes" of parts in a studio session;
-        or even recordings of variant works or cover songs, so long as
-        they are broadly structurally similar.
+        or perhaps recordings of variant works or cover songs, so long
+        as they are broadly structurally similar.
       </p>
       <p>With multiple such audio files loaded, Sonic Lineup will
         attempt to <a href="#alignment">align them in time</a>, based
@@ -75,6 +75,53 @@ for details.</p>
         to <a href="https://sonicvisualiser.org/">Sonic
         Visualiser</a>, Sonic Lineup is intended for "quick"
         comparative analysis, rather than for intensive study.</p>
+      
+      <a name="layout"></a><h2>2 &nbsp;Window Layout</h2>
+      
+      <p><div align="center"><img class="banner" src="images/whole.png"/><br><i>Sonic Lineup with four audio files loaded</i></div></p>
+
+      <p>Most of the Sonic Lineup window is taken up with a view of
+        all of the audio files that you have opened. You can clear
+        this using the <img class="icon"
+        src="images/icons/filenew.svg"/> Clear Session toolbar button
+        or menu option, and you can add one or more audio files using
+        <img class="icon" src="images/icons/fileopen.svg"/> Add Files,
+        selecting multiple files at once in the resulting file dialog
+        if desired.</p>
+
+      <p>The first file opened in a session is considered to be the
+        Reference file, and is labelled as such at the left edge. The
+        other files will be <a href="#alignment">aligned</a> with
+        respect to the reference file.</p>
+
+      <p>
+        The set of files you have opened is remembered from one run of
+        Sonic Lineup to the next: when you start the application, it
+        re-opens the same files as were open when it last exited. You
+        can also pick from among recently-opened sets of files using
+        the File -&gt; Recent Sessions menu.
+      </p>
+
+      <p>All files share a common position corresponding to an aligned
+        time in the Reference file, indicated with a solid white line
+        through the middle of each file in the view. Dragging left and
+        right will move this reference point through all of the files at
+        once, in alignment. This point is also the "playhead" for audio
+        playback, so the file views will naturally scroll during
+        playback, and the playhead may be moved during playback by
+        dragging any view.</p>
+
+      <p>The lighter grey vertical lines arranged across the file
+        views contain points on the <a href="#salientfeatures">Salient
+          Feature Layer</a>, which is calculated from the Reference file
+        and then mapped across to the rest to show the correspondence
+        calculated from the automatic alignment process.</p>
+      
+      <p>At the bottom of the window are the <a href="#viewmodes">view
+          mode</a> selection buttons and <a href="#playback">audio
+          playback speed and volume/pan</a> controls.</p>
+
+      
       
 </body>
 </html>
