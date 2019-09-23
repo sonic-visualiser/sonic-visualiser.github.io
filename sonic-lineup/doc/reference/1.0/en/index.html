@@ -14,17 +14,17 @@
       <div class="toc2">3 &nbsp;<a href="#openingfiles">Opening Files</a></div>
       <div class="toc2">4 &nbsp;<a href="#alignment">Alignment</a></div>
       <div class="toc3">4.1 &nbsp;<a href="#controlling">Controlling Alignment</a></div>
-      <div class="toc2">5 &nbsp;<a href="#navigation">Navigation</a></div>
-      <div class="toc2">6 &nbsp;<a href="#salientfeatures">The Salient Feature Layer</a></div>
-      <div class="toc2">7 &nbsp;<a href="#viewmodes">View Modes</a></div>
-      <div class="toc3">7.1 &nbsp;<a href="#outlinewaveform">Outline Waveform</a></div>
-      <div class="toc3">7.2 &nbsp;<a href="#waveform">Waveform</a></div>
-      <div class="toc3">7.3 &nbsp;<a href="#melodicspectrogram">Melodic Spectrogram</a></div>
-      <div class="toc3">7.4 &nbsp;<a href="#spectrogram">Spectrogram</a></div>
-      <div class="toc3">7.5 &nbsp;<a href="#sungpitch">Sung Pitch</a></div>
-      <div class="toc3">7.6 &nbsp;<a href="#key">Key</a></div>
-      <div class="toc3">7.7 &nbsp;<a href="#stereoazimuth">Stereo Azimuth</a></div>
-      <div class="toc2">8 &nbsp;<a href="#playback">Playback and Recording</a></div>
+      <div class="toc2">5 &nbsp;<a href="#playback">Playback and Recording</a></div>
+      <div class="toc2">6 &nbsp;<a href="#navigation">Navigation</a></div>
+      <div class="toc2">7 &nbsp;<a href="#salientfeatures">The Salient Feature Layer</a></div>
+      <div class="toc2">8 &nbsp;<a href="#viewmodes">View Modes</a></div>
+      <div class="toc3">8.1 &nbsp;<a href="#outlinewaveform">Outline Waveform</a></div>
+      <div class="toc3">8.2 &nbsp;<a href="#waveform">Waveform</a></div>
+      <div class="toc3">8.3 &nbsp;<a href="#melodicspectrogram">Melodic Spectrogram</a></div>
+      <div class="toc3">8.4 &nbsp;<a href="#spectrogram">Spectrogram</a></div>
+      <div class="toc3">8.5 &nbsp;<a href="#sungpitch">Sung Pitch</a></div>
+      <div class="toc3">8.6 &nbsp;<a href="#key">Key</a></div>
+      <div class="toc3">8.7 &nbsp;<a href="#stereoazimuth">Stereo Azimuth</a></div>
     </div>
 
     <div id="reference-content">
@@ -125,7 +125,7 @@ for details.</p>
       <p>The set of files you have opened is remembered from one run
         of Sonic Lineup to the next: when you start the application,
         it starts up with the same files open as last time. You can
-        also use the File -&gt; Recent Sessions menu to choose from
+        also use the File &rarr; Recent Sessions menu to choose from
         the most recently-used sets of files.
       </p>
 
@@ -180,6 +180,77 @@ for details.</p>
         case it may be possible to get a better alignment without
         it.</li></ul>
 
+      <a name="playback"></a><h2>5 &nbsp;Playback and Recording</h2>
+
+      <a name="playbackplayback"></a><h3 class="first">5.1 &nbsp;Playback</h3>
+
+      <p>Playback is controlled using the transport controls in the
+        toolbar.</p>
+
+      <p>Use the &nbsp;<img class="icon"
+      src="images/icons/playpause.svg">&nbsp; Play / Pause button, or
+      press the Space key, to start and stop playback.</p>
+
+      <p>Use <img class="icon" src="images/icons/rewind-start.svg">
+      Rewind to Start and <img class="icon"
+      src="images/icons/ffwd-end.svg"> Fast Forward to End to jump to
+      either end of the current audio file.</p>
+
+      <p>Use <img class="icon" src="images/icons/rewind.svg"> Rewind
+      and <img class="icon" src="images/icons/ffwd.svg"> Fast Forward
+      to jump to the nearest item in the appropriate direction in
+      the <a href="#salientfeatures">salient feature layer</a> if it
+      is present, or by a short fixed distance otherwise.</p>
+
+      <p>You can also skip about during playback
+      by <a href="#navigate">dragging a pane</a>.</p>
+
+      <p>The current playback position is always that of the pointer
+        in the centre of the audio file view, and the current audio
+        file (the one that is playing) is marked with a vertical white
+        bar at the left end of its view. Click on a different file to
+        switch to that one during playback. If they are properly
+        aligned, then this should take you to the same moment in the
+        underlying musical timeline.</p>
+      
+      <p>At the bottom-right of the main window, you can see two
+controls for playback speed and volume level/pan. The dial control can
+be used to speed up or slow down playback: you can adjust playback
+speed from one-tenth to ten times the original speed without affecting
+its pitch, although the sound quality will suffer. The level/pan
+button shows both volume level and overall stereo balance and can be
+used to adjust both: click on the level/pan button to open a bigger
+control and then drag it up or down for level and left for pan.
+
+        <a name="recording"></a><h3>5.2 &nbsp;Recording</h3>
+
+      <p>Use the Record button <img class="icon"
+      src="images/icons/record.svg"> to start recording a new audio
+      file from the microphone or other connected input. Press Record
+      again, or the Space key, to stop recording. The recording will
+      be added as a new audio file and aligned in the normal way.</p>
+
+      <p>Recorded audio files are saved in a folder beneath your home
+        directory, and remain there after Sonic Lineup exits: clearing
+        the session does not delete them. Go to File &rarr; Browse
+        Recorded Audio to open the recorded audio folder in your
+        system's file explorer window.</p>
+
+<a name="microphonepermission"></a><h4>9.3.1 &nbsp;Permission to use the microphone (macOS only)</h4>
+
+<p>On macOS 10.14 Mojave or newer, the first time you ask to record
+from the built-in microphone, a system dialog box will appear asking
+for permission to use the microphone. You must agree to this, or else
+the recording will be silent. The operating system remembers your
+reply, and will not ask you again, even on subsequent runs of Sonic
+Lineup. If you need to change this later, refer to the Privacy
+controls in your System Preferences.
+  
+      <a name="navigation"></a><h2>6 &nbsp;Navigation</h2>
+
+      <p>To navigate in time, click on a file view and drag it left or
+      right. This will move the timelines of all the file views in that direction, maintaining their alignment against the central position pointer.
+      
         <!--
       
       <p>All files share a common position corresponding to an aligned
