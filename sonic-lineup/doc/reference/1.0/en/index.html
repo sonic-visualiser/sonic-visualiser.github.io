@@ -11,19 +11,20 @@
     <div id="reference-toc">
       <div class="toc2">1 &nbsp;<a href="#purpose">What Sonic Lineup is For</a></div>
       <div class="toc2">2 &nbsp;<a href="#layout">Window Layout</a></div>
-      <div class="toc2">3 &nbsp;<a href="#navigation">Navigation</a></div>
+      <div class="toc2">3 &nbsp;<a href="#openingfiles">Opening Files</a></div>
       <div class="toc2">4 &nbsp;<a href="#alignment">Alignment</a></div>
       <div class="toc3">4.1 &nbsp;<a href="#controlling">Controlling Alignment</a></div>
-      <div class="toc2">5 &nbsp;<a href="#salientfeatures">The Salient Feature Layer</a></div>
-      <div class="toc2">6 &nbsp;<a href="#viewmodes">View Modes</a></div>
-      <div class="toc3">6.1 &nbsp;<a href="#outlinewaveform">Outline Waveform</a></div>
-      <div class="toc3">6.2 &nbsp;<a href="#waveform">Waveform</a></div>
-      <div class="toc3">6.3 &nbsp;<a href="#melodicspectrogram">Melodic Spectrogram</a></div>
-      <div class="toc3">6.4 &nbsp;<a href="#spectrogram">Spectrogram</a></div>
-      <div class="toc3">6.5 &nbsp;<a href="#sungpitch">Sung Pitch</a></div>
-      <div class="toc3">6.6 &nbsp;<a href="#key">Key</a></div>
-      <div class="toc3">6.7 &nbsp;<a href="#stereoazimuth">Stereo Azimuth</a></div>
-      <div class="toc2">7 &nbsp;<a href="#playback">Playback and Recording</a></div>
+      <div class="toc2">5 &nbsp;<a href="#navigation">Navigation</a></div>
+      <div class="toc2">6 &nbsp;<a href="#salientfeatures">The Salient Feature Layer</a></div>
+      <div class="toc2">7 &nbsp;<a href="#viewmodes">View Modes</a></div>
+      <div class="toc3">7.1 &nbsp;<a href="#outlinewaveform">Outline Waveform</a></div>
+      <div class="toc3">7.2 &nbsp;<a href="#waveform">Waveform</a></div>
+      <div class="toc3">7.3 &nbsp;<a href="#melodicspectrogram">Melodic Spectrogram</a></div>
+      <div class="toc3">7.4 &nbsp;<a href="#spectrogram">Spectrogram</a></div>
+      <div class="toc3">7.5 &nbsp;<a href="#sungpitch">Sung Pitch</a></div>
+      <div class="toc3">7.6 &nbsp;<a href="#key">Key</a></div>
+      <div class="toc3">7.7 &nbsp;<a href="#stereoazimuth">Stereo Azimuth</a></div>
+      <div class="toc2">8 &nbsp;<a href="#playback">Playback and Recording</a></div>
     </div>
 
     <div id="reference-content">
@@ -80,28 +81,95 @@ for details.</p>
       
       <p><div align="center"><img class="banner" src="images/whole.png"/><br><i>Sonic Lineup with four audio files loaded</i></div></p>
 
-      <p>Most of the Sonic Lineup window is taken up with a view of
-        all of the audio files that you have opened. You can clear
-        this using the <img class="icon"
-        src="images/icons/filenew.svg"/> Clear Session toolbar button
-        or menu option, and you can add one or more audio files using
-        <img class="icon" src="images/icons/fileopen.svg"/> Add Files,
-        selecting multiple files at once in the resulting file dialog
-        if desired.</p>
+      <p>Most of the Sonic Lineup window is taken up with views of
+        each of the audio files that you
+        have <a href="#openingfiles">opened</a>, each in a different
+        colour.</p>
 
-      <p>The first file opened in a session is considered to be the
-        Reference file, and is labelled as such at the left edge. The
-        other files will be <a href="#alignment">aligned</a> with
-        respect to the reference file.</p>
+      <p>In the very centre of each view is the
+        aligned <a href="#playback">playback position</a> line, a
+        solid white line. The translucent white lines snaking down
+        across the views are the <a href="#salientfeatures">salient
+        feature layer</a> mappings.</p>
 
-      <p>
-        The set of files you have opened is remembered from one run of
-        Sonic Lineup to the next: when you start the application, it
-        re-opens the same files as were open when it last exited. You
-        can also pick from among recently-opened sets of files using
-        the File -&gt; Recent Sessions menu.
+      <p>The first of the audio file views is labelled as the
+        "Reference", and has special significance as
+        the <a href="#alignment">alignment reference</a> and source of
+        the salient feature layer.</p>
+
+      <p>Below the audio views, at the bottom of the window, are
+        the <a href="#viewmodes">view mode</a> selection buttons,
+        which switch between the available views for all files at
+        once.</p>
+
+      <p>At bottom right are the <a href="#playback">audio playback speed and
+          volume/pan</a> controls.</p>
+      
+      <a name="openingfiles"></a><h2>3 &nbsp;Opening Files</h2>
+
+      <p>Use the <img class="icon" src="images/icons/fileopen.svg"/>
+      Add Files toolbar button or menu option to open one or more
+      audio files. If you have several files in the same folder that
+      you want to open, you can select them all at once in the file
+      dialog.</p>
+
+      <p>To clear the session and start again with new files, use the
+        <img class="icon" src="images/icons/filenew.svg"/> Clear
+        Session toolbar button or menu option. You can also close any
+        of the individual files except for the Reference, and remove
+        it from the view, by clicking the <img class="icon"
+        src="images/icons/cross.svg"/> close button at the top left of
+        its view. You can't close the Reference file except by
+        clearing the session.</p>
+
+      <p>The set of files you have opened is remembered from one run
+        of Sonic Lineup to the next: when you start the application,
+        it starts up with the same files open as last time. You can
+        also use the File -&gt; Recent Sessions menu to choose from
+        the most recently-used sets of files.
       </p>
 
+      <a name="alignment"></a><h2>4 &nbsp;Alignment</h2>
+
+      <p>When you open more than one audio file, Sonic Lineup will try
+      to calculate an alignment in time between the Reference file
+      (the first one opened) and each of the other files, on the
+      assumption that they all represent different versions of the
+        same underlying musical material.</p>
+
+      <p>If this alignment is calculated correctly, then it becomes
+      possible to scroll through each file while tracking the same
+      position in "musical terms" in all of the other files, and to
+      play through the music switching at any moment between versions
+      at the same "musical" position.</p>
+
+      <p>The alignment is calculated using
+      the <a href="http://www.eecs.qmul.ac.uk/~simond/match/">MATCH
+      algorithm</a> and
+      the <a href="https://code.soundsoftware.ac.uk/projects/match-vamp/">MATCH
+      Vamp Plugin</a>. It typically works well for variant recordings
+      performed in the same key without significant structural
+      differences. The alignment may take a few seconds to calculate,
+      and the text "Aligned" is shown at the left of the file's view
+      when it is complete.</p>
+
+      <p>Real recordings often differ in pitch as well as time &ndash;
+      because of small differences in tuned pitch, or even because
+      they are performed in different keys &ndash; and so before the
+      time alignment is calculated, Sonic Lineup will check whether
+      the files to be aligned have similar pitch profiles and, if not,
+      may retune them when calculating the time alignment. Files whose
+      alignments were calculated with a tuning difference will have
+      "Aligned at N cents" shown on their views, where N is the number
+      of cents the tuning of the aligned file appeared to differ by,
+      relative to the reference.</p>
+
+      <a name="controlling"></a><h3>4.1 &nbsp;Controlling Alignment</h3>
+
+      <p>
+
+        <!--
+      
       <p>All files share a common position corresponding to an aligned
         time in the Reference file, indicated with a solid white line
         through the middle of each file in the view. Dragging left and
@@ -117,11 +185,9 @@ for details.</p>
         and then mapped across to the rest to show the correspondence
         calculated from the automatic alignment process.</p>
       
-      <p>At the bottom of the window are the <a href="#viewmodes">view
-          mode</a> selection buttons and <a href="#playback">audio
-          playback speed and volume/pan</a> controls.</p>
-
-      
+      <a name="navigation"></a><h2>5 &nbsp;Navigation</h2>
+-->
+      <p>
       
 </body>
 </html>
