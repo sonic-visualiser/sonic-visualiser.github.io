@@ -164,7 +164,7 @@ for details.</p>
       alignments were calculated with a tuning difference will have
       "Aligned at N cents" shown on their views, where N is the number
       of cents the tuning of the aligned file appeared to differ by,
-      relative to the reference.</p>
+      relative to the Reference file.</p>
 
       <a name="controlling"></a><h3>4.1 &nbsp;Controlling Alignment</h3>
 
@@ -260,7 +260,25 @@ controls in your System Preferences.
       keys. You can also press the F key (or equivalently use View
       &rarr; Zoom to Fit) to zoom out all the way so that the whole
       extent of the audio fits in the window.</p>
-        
+
+      <a name="salientfeatures"></a><h2>7 &nbsp;The Salient Feature Layer</h2>
+
+      <p>When the first audio file is loaded for use as the Reference
+      file, a set of "salient features" is calculated from it. These
+      features are chord changes calculated
+      using <a href="https://code.soundsoftware.ac.uk/projects/nnls-chroma/">Chordino</a>.
+      Chordino is a chord estimator for pop and rock music, so the
+      resulting features are unlikely to be directly meaningful in
+      other kinds of recording, but the feature times will often
+      correspond to harmonic changes of some sort and may have value
+        as indicators of salient moments in the music.</p>
+
+      <p>The salient features are marked with translucent vertical
+      lines placed over the Reference file view, and next to each line
+      the label of the chord estimate is shown. The timings of these
+      features are then mapped on to the other files according to the
+      alignment that has been calculated between them.</p>
+      
         <!--
       
       <p>All files share a common position corresponding to an aligned
