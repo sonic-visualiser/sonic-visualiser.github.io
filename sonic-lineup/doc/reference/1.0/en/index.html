@@ -143,28 +143,34 @@ for details.</p>
       possible to scroll through each file while tracking the same
       position in "musical terms" in all of the other files, and to
       play through the music switching at any moment between versions
-      at the same "musical" position.</p>
+        at the same "musical" position.</p>
 
-      <p>The alignment is calculated using
+      <p>The alignment may take some time to calculate. A progress bar
+      at the left side of each audio file view shows how far through
+      each file the calculation is, and the text "Aligned" is shown at
+      the left of the file's view when it is complete. (Similar
+      progress bars are used when calculating data for some of the
+      different <a href="#viewmodes">view modes</a>, when you switch
+      mode.)
+
+      <p>The alignment process uses
       the <a href="http://www.eecs.qmul.ac.uk/~simond/match/">MATCH
       algorithm</a> and
       the <a href="https://code.soundsoftware.ac.uk/projects/match-vamp/">MATCH
       Vamp Plugin</a>. It typically works well for variant recordings
       performed in the same key without significant structural
-      differences. The alignment may take a few seconds to calculate,
-      and the text "Aligned" is shown at the left of the file's view
-      when it is complete.</p>
+      differences.</p>
 
       <p>Real recordings often differ in pitch as well as time &ndash;
       because of small differences in tuned pitch, or even because
-      they are performed in different keys &ndash; and so before the
-      time alignment is calculated, Sonic Lineup will check whether
-      the files to be aligned have similar pitch profiles and, if not,
-      may retune them when calculating the time alignment. Files whose
-      alignments were calculated with a tuning difference will have
-      "Aligned at N cents" shown on their views, where N is the number
-      of cents the tuning of the aligned file appeared to differ by,
-      relative to the Reference file.</p>
+      they are performed in different keys &ndash; and so by default,
+      before the time alignment is calculated, Sonic Lineup will check
+      whether the files to be aligned have similar pitch profiles; if
+      not, it may retune them when calculating the time
+      alignment. Files whose alignments were calculated with a tuning
+      difference will have "Aligned at N cents" shown on their views,
+      where N is the number of cents the tuning of the aligned file
+      appeared to differ by, relative to the Reference file.</p>
 
       <a name="controlling"></a><h3>4.1 &nbsp;Controlling Alignment</h3>
 
@@ -292,19 +298,75 @@ controls in your System Preferences.
       <a name="outlinewaveform"></a><h3 class="first">8.1 &nbsp;Outline Waveform</h3>
 
       <p>The Outline Waveform view is an audio waveform-style display
-        designed not to take too much vertical space.
+        designed to give an impression of the overall audio envelope
+        even when very little space is available.</p>
+
+      <div align="center"><img class="banner" src="images/outline-waveform.png"/><br><i>An Outline Waveform view</i></div>
+
+      <p>Only a single wave shape is shown for each audio file, no
+      matter how many channels it has. Two-channel audio is shown in a
+      merged "butterfly" format, with the first channel level
+      determining the distance the shape rises above the X axis and
+      the second channel the distance it descends below it. If there
+      are more than two channels in the file, only the first two are
+      used.</p>
+
+      <p>The vertical scale for sample values uses a non-linear scale
+      based on IEC-268 meter deflection levels. This is intended to
+      make quiet sections easier to see than in a typical linear-scale
+      waveform, while making peaks still fairly apparent.</p>
 
       <a name="waveform"></a><h3>8.2 &nbsp;Waveform</h3>
 
+      <p>The Waveform view is a classic audio waveform with one
+      "track" per channel and a simple linear vertical scale.</p>
+      
+      <div align="center"><img class="banner" src="images/waveform.png"/><br><i>A Waveform view</i></div>
+
+      <p>The image above shows the same audio (from a recording of
+      Bach cello suites) as was used in the Outline Waveform image in
+        the previous section.</p>
+
       <a name="melodicspectrogram"></a><h3>8.3 &nbsp;Melodic Spectrogram</h3>
 
+      <p>The Melodic Spectrogram view is a time-frequency plot derived
+      from a series of short-time Fourier transforms constrained to a
+      limited frequency range (40 to 1500 Hz, roughly <code>D#1</code>
+      to <code>F#6</code> in ASA octave terms).</p>
+      
+      <div align="center"><img class="banner" src="images/melodic-spectrogram.png"/><br><i>A Melodic Spectrogram view</i></div>
+
+      <p>The colour scale uses a mapping that is linear in magnitude
+        within each column, but which scales each column down so that
+        its maximum magnitude is set to the log of its original
+        value. This flattens out the difference in level between
+        subsequent columns, making it easier to see pitch content but
+        obscuring some of the volume and timing information.</p>
+        
       <a name="spectrogram"></a><h3>8.4 &nbsp;Spectrogram</h3>
+
+      <div align="center"><img class="banner" src="images/spectrogram.png"/><br><i>A Spectrogram view</i></div>
 
       <a name="sungpitch"></a><h3>8.5 &nbsp;Sung Pitch</h3>
 
-      <a name="key"></a><h3>8.6 &nbsp;Key</h3>
+      <div align="center"><img class="banner" src="images/sung-pitch.png"/><br><i>A Sung Pitch view</i></div>
 
-      <a name="stereoazimuth"></a><h3>8.7 &nbsp;Stereo Azimuth</h3>
+      <p><img class="left-modest" src="images/sung-pitch-overlay.png">
+
+      </p>
+      
+      <a name="key"></a><h3 style="clear:both">8.6 &nbsp;Key</h3>
+
+      <div align="center"><img class="banner" src="images/key.png"/><br><i>A Key view</i></div>
+
+      <p><img class="right-teeny" src="images/key-scale.png">
+
+
+      </p>
+      
+      <a name="stereoazimuth"></a><h3 style="clear:both">8.7 &nbsp;Stereo Azimuth</h3>
+
+      <div align="center"><img class="banner" src="images/stereo-azimuth.png"/><br><i>A Stereo Azimuth view</i></div>
 
 
       
