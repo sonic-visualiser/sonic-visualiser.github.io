@@ -96,8 +96,9 @@ for details.</p>
 
       <p>The first of the audio file views is labelled as the
         "Reference", and has special significance as
-        the <a href="#alignment">alignment reference</a> and source of
-        the salient feature layer.</p>
+        the <a href="#alignment">alignment reference</a>, source of
+        the salient feature layer, and source of the reference sample
+        rate.</p>
 
       <p>Below the audio views, at the bottom of the window, are
         the <a href="#viewmodes">view mode</a> selection buttons,
@@ -113,7 +114,7 @@ for details.</p>
       Add Files toolbar button or menu option to open one or more
       audio files. If you have several files in the same folder that
       you want to open, you can select them all at once in the file
-      dialog.</p>
+        dialog.</p>
 
       <p>To clear the session and start again with new files, use the
         <img class="icon" src="images/icons/filenew.svg"/> Clear
@@ -158,7 +159,7 @@ for details.</p>
       algorithm</a> and
       the <a href="https://code.soundsoftware.ac.uk/projects/match-vamp/">MATCH
       Vamp Plugin</a>. It typically works well for variant recordings
-      performed in the same key without significant structural
+      of similar recording quality without significant structural
       differences.</p>
 
       <p>Real recordings often differ in pitch as well as time &ndash;
@@ -244,7 +245,7 @@ control and then drag it up or down for level and left for pan.
         Recorded Audio to open the recorded audio folder in your
         system's file explorer window.</p>
 
-<a name="microphonepermission"></a><h4>9.3.1 &nbsp;Permission to use the microphone (macOS only)</h4>
+<a name="microphonepermission"></a><h4>5.2.1 &nbsp;Permission to use the microphone (macOS only)</h4>
 
 <p>On macOS 10.14 Mojave or newer, the first time you ask to record
 from the built-in microphone, a system dialog box will appear asking
@@ -330,45 +331,147 @@ controls in your System Preferences.
       <a name="melodicspectrogram"></a><h3>8.3 &nbsp;Melodic Spectrogram</h3>
 
       <p>The Melodic Spectrogram view is a time-frequency plot derived
-      from a series of short-time Fourier transforms constrained to a
-      limited frequency range (40 to 1500 Hz, roughly <code>D#1</code>
-      to <code>F#6</code> in ASA octave terms).</p>
+      from a succession of short-time Fourier transforms, truncated to
+      a limited frequency range (80 to 1500 Hz,
+      roughly <code>D#2</code> to <code>F#6</code> in ASA octave
+      terms).</p>
+
+      <p>It may be useful for observing melodic and harmonic
+      progressions in the music.</p>
       
       <div align="center"><img class="banner" src="images/melodic-spectrogram.png"/><br><i>A Melodic Spectrogram view</i></div>
+        
+      <p>The spectrogram uses an 8192-sample Hann window and FFT
+      size, with 2048-sample advance between frames. If the audio file
+      has multiple channels, they are mixed to provide the source of
+      the spectrogram.</p>
 
       <p>The colour scale uses a mapping that is linear in magnitude
         within each column, but which scales each column down so that
-        its maximum magnitude is set to the log of its original
-        value. This flattens out the difference in level between
-        subsequent columns, making it easier to see pitch content but
-        obscuring some of the volume and timing information.</p>
-        
+        its maximum magnitude is set to the base-10 logarithm of its
+        original value. This flattens out the difference in level
+        between subsequent columns, making it easier to see pitch
+        content but obscuring some of the volume and timing
+        information.</p>
+
       <a name="spectrogram"></a><h3>8.4 &nbsp;Spectrogram</h3>
 
+      <p>The Spectrogram view is a classic full-frequency-range
+      spectrogram, a time-frequency plot derived from a succession of
+      short-time Fourier transforms, covering the frequency range from
+      0 to half the sample rate of the Reference audio file.</p>
+      
+      <p>It may be useful for observing production and recording
+      conditions such as frequency bandwidth or noise levels, as well
+      as percussive content and the general spectral envelope.</p>
+      
       <div align="center"><img class="banner" src="images/spectrogram.png"/><br><i>A Spectrogram view</i></div>
 
+      <p>The spectrogram uses a 1024-sample Hann window and FFT size,
+      with 512-sample advance between frames. If the audio file has
+      multiple channels, they are mixed to provide the source of the
+      spectrogram. The colour scale is based on a logarithmic (dB)
+      mapping.</p>
+      
+      <p>The image above shows the same audio (from a recording of
+      Bach cello suites) as appears in the Melodic Spectrogram image
+      in the previous section, and indeed in the leading images for
+      all of the other views in this documentation.</p>
+      
       <a name="sungpitch"></a><h3>8.5 &nbsp;Sung Pitch</h3>
 
+      <p>The Sung Pitch view shows the result of analysing the audio
+      using
+      the <a href="https://code.soundsoftware.ac.uk/projects/pyin">pYIN</a>
+      pitch tracker. pYIN is purely a pitch tracker for monophonic
+      audio &ndash; it does not extract a melodic line from mixed or
+      ensemble pieces.</p>
+      
       <div align="center"><img class="banner" src="images/sung-pitch.png"/><br><i>A Sung Pitch view</i></div>
 
+      <p>The name Sung Pitch reflects the fact that this pitch
+      extractor is most reliable for recordings of the solo singing
+      voice, though it will work reasonably well for many other solo
+      instruments, such as the cello recording shown here.</p>
+        
       <p><img class="left-modest" src="images/sung-pitch-overlay.png">
 
+        Each of the views, other than the Reference view, also has the
+        Reference pitch track overlaid upon it &ndash; as shown in the
+        image to the left here.</p><p>That is, the pitch track
+        extracted from the Reference audio is warped in time according
+        to the alignment that has been calculated between the current
+        audio file and the Reference, and is shown in white next to
+        the current file's own pitch track in its colour. In this
+        example we can see that the Reference audio is about four
+        semitones lower than the current file, although detailed
+        measurement is always better done in a different application
+        such as <a href="https://sonicvisualiser.org">Sonic
+        Visualiser</a>.
       </p>
       
       <a name="key"></a><h3 style="clear:both">8.6 &nbsp;Key</h3>
 
+      <p>The Key view shows a merged key-strength plot generated by
+      the <a href="https://vamp-plugins.org/plugin-doc/qm-vamp-plugins.html#qm-keydetector">QM
+      Key Detector</a> Vamp plugin.</p>
+      
       <div align="center"><img class="banner" src="images/key.png"/><br><i>A Key view</i></div>
 
-      <p><img class="right-teeny" src="images/key-scale.png">
+      <p>This is calculated by taking a series of chromagram slices
+      through the audio and, for each, comparing the degree to which
+      the chromagram profile correlates to a prepared key profile for
+      each major and minor key. The resulting plot shows how closely
+      each key profile matches at each increment in time, with
+        orange/yellow representing a better match than blue/black.</p>
 
+      <p><img class="right-modest" src="images/key-scale.png"> The
+      vertical scale, shown to the right, follows the circle of fifths
+      with C major / A minor just above the middle, and with each pair
+      of relative major and minor keys merged into a single value. To
+      toggle visibility of this vertical scale, use the S key or View
+      &rarr; Show Vertical Scales.</p>
 
+      <p>This view has a number of limitations, including:
+
+        <ul><li>In the current version of Sonic Lineup, it assumes a
+        fixed tuning frequency of A=440Hz. <i>This will change in
+        future releases.</i> You can see how this affects the results
+        in the view of the cello recording shown above: the piece is
+        in C minor, but it is shown with a tonal centre at B minor (or
+        D major) because the period instrument in this recording has a
+        lower tuning than A=440.</li>
+          <li>The view carries no information about major/minor mode,
+            as the two are merged.</li>
+        </ul>
       </p>
       
       <a name="stereoazimuth"></a><h3 style="clear:both">8.7 &nbsp;Stereo Azimuth</h3>
 
+      <p>The Stereo Azimuth view shows a stereo plan decomposition of
+      the audio. The vertical scale covers the stereo plan from
+      left-channel-only at the bottom to right-channel-only at the
+      top, and the intensity level indicates what proportion of signal
+      energy is found at that point on the plan at each moment. The
+      view assumes that the file has two channels containing left and
+      right channel signals.</p>
+        
       <div align="center"><img class="banner" src="images/stereo-azimuth.png"/><br><i>A Stereo Azimuth view</i></div>
 
-
+      <p>The calculation works by taking a spectrogram of each channel
+      and, for each frequency bin, using the relative levels of the
+      two channels at that bin to determine where on the stereo image
+      the bin "lives". The resulting plot is effectively a histogram
+      of these locations, for each time increment in the
+      spectrogram.</p>
+      
+      <p>This view is a bit experimental and perhaps should not be
+      taken too literally, but it does show some of the results of
+      production or recording decisions. A mono recording will appear
+      as a simple straight line down the middle, while recordings with
+      limited numbers of sources placed by "pan pot" will show
+      separate strands for each.</p>
+      
       
       <!-- !!! todo: vertical scales -->
       <p>
