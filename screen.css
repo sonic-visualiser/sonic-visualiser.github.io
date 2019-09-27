@@ -66,6 +66,7 @@ figcaption {
   border-top-style: solid;
   border-top-color: #ef6a35;
   text-align: center;
+  margin-top: 0;
   padding-top: 1em;
 }
 #main-image {
@@ -121,28 +122,28 @@ figcaption {
 #nav {
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
     top: 1.8em;
     color: #ef6a35;
-    margin-bottom: 3em;
+    margin-bottom: 0;
+    text-align: center;
 }
-/*
 #nav ul {
-    width: 70%;
+    width: auto;
+    max-width: auto;
 }
-*/
 #nav ul li {
+    display: inline-block; 
+    white-space: nowrap;
     font-size: 0.8em;
     font-weight: bold;
-  text-transform: uppercase;
-  float: left;
-  position: relative;
-  width: auto;
-  margin-left: 2.5em;
-  padding-left: 0.8em;
+    text-transform: uppercase;
+    margin-left: 2.5em;
+    padding-left: 0.8em;
+    width: auto;
+    max-width: auto;
 }
 #nav ul li.first {
-  list-style: none;
+    margin-left: 0;
 }    
 a {
   text-decoration: none;
