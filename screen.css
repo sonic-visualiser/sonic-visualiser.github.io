@@ -1,13 +1,24 @@
 #header {
     width: 70%;
+    background: url(images/sv-title.svg) no-repeat;
+}
+#slheader {
+    width: 60%;
+    background: url(images/sl-title.svg) no-repeat;
+}
+#tonyheader {
+    width: 40%;
+    background: url(images/tony-title.svg) no-repeat;
+}
+#header, #slheader, #tonyheader {
     padding-bottom: 3.6%;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    background: url(images/sv-title.svg) no-repeat;
     background-size: contain;
+    background-position: center;
 }
-#header span {
+#header span, #slheader span, #tonyheader span {
   display: block;
   width: 0;
   height: 0;
@@ -128,8 +139,7 @@ figcaption {
     text-align: center;
 }
 #nav ul {
-    width: auto;
-    max-width: auto;
+    padding: 0;
 }
 #nav ul li {
     display: inline-block; 
@@ -144,6 +154,7 @@ figcaption {
 }
 #nav ul li.first {
     margin-left: 0;
+    padding-left: 0;
 }    
 a {
   text-decoration: none;
