@@ -57,11 +57,14 @@ fun newChangeset (line, old) =
               | _ => NONE
         val fileName =
             case version of
-                SOME v => "news/" ^ dateString ^ "-changes-" ^ v ^ ".txt"
-              | NONE =>  "news/" ^ dateString ^ "-changes.txt"
+                SOME v => dateString ^ "-changes-" ^ v ^ ".txt"
+              | NONE =>  dateString ^ "-changes.txt"
         val outstream = TextIO.openOut fileName
     in
-        TextIO.output (outstream, "== " ^ line ^ "\n");
+        TextIO.output (outstream, line ^ "\n" ^
+                                  (implode (List.tabulate (size line,
+                                                           fn _ => #"-"))) ^
+                                  "\n");
         IN_CHANGESET outstream
     end
                  
