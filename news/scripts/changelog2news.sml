@@ -27,6 +27,21 @@ fun monthNumericToLong m =
       | "07" => "July" | "08" => "August" | "09" => "September"
       | "10" => "October" | "11" => "November" | "12" => "December"
       | _ => raise Fail ("Unexpected numeric month \"" ^ m ^ "\"")
+
+fun dayToOrdinal d =
+    (if String.isPrefix "0" d then String.extract (d, 1, NONE) else d) ^
+    (case hd (rev (explode d)) of
+         #"0" => "th" 
+       | #"1" => "st"
+       | #"2" => if d = "12" then "th" else "nd"
+       | #"3" => if d = "13" then "th" else "rd"
+       | #"4" => "th"
+       | #"5" => "th"
+       | #"6" => "th"
+       | #"7" => "th"
+       | #"8" => "th"
+       | #"9" => "th"
+       | _ => raise Fail ("Day is not a number: \"" ^ d ^ "\""))
                    
 fun formalDate date =
     let fun shortMonth month =
@@ -35,7 +50,12 @@ fun formalDate date =
             else month
     in
         case String.tokens (fn c => c = #" ") date of
-            [month, year] =>
+            [day, month, year] =>
+            let val monthNo = monthShortToNumeric (shortMonth month)
+            in
+                SOME (year ^ "-" ^ monthNo ^ "-" ^ day)
+            end
+          | [month, year] =>
             let val monthNo = monthShortToNumeric (shortMonth month)
             in
                 SOME (year ^ "-" ^ monthNo)
@@ -45,8 +65,9 @@ fun formalDate date =
 
 fun textDate formal =
     case String.tokens (fn c => c = #"-") formal of
-        [year, month, day] => day ^ " " ^ (monthNumericToLong month) ^
-                              " " ^ year
+        [year, month, day] => (dayToOrdinal day) ^ " " ^
+                              (monthNumericToLong month) ^ " " ^
+                              year
       | [year, month] => (monthNumericToLong month) ^ " " ^ year
       | _ => raise Fail ("Unexpected formal date format " ^ formal)
 

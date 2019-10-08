@@ -1,0 +1,811 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <link rel="stylesheet" media="screen" type="text/css" href="../screen.css"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/waveform.png"/>
+    <link rel="icon" type="image/svg" href="../images/sv-icon.svg"/>
+    <title>Sonic Visualiser</title>
+    <meta name="robots" content="index"/>
+    <meta name="keywords" content="sonic visualiser visualizer visualise visualize audio music spectrogram feature extraction"/>
+    <meta name="description" content="Sonic Visualiser is a program for viewing and analysing the contents of music audio files."/>
+  </head>
+  <body>
+    <a href="../index.html"><h1 id="header"><span>Sonic Visualiser</span></h1></a>
+
+    <div id="nav">
+      <ul>
+        <li class="first"><a href="index.html">News</a></li>
+        <li><a href="../download.html">Download</a></li>
+        <li><a href="../documentation.html">Documentation</a></li>
+        <li><a href="../videos.html">Videos</a></li>
+        <li><a href="http://www.vamp-plugins.org/">Plugins</a></li>
+      </ul>
+    </div>
+    
+    <h2 id="firstpara">News and Release Notes</h2>
+
+    <p>News and release notes for <a href="../index.html">Sonic
+    Visualiser</a>, <a href="../sonic-lineup/index.html">Sonic
+    Lineup</a>, <a href="../tony/index.html">Tony</a>,
+    and <a href="https://vamp-plugins.org/sonic-annotator/">Sonic
+    Annotator</a>.
+
+<h3>October 2019 &mdash; Sonic Visualiser v4.0 released</h3>
+<h4>Changes in Sonic Visualiser v4.0 since the previous release 3.3:</h4>
+<ul><li>Add Box annotation layer type, typically used for time-frequency
+   boxes to be annotated over a spectrogram. Because this introduces a
+   new layer type into the session file format, the major version
+   number has been bumped to v4.0. Sessions saved from v4.0 can be
+   opened in earlier versions of Sonic Visualiser, but any Box layers
+   will not be loaded.</li></ul>
+<h3>14th June 2019 &mdash; Sonic Lineup v0.3 released</h3>
+<h4>Changes in Sonic Lineup v0.3:</h4>
+<ul><li>First public release</li>
+<li>First build under this name</li></ul>
+<h3>21st May 2019 &mdash; Sonic Visualiser v3.3 released</h3>
+<h4>Changes in Sonic Visualiser v3.3 since the previous release 3.2.1:</h4>
+<ul><li>Add support for reading the Opus audio codec on all platforms</li>
+<li>Add support for WMA and AAC formats on 64-bit Windows. (AAC was
+   already supported on macOS.) Note that AAC support on Windows does
+   not support "gapless" import, i.e. removing the encoder gaps at
+   start and end of the stream</li>
+<li>Add ability to choose the field separator when importing CSV and
+   CSV-like files, if more than one possible candidate separator is
+   found in the file</li>
+<li>Fix crash when closing session or starting a new session while
+   calculating alignment of multiple audio files</li>
+<li>Fix crash when running certain plugins that call for
+   frequency-domain input at non-power-of-two block sizes</li>
+<li>Fix wandering left edge of measure-tool rectangle while dragging
+   out the area</li>
+<li>Ensure that plugin stderr debug output is logged to the SV log file</li></ul>
+<h3>7th January 2019 &mdash; Sonic Visualiser v3.2.1 released</h3>
+<h4>Changes in Sonic Visualiser 3.2.1 since the previous release 3.2:</h4>
+<ul><li>Fix failure to record from built-in microphone on macOS 10.14
+   (caused by lack of microphone permission request text)</li>
+<li>Fix crash when closing SV or starting a new session during recording</li>
+<li>Fix crash on exit in some builds that disable OSC support</li>
+<li>Fix flashing effect when scrolling certain configurations of colour 3d
+   plot layer leftwards</li></ul>
+<h3>7th December 2018 &mdash; Sonic Visualiser v3.2 released</h3>
+<h4>Changes in Sonic Visualiser 3.2 since the previous release 3.1.1:</h4>
+<ul><li>Add ability to zoom closer than one sample per pixel, so as to see
+   the interpolated signal level between samples</li>
+<li>Add oversampling control to the spectrogram and spectrum layers</li>
+<li>Highlight and label frequency peaks in the spectrum as the mouse
+   rolls over them, when enabled in the parameter area</li>
+<li>Add feature to convert and import audio from a CSV data file</li>
+<li>Add some new colour maps, and restore the old Blue on Black one</li>
+<li>Speed up spectrum rendering at high resolutions</li>
+<li>Fix failure to pass Nyquist bins correctly to
+   frequency-domain-input Vamp plugins in some circumstances</li>
+<li>Fix sometimes incorrect shortcut associations for new-layer menu
+   items</li>
+<li>Various other rendering improvements and bug fixes</li></ul>
+<h3>14th August 2018 &mdash; Sonic Visualiser v3.1.1 released</h3>
+<h4>Changes in Sonic Visualiser 3.1.1 since the previous release 3.1:</h4>
+<ul><li>Fix failure to record correctly into an empty session with certain
+   audio drivers</li>
+<li>Fix failure to run LADSPA plugins at all, except with some unusual
+   path layouts</li>
+<li>Fix failure to silence sonified notes when rewinding backwards or
+   jumping back from a loop endpoint</li>
+<li>Fix macOS .dmg image so as to use older HFS+ filesystem for compatibility</li></ul>
+<h3>14th July 2018 &mdash; Sonic Visualiser v3.1 released</h3>
+<h4>Changes in Sonic Visualiser 3.1 since the previous release 3.0.3:</h4>
+<ul><li>Add Plugins tab to Preferences dialog, from which you can review
+   the plugin load paths and see which plugins were loaded from which
+   locations, and also customise load paths (though the various path
+   environment variables are still supported)</li>
+<li>Stream the export of audio data and other CSV data so that
+   very large exports don't hang the UI or run us out of memory
+   (thanks to Lucas Thompson)</li>
+<li>Ensure vertical scale appears for auto-align layers when there is
+   nothing else to auto-align them to</li>
+<li>Fix another long-standing Windows-platform wide-char/utf8
+   conversion problem, with environment variable naming and contents</li>
+<li>Improve handling of incomplete session loads, i.e. situations where
+   the audio files referred to by a session could not be found -
+   previously the session could be re-saved immediately thus losing
+   the audio reference; now at least we disable Save (enabling only
+   Save As) and show a warning</li>
+<li>Update pane and layer menu shortcuts so that the
+   waveform/spectrogram/etc shortcuts (Shift+G etc) operate on the
+   source model in the currently-selected pane rather than the main
+   model. This is a backward-incompatible change but is a far more
+   intuitive way for the function to work</li>
+<li>Use dark background for bright colours in time-value/note/etc
+   layers as well as e.g. waveforms - this is how it was always
+   "intended to" work, but it is a backward-incompatible change</li>
+<li>Make "Select All" select the whole span of everything that exists,
+   not just the main model</li>
+<li>Add horizontal scale to Spectrum layer</li>
+<li>Improve spacing and labelling of vertical log scales</li>
+<li>Update build system for better Cap'n Proto version support and to
+   use Repoint for code management in the repository</li>
+<li>Various other bug fixes</li></ul>
+<h3>25th May 2017 &mdash; Sonic Visualiser v3.0.3 released</h3>
+<h4>Changes in Sonic Visualiser 3.0.3 since the previous release 3.0.2:</h4>
+<ul><li>Improve decisions about where and how to label vertical scales</li>
+<li>Update build support material and documentation to reflect the
+   official release of Cap'n Proto 0.6 (which we can now use rather
+   than depending on git builds)</li></ul>
+<h3>25th May 2017 &mdash; Sonic Annotator v1.5 released</h3>
+<h4>Changes in Sonic Annotator 1.5 since the previous release 1.4:</h4>
+<p>Front-end changes:</p>
+<ul><li>Change mp3 file loading so as to compensate for encoder/decoder
+   delay and padding (using "gapless playback" logic). While this is a
+   real improvement, unfortunately it does mean that the initial
+   padding in mp3 file load has changed from previous versions, which
+   may change alignment of features based on mp3 files relative to
+   those generated by previous versions. It's not a great idea to use
+   mp3 as a file format of record, because of differences like this
+   between decoders</li>
+<li>Add --transform-minversion flag to test for available version of
+   a plugin transform</li>
+<li>Add quiet mode (-q)</li>
+</ul><p>Bug fixes:</p>
+<ul><li>Fix possible crash in multiplexed file handling (--multiplex, -m)</li>
+<li>Fix nominal rounding error (out by 1ns) in output under some
+   conditions</li></ul>
+<h3>25th March 2017 &mdash; Sonic Visualiser v3.0.2 released</h3>
+<h4>Changes in Sonic Visualiser 3.0.2 since the previous release 3.0.1:</h4>
+<ul><li>Fix crash when changing parameters for spectrum view</li>
+<li>Fix incorrect measure tool crosshairs in spectrum view</li>
+<li>Update Russian and Czech UI translations (thanks to Alexandre Prokoudine
+   and Pavel Fric respectively)</li></ul>
+<h3>12th March 2017 &mdash; Sonic Visualiser v3.0.1 released</h3>
+<h4>Changes in Sonic Visualiser 3.0.1 since the previous release 3.0:</h4>
+<ul><li>Fix crashes with MIDI devices and speedup/slowdown control on Windows</li>
+<li>Update MIDI input driver layer</li></ul>
+<h3>7th March 2017 &mdash; Sonic Visualiser v3.0 released</h3>
+<h4>Changes in Sonic Visualiser 3.0 since the previous release 2.5:</h4>
+<ul><li>Add ability to record audio, and ability to change the audio device
+   for playback or recording in the preferences</li>
+<li>Add complete support for high-resolution (Hi-DPI or retina)
+   displays, including for layer data rendering as well as UI controls
+   and icons. This makes the biggest difference when using a retina
+   Mac, on which previous versions did not render layer data at retina
+   resolution, but it also improves scaling and rendering of UI
+   elements on Hi-DPI displays on Windows and Linux</li>
+<li>Add ability to export scalable (SVG) image files</li>
+<li>Run plugins in a separate process, so that if a plugin crashes, it
+   no longer brings down Sonic Visualiser with it. In every other
+   respect the behaviour should be unchanged</li>
+<li>Scan plugins on startup in a separate process, and report on any
+   that crash or won't load</li>
+<li>Add ability to open, display, and analyse very long audio files (of
+   more than 2^32 sample frames)</li>
+<li>Change mp3 file loading so as to compensate for encoder/decoder
+   delay and padding (using "gapless playback" logic). While this is a
+   real improvement, unfortunately it does mean that the initial
+   padding in mp3 file load has changed from previous versions, which
+   may mean some sessions saved in previous versions are no longer
+   correctly aligned. It's not a great idea to use mp3 as a file
+   format of record, because of differences like this between
+   decoders. The previous behaviour is still available as a preference.</li>
+<li>Add new Hybrid normalisation type for spectrogram and colour 3d
+   plot layers. This normalises each column to its peak value and then
+   scales the normalised values by the log of the peak in order to
+   restore some distinction in scale between columns with different
+   levels. It can provide quite visually clear results.</li>
+<li>Add function to subdivide time instant layers into regular
+   intervals (and its inverse)</li>
+<li>Add new preference for default colour scales</li>
+<li>Add a basic ability to zoom (in the frequency axis) to the spectrum</li>
+<li>Switch to using combined level/pan controls in layer property boxes
+   and for the main volume control</li>
+<li>Make CSV file reader better able to handle files with varying
+   numbers of columns</li>
+<li>Fix a number of problems on Windows with loading and saving some
+   file formats to filenames not representable in system codepage</li>
+<li>Add "What's New" dialog</li>
+<li>Finally switch the Windows build to 64-bit by default (with
+   adapters to run either 32- or 64-bit plugins)</li></ul>
+<h3>18th March 2016 &mdash; Sonic Annotator v1.4 released</h3>
+<h4>Changes in Sonic Annotator 1.4 since the previous release 1.3:</h4>
+<p>Front-end changes:</p>
+<ul><li>Better error reporting, especially for invalid transform files
+   and transform-not-found</li>
+<li>Avoid crashing out when a single plugin (that is not being used)
+   can't be loaded because of e.g. an undefined symbol</li>
+</ul><p>Bug fixes:</p>
+<ul><li>Fix (with test) horrible crash with --multiplex option</li>
+<li>Fix erroneous quantization to 16 bits for coded file types of
+   greater bit depth</li>
+<li>Fix multiple outputs when requesting both summary and non-summary
+   for the same output</li></ul>
+<h3>5th November 2015 &mdash; Sonic Annotator v1.3 released</h3>
+<h4>Changes in Sonic Annotator 1.3 since the previous release 1.2:</h4>
+<p>Back-end (feature writer) changes:</p>
+<ul><li>Add the --csv-digits, --lab-digits, and --jams-digits options to
+   control the number of significant figures printed for feature values</li>
+<li>Update the JAMS writer to JAMS 0.2.0 format</li>
+<li>Show a more useful error message when user provides a filename
+   instead of a transform id to the -d option (happened to me when
+   cut-and-pasting command lines and I was quite baffled at first)</li></ul>
+<h3>23rd October 2015 &mdash; Sonic Visualiser v2.5 released</h3>
+<h4>Changes in Sonic Visualiser 2.5 since the previous release 2.4.1:</h4>
+<ul><li>Add unit-converter dialog, for converting between various pitch and
+   timing units</li>
+<li>Fix failure to reload note layers from session file</li>
+<li>Use a more sensible scale for the play-speed dial</li>
+<li>Fix crash when importing very wide CSV files</li>
+<li>Fix generation of wrong layer type from some CSV files</li>
+<li>Fix failure to export last instant in a time-instant layer</li></ul>
+<h3>23rd October 2015 &mdash; Tony v2.0 released</h3>
+<h4>Changes in Tony 2.0 since the previous release 1.0:</h4>
+<ul><li>Tony now has a Record button, allowing you to record audio from the
+   microphone and analyse it</li>
+<li>Graphical rendering and icons now properly support hi-dpi/Retina
+   displays</li>
+<li>The playback speed dial uses a more sensible scale</li></ul>
+<h3>1st September 2015 &mdash; Sonic Annotator v1.2 released</h3>
+<h4>Changes in Sonic Annotator 1.2 since the previous release 1.1:</h4>
+<p>Front-end changes:</p>
+<ul><li>Add the --segments-from option, providing the ability to read
+   segment boundaries from a file</li>
+</ul><p>Back-end (feature writer) changes:</p>
+<ul><li>Rename the JSON feature writer to JAMS. There may be other JSON
+   formats supported in future</li>
+</ul><p>Bug fixes:</p>
+<ul><li>Fix invalid JSON written by JAMS feature writer for dense
+   features</li>
+<li>Fix invalid UTF-8 output from RDF feature writer when processing
+   MP3 files having ID3 tags in non-ASCII, non-UTF8 encodings</li></ul>
+<h3>1st April 2015 &mdash; Tony v1.0 released</h3>
+<h4>Changes in Tony 1.0 since the previous release 0.6:</h4>
+<ul><li>The underlying pYin analysis plugin has been updated; more analysis
+   options are available</li>
+<li>Notes can be dragged up and down using the mouse in edit mode. When
+   you drag a note, the pitch track underneath it snaps to the nearest
+   spectral peaks (if any are found). Releasing the note makes the
+   note snap back to the (possibly now moved) underlying pitch values.</li>
+<li>Exported pitch track CSV files now contain one row for every
+   processing frame in the file, and those with no identified pitch
+   have the pitch recorded as 0. This is useful for some evaluation
+   and post-processing tools, and it's easier to filter out the 0
+   values if you don't need them than add them afterwards if you do</li>
+<li>Exported note track CSV files now omit the (meaningless, in this
+   context) velocity column</li>
+<li>Level and pan for a layer (audio, pitch track, notes) are now shown
+   in a little matrix widget, which is quicker to read than the
+   previous pair of rotary dials; click on it to pop up an editable
+   version</li>
+<li>Horizontal scrolling using a Mac trackpad now works properly</li>
+<li>Tony now finds plugins in its own installation directory by default
+   (can be overridden with TONY_VAMP_PATH environment variable)</li>
+<li>Bug fixes</li></ul>
+<h3>16th October 2014 &mdash; Sonic Annotator v1.1 released</h3>
+<h4>Changes in Sonic Annotator 1.1 since the previous release 1.0:</h4>
+<p>Front-end changes:</p>
+<ul><li>Add support for the start time and duration properties of a
+   transform, applying a plugin to only a range of the input audio</li>
+<li>Reduce the internal processing blocksize from 16384 to 1024 samples
+   to reduce extent of time rounding at end of file or range</li>
+<li>Add --multiplex option to compose multiple audio files into a
+   single multi-channel stream with one input file per channel</li>
+<li>Add --normalise to request each audio file be normalised to 1.0 max</li>
+<li>Add support for the plugin_version property of a transform, causing
+   Sonic Annotator to refuse to run with the wrong version of a plugin</li>
+<li>Add --minversion option to permit scripts to check that the
+   version of Sonic Annotator is as they expect</li>
+<li>Add new housekeeping options to list the available feature writers
+   and supported audio file formats</li>
+<li>Pull out the feature-writer-specific help text into separate help
+   options (-h <writertype>) as the help was getting too long</li>
+</ul><p>Back-end (feature writer) changes:</p>
+<ul><li>Add --csv-omit-filename, --csv-end-times, and --csv-fill-ends
+   options to the CSV feature writer to adjust various aspects of its
+   output</li>
+<li>Add "json" feature writer, exporting to JAMS (JSON Annotated Music
+   Specification) format. This writer is provisional and is expected
+   to change in future releases to comply more effectively with the
+   specification</li>
+<li>Add "midi" feature writer, exporting to MIDI files</li>
+<li>Add "lab" feature writer, exporting to tab-separated label files.
+   (This is equivalent to using the CSV writer with a tab separator and
+   the new --csv-omit-filename and --csv-end-times options, but it's
+   simpler to use if .lab is what you want)</li>
+</ul><p>Bug fixes:</p>
+<ul><li>Fix the former habit of forging ahead even if not all transform
+   files could be found or parsed (this may have been intentional
+   behaviour but it is confusing more than it is useful)</li>
+<li>Fix failure to support --summary-only flag when reading transforms
+   with summaries from a transform file</li></ul>
+<h3>1st October 2014 &mdash; Sonic Visualiser v2.4.1 released</h3>
+<h4>Changes in Sonic Visualiser 2.4.1 since the previous release 2.4:</h4>
+<ul><li>Fix a crash when rendering certain colour 3d plot layers</li></ul>
+<h3>1st September 2014 &mdash; Sonic Visualiser v2.4 released</h3>
+<h4>Changes in Sonic Visualiser 2.4 since the previous release 2.3:</h4>
+<ul><li>Add support for left/right scrolling using a two-finger touchpad
+   gesture (where available)</li>
+<li>Make the octave numbering into a configurable option, and change
+   the default. Previously Sonic Visualiser labelled middle-C as "C3";
+   now it labels middle-C as "C4", a more common standard in the world
+   outside MIDI sequencer software. The previous system is available
+   as an option in the Preferences. This affects only the visible
+   labels: there is no change to analysis or to the file format</li>
+<li>Sonify time-value layers. Any time-value curve whose scale unit is
+   set to Hz will now acquire a playback toggle control; this control
+   is off by default, but if it is switched on, the curve will be
+   played back using a variable-frequency sound generator</li>
+<li>Add support for playback of note layers with non-MIDI frequencies
+   (formerly the note playback was limited to exact MIDI pitch)</li>
+<li>Change the default playback sample for note layers from piano to an
+   electric piano with sustain. The piano sample is still available,
+   and any sessions saved using it should continue to use it</li>
+<li>Add a cancel button for Vamp plugin processing: currently,
+   cancelling a transform results in a part-complete layer rather than
+   removing the results</li>
+<li>Add keyboard shortcuts to cycle the current layer (in addition to
+   the existing ones to cycle the current pane)</li>
+<li>Fix various bugs related to layer ordering: layer tabs re-ordering
+   themselves randomly when new layer added, layers being ordered
+   randomly when saving and reloading a session</li>
+<li>Fix incorrect interaction with non-Unicode usernames when creating
+   temporary and template directories on Windows</li>
+<li>Shade the start and end of the main audio file, to make them easier
+   to see for files that start or end in silence</li>
+<li>Speed up rendering and scrolling in time-value layers</li>
+<li>Make it possible to import CSV files directly into Note layers by
+   adding Pitch as a data type in the CSV file import dialog</li>
+<li>Fix play pointer jump to wrong frame when clicking on row in the
+   layer edit dialog</li>
+<li>Fix problems with keyboard shortcuts when using Qt5 on OS/X. This
+   is the first release in which the official builds use Qt5 for all
+   platforms.</li></ul>
+<h3>16th June 2014 &mdash; Tony v0.6 released</h3>
+<h4>Changes in Tony 0.6 since the previous release 0.5:</h4>
+<ul><li>The play pointer no longer tracks to the centre of the main pane
+   when dragging, and is now always visible. Play pointer / playhead
+   behaviour is generally expected to be much more sensible and
+   intuitive in this release than in prior ones</li>
+<li>Many keyboard shortcuts have been added and improved, including the
+   shortcuts for incremental note-by-note selection and moving the
+   play pointer</li>
+<li>Audio files are now implicitly normalised to peak == 1.0 when
+   loading</li>
+<li>Tony now has an Analysis menu which contains various configuration
+   settings that affect pitch analysis</li>
+<li>There is now an option to save the session directly to the same
+   directory as the original audio file, for rapid saving when
+   annotating many audio files in sequence</li>
+<li>The extents of the "active" note are now more clearly shown when
+   mousing over the note track</li>
+<li>There is a new function to delete the notes (without deleting pitch
+   measurements) within the selection</li>
+<li>Numerous bug fixes</li></ul>
+<h3>3rd April 2014 &mdash; Tony v0.5 released</h3>
+<h4>Changes in Tony 0.5 since the previous release 0.4:</h4>
+<ul><li>The start and end of the recording are now shaded in grey so you
+   can see where they are</li>
+<li>There are new save/open session functions on the File menu; the
+   session file extension is .ton, and save/open session should work</li>
+<li>The note edit tool (which was largely broken in 0.4 after lots of
+   work on pitch track editing) now works again</li>
+<li>New note editing menu actions: split note, merge notes, form note
+   from selection, snap notes to pitch track</li>
+<li>Editing the pitch track (when notes are present) causes the notes
+   to be automatically updated to the new pitch track</li>
+<li>The Key and Mouse Reference help window has been updated so as to
+   show Tony-specific actions properly</li>
+<li>The undo/redo command bundling has been tidied up and some related
+   crashes fixed</li></ul>
+<h3>12th March 2014 &mdash; Tony v0.4 released</h3>
+<h4>Changes in Tony 0.4 since the previous release 0.3:</h4>
+<ul><li>The main pitch tracker (pYIN) now uses a non-FFT Yin method in
+   order to produce unbiased timestamps</li>
+<li>Pitch estimation within a constrained frequency range now uses a
+   harmonic spectrum plugin (CHP) that tracks peaks within the range
+   in a way more in line with user expectations than pYIN</li>
+<li>The layer show/hide controls have been merged into the layer type
+   icons, saving toolbar space</li>
+<li>Adjustment of the displayed frequency range has been crudely added</li>
+<li>Fix crash on loading a second file and inability to export pitch
+   track after using selection strip</li></ul>
+<h3>6th March 2014 &mdash; Tony v0.3 released</h3>
+<h4>Changes in Tony 0.3 since the previous release 0.2:</h4>
+<ul><li>Key shortcuts for editing have been revised to be more consistent
+   on OS/X and across different Qt versions</li>
+<li>Reduce visual clutter in selection areas</li>
+<li>Fixes to OS/X deployment</li></ul>
+<h3>5th March 2014 &mdash; Tony v0.2 released</h3>
+<h4>Changes in Tony 0.2 since the previous release 0.1:</h4>
+<ul><li>Waveform is now displayed in a shadow layer at bottom of main pane</li>
+<li>A selection strip has been added at the bottom of the window, so
+   selections can be made without changing tool mode</li>
+<li>Double-click in selection strip now selects a region associated
+   with a single note</li>
+<li>Pitches can be moved up and down by octaves, and to different pitch
+   candidates, within the selected area</li>
+<li>Cancelling a selection by hitting Esc restores the pre-selection
+   pitch track</li>
+<li>A frequency range can be selected with shift-click in the main
+   window to prompt the pitch tracker to run only within that range</li>
+<li>Arbitrary-frequency playback and pitch track resynthesis now supported</li>
+<li>Layers can now be hidden, and playback toggled, individually, and
+   there are now gain and pain controls for each playable layer type</li></ul>
+<h3>12th December 2013 &mdash; Sonic Visualiser v2.3 released</h3>
+<h4>Changes in Sonic Visualiser 2.3 since the previous release 2.2:</h4>
+<ul><li>Add a startup welcome dialog that also explains what SV makes
+   network connections for and allows user to forbid them</li>
+<li>Add "Export Audio Data" feature</li>
+<li>Show piano keyboard scale in note and time-value layers as well
+   as spectrogram, where vertical scale is log Hz; also show
+   numerical scale in note and region layers when not auto-aligned</li>
+<li>Speed up CSV file import and avoid showing crazily wide window
+   for CSV file format dialog when file has lots of columns</li>
+<li>Fix incorrectly saved window geometry when exiting from maximised
+   state</li>
+<li>Reduce number of timer wakeups when idle</li>
+<li>Add American English translation and make choice of translation
+   into a preference (defaulting to system locale)</li>
+<li>Permit installation to non-default location with Windows installer
+   build</li></ul>
+<h3>31st July 2013 &mdash; Sonic Visualiser v2.2 released</h3>
+<h4>Changes in Sonic Visualiser 2.2 since the previous release 2.1:</h4>
+<ul><li>Build with support for hidpi ("retina") text on OS/X</li>
+<li>Fix very slow analysis when using Ogg or FLAC files decoded
+   via libsndfile</li>
+<li>Fix inaccurate scale auto-align between time-value layers and
+   others</li>
+<li>Fix failure to open files specified on command line (or via
+   Open With) on Windows</li>
+<li>Reset cyclical counters and switch back to navigate mode when
+   a new session is started</li></ul>
+<h3>16th May 2013 &mdash; Sonic Visualiser v2.1 released</h3>
+<h4>Changes in Sonic Visualiser 2.1 since the previous release 2.0.1:</h4>
+<ul><li>Fix incorrect handling of FixedSampleRate outputs (Vamp SDK fix)</li>
+<li>Make it easier to see results from transforms that return a single point</li>
+<li>Make labelling clearer on time-value layers</li>
+<li>Add discrete-curve mode for time-value layers (for curves with gaps)</li>
+<li>Update code to build against Qt5</li></ul>
+<h3>9th May 2013 &mdash; Sonic Annotator v1.0 released</h3>
+<h4>Changes in Sonic Annotator 1.0 since the previous release 0.7:</h4>
+<p>Bug fixes:</p>
+<ul><li>Fix incorrect samplerate in reading m4a files on OS/X</li>
+<li>Fix incorrect handling of FixedSampleRate outputs (Vamp SDK fix)</li>
+<li>Add tests that use the Vamp test plugin</li></ul>
+<h3>March 2013 &mdash; Sonic Visualiser v2.0.1 released</h3>
+<h4>Changes in Sonic Visualiser 2.0.1 since the previous release 2.0:</h4>
+<ul><li>Fix incorrect samplerate in reading m4a files on OS/X</li></ul>
+<h3>17th July 2012 &mdash; Sonic Annotator v0.7 released</h3>
+<h4>Changes in Sonic Annotator 0.7 since the previous release 0.6:</h4>
+<p>Build changes:</p>
+<ul><li>Support 64-bit builds on OS/X (using CoreAudio instead of
+   obsolete QuickTime audio file reader)</li>
+<li>Simplify RDF reading and fix some bugs. Now requires Dataquay
+   (http://breakfastquay.com/dataquay/) rather than using Redland
+   directly. Release builds use Sord/Serd rather than Redland</li></ul>
+<h3>16th July 2012 &mdash; Sonic Visualiser v2.0 released</h3>
+<h4>Changes in Sonic Visualiser 2.0 since the previous release 1.9:</h4>
+<ul><li>Support 64-bit builds on OS/X (using CoreAudio instead of
+   obsolete QuickTime audio file reader)</li>
+<li>Simplify RDF reading and fix some bugs. Now requires Dataquay
+   (http://breakfastquay.com/dataquay/) rather than using Redland
+   directly. Release builds use Sord/Serd rather than Redland</li>
+<li>Add a fullscreen mode on the F11 key</li></ul>
+<h3>10th October 2011 &mdash; Sonic Visualiser v1.9 released</h3>
+<h4>Changes in Sonic Visualiser 1.9 since the previous release 1.8:</h4>
+<ul><li>Add session templates; save session as template; apply template to
+   session</li>
+<li>Tidy up the file open logic so as to remove the dialog asking how
+   to open a file, where possible</li>
+<li>Various bug fixes.</li></ul>
+<h3>28th September 2011 &mdash; Sonic Annotator v0.6 released</h3>
+<h4>Changes in Sonic Annotator 0.6 since the previous release 0.5:</h4>
+<p>Build changes:</p>
+<ul><li>Switch to modular SV-libraries build using svcore library</li>
+<li>We now require Vamp plugin SDK v2.3</li>
+<li>Add autoconf configure script</li>
+</ul><p>Front-end changes:</p>
+<ul><li>Pick up default sample rate and channel count from the first
+ audio file, where not specified in the transform, instead of using
+ hard coded defaults</li>
+<li>Make it possible to specify the window shape in transform</li>
+<li>Fix the --csv-one-file option which did not work in 0.5</li>
+<li>Fix --force option when using playlists</li>
+<li>Add -v option to print version number and exit</li></ul>
+<h3>8th April 2011 &mdash; Sonic Visualiser v1.8 released</h3>
+<h4>Changes in Sonic Visualiser 1.8 since the previous release 1.7.2:</h4>
+<ul><li>Sonic Visualiser now registers as a file type handler on OS/X,
+ providing better integration with the desktop generally (Dan Stowell)</li>
+<li>There is a new function to toggle all Time Rulers at once (key #)</li>
+<li>The CSV import dialog has been overhauled, allowing more flexible
+ selection of purpose for each column</li>
+<li>Text overlays are now easier to read on dark backgrounds</li>
+<li>Hidden layers are now ignored when exporting an image (Dan Stowell)</li>
+<li>A crash when starting a new session or exiting the application
+   after loading a session with saved alignment data has been fixed</li>
+<li>The duplication of right-button menu functions when multiple files
+ were loaded has been fixed</li>
+<li>The layer-add menu functions now have shortcuts (Dan Stowell)</li>
+<li>The codebase has been reorganised into libraries and a configure
+ step added.  It should be easier to build and maintain on OS/X and
+ Linux than previously, although it won't make much difference on
+ Windows.</li>
+<li>A Czech translation is now included (thanks to Pavel Fric).</li></ul>
+<h3>26th May 2010 &mdash; Sonic Annotator v0.5 released</h3>
+<h4>Changes in Sonic Annotator 0.5 since the previous release 0.4:</h4>
+<p>Build changes:</p>
+<ul><li>Remove unused audioio library and avoid its dependencies</li>
+</ul><p>Front-end changes:</p>
+<ul><li>Avoid leaking file descriptors on exceptions</li>
+<li>Fix embarrassing bug that caused failure to mix down to mono
+ properly for single-channel plugins with multi-channel input files</li>
+<li>Fail sooner if the output file is not writable (i.e. don't wait
+ until the first data is available for writing)</li></ul>
+<h3>5th May 2010 &mdash; Sonic Visualiser v1.7.2 released</h3>
+<h4>Changes in Sonic Visualiser 1.7.2 since the previous release 1.7.1:</h4>
+<ul><li>The time-value layer now has an origin line and an option to
+ show derivatives (change from one point to the next) rather than
+ raw values</li>
+<li>A static initialiser race has been fixed, possibly fixing an
+ occasional crash on startup in Windows</li>
+<li>A crash when pressing Play straight after New Session has been
+ fixed</li></ul>
+<h3>22nd October 2009 &mdash; Sonic Visualiser v1.7.1 released</h3>
+<h4>Changes in Sonic Visualiser 1.7.1 since the previous release 1.7:</h4>
+<ul><li>The RDF importer does a better job of assigning labels to layers,
+ layers to panes, and values to labelled regions</li>
+<li>Interactive editing in the Text layer benefits from the same
+ improvements as made in 1.7 to Note and Region layers</li>
+<li>The layer data editor window has a text search feature</li>
+<li>The main window status bar now shows the last label to have passed
+ the playback position in the current layer, at the right end of the
+ status bar</li>
+<li>The Russian translation has been updated (thanks Alexandre)</li></ul>
+<h3>25th September 2009 &mdash; Sonic Annotator v0.4 released</h3>
+<h4>Changes in Sonic Annotator 0.4 since the previous release 0.3:</h4>
+<p>Build changes:</p>
+<ul><li>Sonic Annotator now requires the Vamp plugin SDK v2.1 or newer.</li>
+</ul><p>Front-end changes:</p>
+<ul><li>Frequency-domain plugins now use the PluginInputDomainAdapter's new
+ ShiftData processing method, ensuring that the first block received
+ by the plugin is the one centred on 0 rather than starting at 0.
+ Unfortunately, the old behaviour omitted a timing compensation step,
+ and this fix actually changes the results from some plugin processes:
+ the previous behaviour was not always in line with the Vamp plugin
+ specification.</li>
+<li>More useful diagnostics are now available when a plugin fails to
+ load or run.</li>
+</ul><p>CSV back-end (feature writer) changes:</p>
+<ul><li>The CSV writer now closes its output files properly when it
+ finishes writing to each one, rather than leaving them all open
+ until the end and risk running out of file descriptors.  This was
+ already the behaviour of the RDF writer, the CSV one has just been
+ updated to match it.</li>
+<li>The behaviour of the CSV writer has also been changed to match
+ that of the RDF writer in handling file write failures (it now
+ continues processing only if --force is given).</li></ul>
+<h3>5th September 2009 &mdash; Sonic Visualiser v1.7 released</h3>
+<h4>Changes in Sonic Visualiser 1.7 since the previous release 1.6:</h4>
+<ul><li>A new "Insert Item At Selection" function on the Edit menu
+ can be used to create Note and Region layer items whose time
+ extents correspond to the current selection(s)</li>
+<li>Interactively editing points in the Note and Region layers
+ now works much more smoothly</li>
+<li>SV can now import MIDI files that use SMPTE timecode for event
+ timing (importing MIDI files using with the more common
+ timebase-based timing was already supported)</li>
+<li>Time values throughout the display may optionally be shown in
+ seconds and frames at various frame rates</li>
+<li>A crash on exit in Windows has been fixed</li>
+<li>A very unobtrusive user survey is now included</li>
+<li>Various other bug fixes.</li></ul>
+<h3>22nd June 2009 &mdash; Sonic Visualiser v1.6 released</h3>
+<h4>Changes in Sonic Visualiser 1.6 since the previous release 1.5:</h4>
+<ul><li>The Colour 3D Plot layer now supports logarithmic vertical
+ scale and linear interpolation options.</li>
+<li>A new colour scheme (High Gain) has been added for spectrogram
+ and Colour 3D Plot, which improves readability for some data.</li>
+<li>Further performance improvements have been made to Colour 3D
+ Plot.</li>
+<li>Various other bug fixes.</li></ul>
+<h3>16th March 2009 &mdash; Sonic Visualiser v1.5 released</h3>
+<h4>Changes in Sonic Visualiser 1.5 since the previous release 1.4:</h4>
+<ul><li>You can now insert time instants, time values, and notes using
+ a MIDI device during playback.  If a time value or note layer is
+ current it will be used for insertion (giving a value equal to
+ the pitch class, or the played note, respectively); otherwise an
+ existing or new time instants layer will be used just as it is
+ when inserting instants using the PC keyboard.  Using a MIDI
+ device should give better timing than using the PC keyboard.</li>
+<li>There is a new Activity Log window with a (purely informative) list
+ of events and user interactions that happen while SV is running.</li>
+<li>The spectrogram has somewhat improved graphical scaling, and
+ this is now the default (being much faster than the 4x oversampled
+ method).  The previous default is still available as a preference.</li>
+<li>Visualisation of very dense colour plots (such as spectrograms
+ calculated by plugins) is substantially faster in this release.</li>
+<li>Spectrogram display is now faster in many circumstances.</li>
+<li>Alignment using the MATCH plugin is faster on OS/X than before.</li>
+<li>SV will take into account RDF plugin descriptions, if available,
+ in order to make somewhat better decisions about display of plugin
+ outputs (for example, placing segmentation data into a layer with
+ segmentation plot type).</li>
+<li>You can now switch layers by clicking on the spare area at the left
+ end of the pane that is also used for the current pane indicator.</li>
+<li>The vertical black lines dividing segments in the time value
+ layer's segmentation plot style are now optional.</li>
+<li>Several widget layout bugs on OS/X have been fixed.</li>
+<li>Several serious crashing, deadlock, and data corruption bugs have
+ been fixed.</li></ul>
+<h3>5th December 2008 &mdash; Sonic Visualiser v1.4 released</h3>
+<h4>Changes in Sonic Visualiser 1.4 since the previous release 1.3:</h4>
+<ul><li>SV now has a Region layer type, used for display of features with
+ durations.  It also supports Vamp v2.0 plugins that provide durations
+ for features.</li>
+<li>Layer data can now be imported from RDF described using the Audio
+ Features Ontology, as well as from the existing text file types.  SV
+ can also export annotation layer data to RDF/Turtle, although in a
+ somewhat simplistic manner at present.</li>
+<li>You can search for transforms by text in the new "Find a Transform"
+ dialog.  This searches both installed plugins, and plugins that have
+ not been installed but that have descriptions available on the
+ semantic web.</li>
+<li>You can now zoom and scroll vertically in the time-value, note,
+ and colour 3d plot layers.</li>
+<li>Sonic Visualiser can now load sessions from uncompressed XML files
+ as well as its own compressed-XML .sv format.  Files with extension
+ .xml that contain suitable session data will be loaded as sessions.
+ Note that .xml extension files still do not show up in the default
+ file load filter.  This is intentional, as there may be any kind of
+ data in them -- if you want to load uncompressed session files from
+ XML, you need to know you're doing it.</li>
+<li>Several crashes and other bugs have been fixed.</li></ul>
+<h3>10th July 2008 &mdash; Sonic Visualiser v1.3 released</h3>
+<h4>Changes in Sonic Visualiser 1.3 since the previous release 1.2:</h4>
+<ul><li>There is a new spreadsheet-style data viewer and editor for
+ viewing and editing the data in some types of annotation layer.</li>
+<li>Alignments are now saved to the session file.</li>
+<li>The spectrogram layer is usually somewhat faster than it was.</li>
+<li>You can now hold Shift while dragging to move an item, in order
+ to override the initial drag resistance introduced in 1.2.</li>
+<li>The gross mis-labelling of time lines in the ruler has been fixed.</li>
+<li>There is a new, somewhat provisional PulseAudio output driver.</li>
+<li>Several other bug fixes.</li></ul>
+<h3>20th February 2008 &mdash; Sonic Visualiser v1.2 released</h3>
+<h4>Changes in Sonic Visualiser 1.2 since the previous release 1.0:</h4>
+<ul><li>SV now supports time-alignment of multiple performances of a work
+ loaded at the same time.  This option is enabled when the MATCH Vamp
+ plugin is installed.  When alignment is switched on and more than one
+ audio file is open, SV will assume that all open files are
+ differently timed performances of the same work, and will calculate
+ time alignments for them.  Playback will then play only a single file
+ at a time, and the playback cursors in other files will track at the
+ varying speeds to try to ensure that each is at the same point in the
+ underlying score.  This enables effective comparison of several such
+ files, as well as a meaningful way to switch from one performance to
+ another during playback (ensuring that the switch happens at the
+ correct point in the performance being switched to).</li>
+<li>There is a new Image layer, which can display images from the
+ local filesystem or retrieved via HTTP or FTP.</li>
+<li>A new measurement tool has been added.  With the measurement tool
+ selected, dragging in a pane draws a rectangle labelled with the
+ scale values for its start and end corners and its size.  You can
+ have any number of measurements present at once; they are associated
+ with the top layer, their scale values depend on the scale for that
+ layer, and they are only shown when that layer is at the top and the
+ measurement tool is active.  Measurements are saved and reloaded in
+ the session file.  Drawing measurements can be undone and redone, and
+ a measurement can be deleted by hitting Del when highlighted.  Note
+ that the measurement tool shows the scale values associated with the
+ pixel positions of the mouse when dragging, not any values associated
+ with actual features present in the audio or its analysis (e.g. the
+ values are not rounded to the nearest spectrogram bin).</li>
+<li>You can double-click using the measurement tool in the spectrogram
+ to get an instant measurement rectangle for a feature.  This is a
+ purely graphical feature that works by calculating the boundary of a
+ contiguous region of pixels "similar to" the one you double-clicked
+ on; it does not use audio analysis.  Adjusting the gain and colour
+ scheme etc of the spectrogram will (by design) affect the
+ measurements obtained this way.</li>
+<li>The spectrum can now optionally show frequency estimates of peaks
+ aligned with a piano keyboard along the horizontal axis (this needs
+ some refinement).</li>
+<li>The harmonic cursor in the spectrogram has moved from the Select
+ tool to the Measurement tool.  There is now a similar harmonic cursor
+ in the spectrum.  Both of them show more information as text
+ alongside the cursor than previously.</li>
+<li>There is a new Erase tool for erasing individual points from an
+ editable layer.</li>
+<li>Several keyboard shortcuts have changed -- all of the Alt+key
+ shortcuts now either use Ctrl or a plain keypress with no modifier,
+ to avoid clashes with window manager shortcuts and to make them
+ easier to use and remember</li>
+<li>The playback controls are now in a Playback menu as well as the
+ toolbar.</li>
+<li>There is a new key and mouse control reference under Help (or press
+ F2).</li>
+<li>You can double-click on a pane in navigate mode to jump to a time.</li>
+<li>All of the single-colour layers (waveform, time values etc) now
+ allow you to define your own colours as well as using the built-in
+ set.  The colour of a layer is now shown next to its name on the pane.</li>
+<li>When you add a new single-colour layer it will use a default colour
+ that is not yet in use in another layer (if there is one).</li>
+<li>Single-colour layers can now optionally have black backgrounds (with
+ a set of lighter colours in the default colour palette that use black
+ backgrounds by default).</li>
+<li>There's a new Printer colour scheme in the spectrogram with only a
+ small number of grey shades.</li>
+<li>Vertical zoom in a log-scaled spectrogram is much more intuitive;
+ it now leaves the point that was in the centre of the visible area in
+ the centre after zoom, instead of the point that was in the centre of
+ the linear range corresponding to the visible area.</li>
+<li>You can now turn a colour 3d plot layer upside down by clicking the
+ Invert Vertical Scale button.</li>
+<li>There's a new Layer Summary window which shows the panes and
+ layer data in a tree layout.  This is very simplistic at the moment.</li>
+<li>Each pane now has an [X] button at its top left, which removes that
+ pane when clicked.</li>
+<li>There's a new Solo play mode toggle button; when active, only the
+ currently selected pane is played.  This is also the default when
+ time alignment is in use.</li>
+<li>Rewind/ffwd now stay confined to the selection if Play Selection is
+ enabled; also, the rewind and ffwd "one step" buttons are now enabled
+ even if there is no time instants layer for them to align to (they
+ align to the time ruler instead and so jump in steps of a size
+ dependent on the zoom level).</li>
+<li>You can now export note layers to MIDI.</li>
+<li>MIDI note velocity is partially supported.  Note velocity is
+ retained when importing and exporting MIDI and is used in playback,
+ but it is not yet shown in the display and cannot yet be edited.</li>
+<li>You can now drag-and-drop files (of whatever type) onto SV from
+ other programs such as file managers or web browsers.</li>
+<li>mp3 files (and Ogg, but they aren't supported on Windows at the
+ moment) are now decoded in a background thread so you can see the
+ start of the track without waiting for the rest to decode.</li>
+<li>Mac builds of SV can now load AAC/mp4 files and anything else
+ supported by QuickTime.</li>
+<li>There is now an option to resample audio files on import if they
+ don't match the samplerate of the first file loaded.  By default this
+ is switched off, as it affects the visible waveform.  The default
+ behaviour is unchanged (play at the wrong rate).  There is still no
+ option to handle multiple rates "correctly" (i.e. by resampling
+ on playback and showing the waveforms at different resolutions
+ according to each one's underlying rate) and there probably never
+ will be.</li>
+<li>SV can now open .m3u playlist files, though it's a hazardous thing
+ to do as it simply loads all the files in the playlist at once.</li>
+<li>SV now has various options for how to number tapped time instants
+ (bar/beat, plain counter, time in seconds, tempo etc).</li>
+<li>The official builds use Qt 4.3, which fixes some nasty
+ bugs in the file dialog that the version 1.0 builds suffered from.</li></ul>
+<h3>7th July 2007 &mdash; Sonic Annotator v0.3 released</h3>
+<h4>Changes in Sonic Annotator 0.3 since the previous release 0.2:</h4>
+<p>Front-end changes:</p>
+<ul><li>A new --force front-end option (distinct from the --csv-force and
+ --rdf-force back-end options) has been added, which makes Sonic
+ Annotator continue to process subsequent audio files instead of
+ exiting after an error, if multiple audio files have been specified.</li>
+</ul><p>RDF back-end (feature writer) changes:</p>
+<ul><li>The RDF writer now conforms more correctly with the Music Ontology
+ in the way it relates signal, track, and track metadata.  Signals
+ that have available metadata now gain a Track resource to associate
+ that metadata with, instead of hanging it directly from the Signal
+ resource; also the audio file now encodes the signal rather than the
+ signal being available as the audio file (matching the domain
+ specification of the Music Ontology).  Note that this new resource
+ structure will not be properly read by versions of Sonic Visualiser
+ prior to 1.6 (should importing the data into Sonic Visualiser be of
+ interest to you).</li>
+<li>The --rdf-signal-uri option has been removed and replaced with the
+ more meaningful set of options --rdf-audiofile-uri, --rdf-track-uri,
+ and --rdf-maker-uri.</li>
+<li>A new --rdf-network option is available, to cause Sonic Annotator
+ to try to retrieve RDF descriptions for plugins from the network
+ where those descriptions are not available locally.  Use of this
+ option is recommended, but it is not the default because of the
+ possible performance implication (even though the results are mostly
+ cached, there may be some network access involved).</li>
+<li>The RDF writer now writes the computed_by property for signal
+ features.</li>
+<li>Plugin and output URIs in the resulting RDF are now percent-encoded.</li></ul>
+<h3>10th May 2007 &mdash; Sonic Visualiser v1.0 released</h3>
+<h4>Changes in Sonic Visualiser 1.0:</h4>
+<ul><li>First official release of Sonic Visualiser</li></ul>
+
+  </body>
+</html>
