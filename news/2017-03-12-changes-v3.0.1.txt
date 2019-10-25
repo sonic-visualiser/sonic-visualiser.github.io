@@ -1,0 +1,7 @@
+=== 12th March 2017 &mdash; Sonic Visualiser v3.0.1 released
+
+== Changes in Sonic Visualiser 3.0.1 since the previous release 3.0:
+
+ - Fix crashes with MIDI devices and speedup/slowdown control on Windows
+
+ - Update MIDI input driver layer

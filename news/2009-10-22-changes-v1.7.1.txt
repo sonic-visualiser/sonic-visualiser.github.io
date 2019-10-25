@@ -1,0 +1,17 @@
+=== 22nd October 2009 &mdash; Sonic Visualiser v1.7.1 released
+
+== Changes in Sonic Visualiser 1.7.1 since the previous release 1.7:
+
+ - The RDF importer does a better job of assigning labels to layers,
+ layers to panes, and values to labelled regions
+
+ - Interactive editing in the Text layer benefits from the same
+ improvements as made in 1.7 to Note and Region layers
+
+ - The layer data editor window has a text search feature
+
+ - The main window status bar now shows the last label to have passed
+ the playback position in the current layer, at the right end of the
+ status bar
+
+ - The Russian translation has been updated (thanks Alexandre)

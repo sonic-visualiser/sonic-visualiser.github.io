@@ -1,0 +1,11 @@
+=== 10th October 2011 &mdash; Sonic Visualiser v1.9 released
+
+== Changes in Sonic Visualiser 1.9 since the previous release 1.8:
+
+ - Add session templates; save session as template; apply template to
+   session
+
+ - Tidy up the file open logic so as to remove the dialog asking how
+   to open a file, where possible
+
+ - Various bug fixes.

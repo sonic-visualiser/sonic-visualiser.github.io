@@ -1,0 +1,41 @@
+=== 16th March 2009 &mdash; Sonic Visualiser v1.5 released
+
+== Changes in Sonic Visualiser 1.5 since the previous release 1.4:
+
+ - You can now insert time instants, time values, and notes using
+ a MIDI device during playback.  If a time value or note layer is
+ current it will be used for insertion (giving a value equal to
+ the pitch class, or the played note, respectively); otherwise an
+ existing or new time instants layer will be used just as it is
+ when inserting instants using the PC keyboard.  Using a MIDI
+ device should give better timing than using the PC keyboard.
+
+ - There is a new Activity Log window with a (purely informative) list
+ of events and user interactions that happen while SV is running.
+
+ - The spectrogram has somewhat improved graphical scaling, and
+ this is now the default (being much faster than the 4x oversampled
+ method).  The previous default is still available as a preference.
+
+ - Visualisation of very dense colour plots (such as spectrograms
+ calculated by plugins) is substantially faster in this release.
+
+ - Spectrogram display is now faster in many circumstances.
+
+ - Alignment using the MATCH plugin is faster on OS/X than before.
+
+ - SV will take into account RDF plugin descriptions, if available,
+ in order to make somewhat better decisions about display of plugin
+ outputs (for example, placing segmentation data into a layer with
+ segmentation plot type).
+
+ - You can now switch layers by clicking on the spare area at the left
+ end of the pane that is also used for the current pane indicator.
+
+ - The vertical black lines dividing segments in the time value
+ layer's segmentation plot style are now optional.
+
+ - Several widget layout bugs on OS/X have been fixed.
+
+ - Several serious crashing, deadlock, and data corruption bugs have
+ been fixed.

@@ -1,0 +1,61 @@
+=== 7th March 2017 &mdash; Sonic Visualiser v3.0 released
+
+== Changes in Sonic Visualiser 3.0 since the previous release 2.5:
+
+ - Add ability to record audio, and ability to change the audio device
+   for playback or recording in the preferences
+
+ - Add complete support for high-resolution (Hi-DPI or retina)
+   displays, including for layer data rendering as well as UI controls
+   and icons. This makes the biggest difference when using a retina
+   Mac, on which previous versions did not render layer data at retina
+   resolution, but it also improves scaling and rendering of UI
+   elements on Hi-DPI displays on Windows and Linux
+
+ - Add ability to export scalable (SVG) image files
+
+ - Run plugins in a separate process, so that if a plugin crashes, it
+   no longer brings down Sonic Visualiser with it. In every other
+   respect the behaviour should be unchanged
+
+ - Scan plugins on startup in a separate process, and report on any
+   that crash or won't load
+
+ - Add ability to open, display, and analyse very long audio files (of
+   more than 2^32 sample frames)
+
+ - Change mp3 file loading so as to compensate for encoder/decoder
+   delay and padding (using "gapless playback" logic). While this is a
+   real improvement, unfortunately it does mean that the initial
+   padding in mp3 file load has changed from previous versions, which
+   may mean some sessions saved in previous versions are no longer
+   correctly aligned. It's not a great idea to use mp3 as a file
+   format of record, because of differences like this between
+   decoders. The previous behaviour is still available as a preference.
+
+ - Add new Hybrid normalisation type for spectrogram and colour 3d
+   plot layers. This normalises each column to its peak value and then
+   scales the normalised values by the log of the peak in order to
+   restore some distinction in scale between columns with different
+   levels. It can provide quite visually clear results.
+
+ - Add function to subdivide time instant layers into regular
+   intervals (and its inverse)
+
+ - Add new preference for default colour scales
+
+ - Add a basic ability to zoom (in the frequency axis) to the spectrum
+
+ - Switch to using combined level/pan controls in layer property boxes
+   and for the main volume control
+
+ - Make CSV file reader better able to handle files with varying
+   numbers of columns
+
+ - Fix a number of problems on Windows with loading and saving some
+   file formats to filenames not representable in system codepage
+
+ - Add "What's New" dialog
+
+ - Finally switch the Windows build to 64-bit by default (with
+   adapters to run either 32- or 64-bit plugins)

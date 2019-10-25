@@ -1,0 +1,13 @@
+=== 16th May 2013 &mdash; Sonic Visualiser v2.1 released
+
+== Changes in Sonic Visualiser 2.1 since the previous release 2.0.1:
+
+ - Fix incorrect handling of FixedSampleRate outputs (Vamp SDK fix)
+
+ - Make it easier to see results from transforms that return a single point
+
+ - Make labelling clearer on time-value layers
+
+ - Add discrete-curve mode for time-value layers (for curves with gaps)
+
+ - Update code to build against Qt5

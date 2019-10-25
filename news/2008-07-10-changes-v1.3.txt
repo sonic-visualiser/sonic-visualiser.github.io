@@ -1,0 +1,19 @@
+=== 10th July 2008 &mdash; Sonic Visualiser v1.3 released
+
+== Changes in Sonic Visualiser 1.3 since the previous release 1.2:
+
+ - There is a new spreadsheet-style data viewer and editor for
+ viewing and editing the data in some types of annotation layer.
+
+ - Alignments are now saved to the session file.
+
+ - The spectrogram layer is usually somewhat faster than it was.
+
+ - You can now hold Shift while dragging to move an item, in order
+ to override the initial drag resistance introduced in 1.2.
+
+ - The gross mis-labelling of time lines in the ruler has been fixed.
+
+ - There is a new, somewhat provisional PulseAudio output driver.
+
+ - Several other bug fixes.

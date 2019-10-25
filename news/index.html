@@ -30,14 +30,48 @@
     and <a href="https://vamp-plugins.org/sonic-annotator/">Sonic
     Annotator</a>.
 
-<h3>October 2019 &mdash; Sonic Visualiser v4.0 released</h3>
+<h3>25th October 2019 &mdash; Sonic Visualiser v4.0 released</h3>
 <h4>Changes in Sonic Visualiser v4.0 since the previous release 3.3:</h4>
 <ul><li>Add Box annotation layer type, typically used for time-frequency
    boxes to be annotated over a spectrogram. Because this introduces a
    new layer type into the session file format, the major version
-   number has been bumped to v4.0. Sessions saved from v4.0 can be
-   opened in earlier versions of Sonic Visualiser, but any Box layers
-   will not be loaded.</li></ul>
+   number has been bumped to v4.0. Sessions saved from v4.0 can still
+   be opened in earlier versions of Sonic Visualiser, but any Box
+   layers will not be loaded</li>
+<li>Fix behaviour of auto-align layers on top of waveform: they can now
+   be aligned in the vertical scale, if they have a unit of V and the
+   waveform is of a single channel in linear or dB mode</li>
+<li>Make the UI more readable in macOS "dark mode"</li>
+<li>Fix sluggishness in starting and stopping playback when using
+   PulseAudio v13.0+</li></ul>
+<h3>25th October 2019 &mdash; Tony v2.1 released</h3>
+<h4>Changes in Tony 2.1 since the previous release 2.0:</h4>
+<ul><li>Fix problems reopening session files</li>
+<li>Add support for reading the Opus audio codec on all platforms</li>
+<li>Add support for WMA and AAC formats on 64-bit Windows. (AAC was
+   already supported on macOS.) Note that AAC support on Windows does
+   not support "gapless" import, i.e. removing the encoder gaps at
+   start and end of the stream</li>
+<li>Fix sluggishness in starting and stopping playback when using
+   PulseAudio v13.0+</li>
+<li>Update platform builds with newer libraries and updated platform
+   support</li></ul>
+<h3>25th October 2019 &mdash; Sonic Lineup v1.0 released</h3>
+<h4>Changes in Sonic Lineup v1.0 since the previous release 0.3:</h4>
+<ul><li>Add ghost reference trace to Sung Pitch view for comparison with
+   pitch of reference</li>
+<li>Add first-run explainer dialog</li>
+<li>Improve rendering of alignment views between panes</li>
+<li>Fix performance problem when switching to spectrogram mode with
+   numerous tracks open, especially on Windows</li>
+<li>Merge major and minor key plots, because of lack of vertical space</li>
+<li>Fix problems with presentation and alignment of vertical scales</li>
+<li>Fix ffwd/rewind which could get stuck when used in aligned views</li>
+<li>Fix incorrect waveform type selection when switching modes, and
+   ensure outline waveform always uses the same waveform configuration</li>
+<li>Fix a number of crashes and thread-safety issues</li>
+<li>Fix sluggishness in starting and stopping playback when using
+   PulseAudio v13.0+</li></ul>
 <h3>14th June 2019 &mdash; Sonic Lineup v0.3 released</h3>
 <h4>Changes in Sonic Lineup v0.3:</h4>
 <ul><li>First public release</li>

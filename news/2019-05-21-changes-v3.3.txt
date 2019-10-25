@@ -1,0 +1,25 @@
+=== 21st May 2019 &mdash; Sonic Visualiser v3.3 released
+
+== Changes in Sonic Visualiser v3.3 since the previous release 3.2.1:
+
+ - Add support for reading the Opus audio codec on all platforms
+
+ - Add support for WMA and AAC formats on 64-bit Windows. (AAC was
+   already supported on macOS.) Note that AAC support on Windows does
+   not support "gapless" import, i.e. removing the encoder gaps at
+   start and end of the stream
+
+ - Add ability to choose the field separator when importing CSV and
+   CSV-like files, if more than one possible candidate separator is
+   found in the file
+
+ - Fix crash when closing session or starting a new session while
+   calculating alignment of multiple audio files
+
+ - Fix crash when running certain plugins that call for
+   frequency-domain input at non-power-of-two block sizes
+
+ - Fix wandering left edge of measure-tool rectangle while dragging
+   out the area
+
+ - Ensure that plugin stderr debug output is logged to the SV log file

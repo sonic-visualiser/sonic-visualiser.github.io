@@ -1,0 +1,30 @@
+=== 8th April 2011 &mdash; Sonic Visualiser v1.8 released
+
+== Changes in Sonic Visualiser 1.8 since the previous release 1.7.2:
+
+ - Sonic Visualiser now registers as a file type handler on OS/X,
+ providing better integration with the desktop generally (Dan Stowell)
+
+ - There is a new function to toggle all Time Rulers at once (key #)
+
+ - The CSV import dialog has been overhauled, allowing more flexible
+ selection of purpose for each column
+
+ - Text overlays are now easier to read on dark backgrounds
+
+ - Hidden layers are now ignored when exporting an image (Dan Stowell)
+
+ - A crash when starting a new session or exiting the application
+   after loading a session with saved alignment data has been fixed
+
+ - The duplication of right-button menu functions when multiple files
+ were loaded has been fixed
+
+ - The layer-add menu functions now have shortcuts (Dan Stowell)
+
+ - The codebase has been reorganised into libraries and a configure
+ step added.  It should be easier to build and maintain on OS/X and
+ Linux than previously, although it won't make much difference on
+ Windows.
+
+ - A Czech translation is now included (thanks to Pavel Fric).

@@ -1,0 +1,18 @@
+=== 25th October 2019 &mdash; Tony v2.1 released
+
+== Changes in Tony 2.1 since the previous release 2.0:
+
+ - Fix problems reopening session files
+
+ - Add support for reading the Opus audio codec on all platforms
+
+ - Add support for WMA and AAC formats on 64-bit Windows. (AAC was
+   already supported on macOS.) Note that AAC support on Windows does
+   not support "gapless" import, i.e. removing the encoder gaps at
+   start and end of the stream
+
+ - Fix sluggishness in starting and stopping playback when using
+   PulseAudio v13.0+
+
+ - Update platform builds with newer libraries and updated platform
+   support

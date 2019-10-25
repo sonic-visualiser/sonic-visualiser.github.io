@@ -1,0 +1,25 @@
+=== 5th March 2014 &mdash; Tony v0.2 released
+
+== Changes in Tony 0.2 since the previous release 0.1:
+
+ - Waveform is now displayed in a shadow layer at bottom of main pane
+
+ - A selection strip has been added at the bottom of the window, so
+   selections can be made without changing tool mode
+
+ - Double-click in selection strip now selects a region associated
+   with a single note
+
+ - Pitches can be moved up and down by octaves, and to different pitch
+   candidates, within the selected area
+
+ - Cancelling a selection by hitting Esc restores the pre-selection
+   pitch track
+
+ - A frequency range can be selected with shift-click in the main
+   window to prompt the pitch tracker to run only within that range
+
+ - Arbitrary-frequency playback and pitch track resynthesis now supported
+
+ - Layers can now be hidden, and playback toggled, individually, and
+   there are now gain and pain controls for each playable layer type

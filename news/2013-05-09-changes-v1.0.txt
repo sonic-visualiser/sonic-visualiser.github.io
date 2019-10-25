@@ -1,0 +1,11 @@
+=== 9th May 2013 &mdash; Sonic Annotator v1.0 released
+
+== Changes in Sonic Annotator 1.0 since the previous release 0.7:
+
+Bug fixes:
+
+ - Fix incorrect samplerate in reading m4a files on OS/X
+
+ - Fix incorrect handling of FixedSampleRate outputs (Vamp SDK fix)
+
+ - Add tests that use the Vamp test plugin

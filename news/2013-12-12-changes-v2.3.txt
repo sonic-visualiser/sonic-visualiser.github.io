@@ -1,0 +1,26 @@
+=== 12th December 2013 &mdash; Sonic Visualiser v2.3 released
+
+== Changes in Sonic Visualiser 2.3 since the previous release 2.2:
+
+ - Add a startup welcome dialog that also explains what SV makes
+   network connections for and allows user to forbid them
+
+ - Add "Export Audio Data" feature
+
+ - Show piano keyboard scale in note and time-value layers as well
+   as spectrogram, where vertical scale is log Hz; also show
+   numerical scale in note and region layers when not auto-aligned
+
+ - Speed up CSV file import and avoid showing crazily wide window
+   for CSV file format dialog when file has lots of columns
+
+ - Fix incorrectly saved window geometry when exiting from maximised
+   state
+
+ - Reduce number of timer wakeups when idle
+
+ - Add American English translation and make choice of translation
+   into a preference (defaulting to system locale)
+
+ - Permit installation to non-default location with Windows installer
+   build

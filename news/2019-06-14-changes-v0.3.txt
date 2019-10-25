@@ -1,0 +1,7 @@
+=== 14th June 2019 &mdash; Sonic Lineup v0.3 released
+
+== Changes in Sonic Lineup v0.3:
+
+ - First public release
+
+ - First build under this name

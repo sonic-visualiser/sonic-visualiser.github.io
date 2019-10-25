@@ -1,0 +1,5 @@
+=== 10th May 2007 &mdash; Sonic Visualiser v1.0 released
+
+== Changes in Sonic Visualiser 1.0:
+
+ - First official release of Sonic Visualiser
