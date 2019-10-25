@@ -1,0 +1,5 @@
+=== 1st October 2014 &mdash; Sonic Visualiser v2.4.1 released
+
+== Changes in Sonic Visualiser 2.4.1 since the previous release 2.4:
+
+ - Fix a crash when rendering certain colour 3d plot layers

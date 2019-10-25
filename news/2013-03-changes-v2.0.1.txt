@@ -1,0 +1,5 @@
+=== March 2013 &mdash; Sonic Visualiser v2.0.1 released
+
+== Changes in Sonic Visualiser 2.0.1 since the previous release 2.0:
+
+ - Fix incorrect samplerate in reading m4a files on OS/X

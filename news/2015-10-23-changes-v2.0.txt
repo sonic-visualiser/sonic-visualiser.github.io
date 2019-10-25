@@ -1,0 +1,11 @@
+=== 23rd October 2015 &mdash; Tony v2.0 released
+
+== Changes in Tony 2.0 since the previous release 1.0:
+
+ - Tony now has a Record button, allowing you to record audio from the
+   microphone and analyse it
+
+ - Graphical rendering and icons now properly support hi-dpi/Retina
+   displays
+
+ - The playback speed dial uses a more sensible scale

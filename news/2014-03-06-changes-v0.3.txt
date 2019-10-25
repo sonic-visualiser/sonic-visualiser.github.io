@@ -1,0 +1,10 @@
+=== 6th March 2014 &mdash; Tony v0.3 released
+
+== Changes in Tony 0.3 since the previous release 0.2:
+
+ - Key shortcuts for editing have been revised to be more consistent
+   on OS/X and across different Qt versions
+
+ - Reduce visual clutter in selection areas
+
+ - Fixes to OS/X deployment

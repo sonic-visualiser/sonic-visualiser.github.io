@@ -1,0 +1,18 @@
+=== 12th March 2014 &mdash; Tony v0.4 released
+
+== Changes in Tony 0.4 since the previous release 0.3:
+
+ - The main pitch tracker (pYIN) now uses a non-FFT Yin method in
+   order to produce unbiased timestamps
+
+ - Pitch estimation within a constrained frequency range now uses a
+   harmonic spectrum plugin (CHP) that tracks peaks within the range
+   in a way more in line with user expectations than pYIN
+
+ - The layer show/hide controls have been merged into the layer type
+   icons, saving toolbar space
+
+ - Adjustment of the displayed frequency range has been crudely added
+
+ - Fix crash on loading a second file and inability to export pitch
+   track after using selection strip

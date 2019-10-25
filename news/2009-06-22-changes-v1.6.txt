@@ -1,0 +1,14 @@
+=== 22nd June 2009 &mdash; Sonic Visualiser v1.6 released
+
+== Changes in Sonic Visualiser 1.6 since the previous release 1.5:
+
+ - The Colour 3D Plot layer now supports logarithmic vertical
+ scale and linear interpolation options.
+
+ - A new colour scheme (High Gain) has been added for spectrogram
+ and Colour 3D Plot, which improves readability for some data.
+
+ - Further performance improvements have been made to Colour 3D
+ Plot.
+
+ - Various other bug fixes.

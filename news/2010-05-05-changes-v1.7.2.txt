@@ -1,0 +1,13 @@
+=== 5th May 2010 &mdash; Sonic Visualiser v1.7.2 released
+
+== Changes in Sonic Visualiser 1.7.2 since the previous release 1.7.1:
+
+ - The time-value layer now has an origin line and an option to
+ show derivatives (change from one point to the next) rather than
+ raw values
+
+ - A static initialiser race has been fixed, possibly fixing an
+ occasional crash on startup in Windows
+
+ - A crash when pressing Play straight after New Session has been
+ fixed

@@ -1,0 +1,9 @@
+=== 25th May 2017 &mdash; Sonic Visualiser v3.0.3 released
+
+== Changes in Sonic Visualiser 3.0.3 since the previous release 3.0.2:
+
+ - Improve decisions about where and how to label vertical scales
+
+ - Update build support material and documentation to reflect the
+   official release of Cap'n Proto 0.6 (which we can now use rather
+   than depending on git builds)

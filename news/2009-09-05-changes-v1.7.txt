@@ -1,0 +1,23 @@
+=== 5th September 2009 &mdash; Sonic Visualiser v1.7 released
+
+== Changes in Sonic Visualiser 1.7 since the previous release 1.6:
+
+ - A new "Insert Item At Selection" function on the Edit menu
+ can be used to create Note and Region layer items whose time
+ extents correspond to the current selection(s)
+
+ - Interactively editing points in the Note and Region layers
+ now works much more smoothly
+
+ - SV can now import MIDI files that use SMPTE timecode for event
+ timing (importing MIDI files using with the more common
+ timebase-based timing was already supported)
+
+ - Time values throughout the display may optionally be shown in
+ seconds and frames at various frame rates
+
+ - A crash on exit in Windows has been fixed
+
+ - A very unobtrusive user survey is now included
+
+ - Various other bug fixes.
