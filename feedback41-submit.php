@@ -9,7 +9,7 @@ $followup = $_POST['followup'];
 
 if ($name != "" || $email != "" || $about != "") {
    
-    $to = 'c4dm-tech@lists.eecs.qmul.ac.uk';
+    $to = 'c.cannam@qmul.ac.uk';
     $subject = "Sonic Visualiser feedback";
     $message = "$name [$email] [followup: $followup] wrote: $about";
     $headers = "From: noreply@sonicvisualiser.org";

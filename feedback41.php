@@ -22,7 +22,6 @@
 
       <h2 id="firstpara">Sonic Visualiser &mdash; Tell Us About Your Work</h2>
 
-      <div style="float: left; width: 73%">
       <p>Are you using Sonic Visualiser in academic research or for
       commercial purposes? Or do you hope or intend to do so?</p>
 
@@ -38,21 +37,13 @@
       <p>Anything you tell us will be used only to guide research and
       development at the Centre for Digital Music, Queen Mary
       University of London.</p>
-      </div>
 
-      <div style="float: right; width: 25%"><a href="https://c4dm.eecs.qmul.ac.uk/"><img src="https://sonicvisualiser.org/images/qm-logo.png"
-      width="224" height="95" alt="Queen Mary logo"
-      border=0/></a><br><small><nobr>Brought to
-      you by the Centre for Digital Music,<br>Queen Mary,
-      University of London</small></div>
+      <p>All fields are optional.</p>
 
-      <div style="clear: both">
-      
+      <p>
       <form action="feedback41-submit.php" method="post">
       <input type="hidden" name="sv-version" value="<?php echo htmlentities($_GET['sv']); ?>">
       <input type="hidden" name="feedback-version" value="1"/>
-
-      <p>All fields are optional.</p>
 
       <table><tr><td valign=top>Your name:</td><td><input type="text" name="name" size="60"/></td></tr>
         <tr><td valign=top>Your email address:&nbsp;</td><td><input type="text" name="email" size="60"/></td></tr>
@@ -66,7 +57,7 @@
         </td></tr>
         </table>
       </form>
-      </div>
-
+      </p>
+      
   </body>
 </html>
