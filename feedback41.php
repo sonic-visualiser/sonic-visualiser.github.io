@@ -40,24 +40,22 @@
 
       <p>All fields are optional.</p>
 
-      <p>
       <form action="feedback41-submit.php" method="post">
       <input type="hidden" name="sv-version" value="<?php echo htmlentities($_GET['sv']); ?>">
       <input type="hidden" name="feedback-version" value="1"/>
 
-      <table><tr><td valign=top>Your name:</td><td><input type="text" name="name" size="60"/></td></tr>
+      <table style="margin-left: auto; margin-right: auto"><tr><td valign=top>Your name:</td><td><input type="text" name="name" size="60"/></td></tr>
         <tr><td valign=top>Your email address:&nbsp;</td><td><input type="text" name="email" size="60"/></td></tr>
         <tr><td valign=top>Tell us about your work,<br>and what role Sonic
             Visualiser&nbsp;<br>plays or could play in it:&nbsp;</td>
           <td>
-	    <textarea id="about" name="about" rows="8" cols="70"></textarea>
+	    <textarea id="about" name="about" rows="10" cols="70"></textarea>
         </td></tr>
-        <tr><td>Check this box if you would be happy<br>for us to contact you to discuss:</td><td><input type="checkbox" name="followup"/> Yes, please do</td></tr>
+        <tr><td>Check this box if you would<br>be happy for us to contact you<br>to talk further:</td><td><input type="checkbox" name="followup"/> Yes, please do</td></tr>
         <tr><td></td><td><button type="submit">Send</button>
         </td></tr>
         </table>
       </form>
-      </p>
       
   </body>
 </html>
