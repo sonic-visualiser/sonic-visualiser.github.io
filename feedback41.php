@@ -22,21 +22,21 @@
 
       <h2 id="firstpara">Sonic Visualiser &mdash; Tell Us About Your Work</h2>
 
-      <p>Are you using Sonic Visualiser in academic research or for
+      <p>Are you using Sonic Visualiser in academic research, or for
       commercial purposes? Or do you hope or intend to do so?</p>
 
       <p>If so, would you be interested in telling us something about
       your work? We are gathering case studies to gauge the impact of
       our work and to guide our future actions.</p>
 
-      <p>We are especially interested in successful examples of Sonic
-      Visualiser in research or industry, but we would also like to
-      learn about situations where Sonic Visualiser or related
-      applications could be made more helpful.</p>
+      <p>We are especially interested in successful examples of using
+      Sonic Visualiser in research or industry, but we would also like
+      to learn about situations where Sonic Visualiser or related
+      applications could be made more helpful to you.</p>
       
-      <p>Anything you tell us will be used only to guide research and
-      development at the Centre for Digital Music, Queen Mary
-      University of London.</p>
+      <p>Anything you tell us will be used only to guide our work at
+      the Centre for Digital Music, Queen Mary University of
+      London.</p>
 
       <p>All fields are optional.</p>
 

@@ -11,7 +11,7 @@ if ($name != "" || $email != "" || $about != "") {
    
     $to = 'c.cannam@qmul.ac.uk';
     $subject = "Sonic Visualiser feedback";
-    $message = "$name [$email] [followup: $followup] wrote: $about";
+    $message = "$name [$email] [followup: $followup] wrote:\n$about";
     $headers = "From: noreply@sonicvisualiser.org";
 
     mail($to, $subject, $message, $headers);
