@@ -23,19 +23,20 @@
       <h2 id="firstpara">Sonic Visualiser &mdash; Tell Us About Your Work</h2>
 
       <p>Are you using Sonic Visualiser in academic research, or for
-      commercial purposes? Or do you hope or intend to do so?</p>
+      commercial purposes?<br>Or do you hope or intend to do so?</p>
 
       <p>If so, would you be interested in telling us something about
-      your work? We are gathering case studies to gauge the impact of
-      our work and to guide our future actions.</p>
+      your work? We are gathering case studies to gauge our impact and
+      inform our future actions.</p>
 
-      <p>We are especially interested in successful examples of using
+      <p>We are of course interested in successful examples of using
       Sonic Visualiser in research or industry. But we would also like
-      to learn about cases in which you think Sonic Visualiser or
-      something like it could be helpful to you in the future.</p>
+      to learn about cases where it could be improved, or in which you
+      think Sonic Visualiser or something like it could be helpful to
+      you in the future.</p>
       
-      <p>Anything you tell us will be used only to guide research and
-      development work at the Centre for Digital Music, Queen Mary
+      <p>Anything you tell us will be used solely to guide research
+      and development work at the Centre for Digital Music, Queen Mary
       University of London.</p>
 
       <p>All fields are optional.</p>
@@ -56,6 +57,12 @@
         </td></tr>
         </table>
       </form>
+
+      <p style="text-align: center"><a href="https://c4dm.eecs.qmul.ac.uk/"><img src="https://sonicvisualiser.org/images/qm-logo.png"
+      width="224" height="95" alt="Queen Mary logo"
+      border=0/></a><br><small><nobr>Brought to
+      you by the Centre for Digital Music,<br>Queen Mary,
+      University of London</small></p>
       
   </body>
 </html>
