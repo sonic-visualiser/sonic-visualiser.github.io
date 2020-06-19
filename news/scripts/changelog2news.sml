@@ -52,6 +52,9 @@ fun formalDate date =
         case String.tokens (fn c => c = #" ") date of
             [day, month, year] =>
             let val monthNo = monthShortToNumeric (shortMonth month)
+                val day = if String.size day = 1
+                          then "0" ^ day
+                          else day
             in
                 SOME (year ^ "-" ^ monthNo ^ "-" ^ day)
             end

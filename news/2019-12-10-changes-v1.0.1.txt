@@ -1,0 +1,14 @@
+=== 10th December 2019 &mdash; Sonic Lineup v1.0.1 released
+
+== Changes in Sonic Lineup v1.0.1 since the previous release 1.0:
+
+ - Fix salient features disappearing as the view scrolls
+
+ - Fix failure to open playback device when using macOS Catalina with
+   certain audio devices
+
+ - Remove dependency on JACK in Linux deb package: the application can
+   use it if available, but it isn't required
+
+ - Fix failure to make installed executables executable when
+   installing from the source package

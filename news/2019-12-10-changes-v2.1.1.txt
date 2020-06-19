@@ -1,0 +1,19 @@
+=== 10th December 2019 &mdash; Tony v2.1.1 released
+
+== Changes in Tony 2.1.1 since the previous release 2.1:
+
+ - Fix incorrect note numbering in display
+
+ - Fix incorrect state of "Penalise Soft Pitches" option in Analysis
+   menu. Previously this was displayed as if enabled, but the option
+   was not actually active when performing the analysis, until the
+   option was toggled or "Reset Options to Default" was used
+
+ - Fix failure to open playback device when using macOS Catalina with
+   certain audio devices
+
+ - Remove dependency on JACK in Linux deb package: the application can
+   use it if available, but it isn't required
+
+ - Fix failure to make installed executables executable when
+   installing from the source package

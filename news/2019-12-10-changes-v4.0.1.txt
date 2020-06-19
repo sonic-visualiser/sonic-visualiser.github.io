@@ -1,0 +1,13 @@
+=== 10th December 2019 &mdash; Sonic Visualiser v4.0.1 released
+
+== Changes in Sonic Visualiser v4.0.1 since the previous release 4.0:
+
+ - Fix nonsense vertical scale in NoteLayer when displaying a model
+   with non-Hz scale (e.g. from an analysis plugin that outputs MIDI
+   note values)
+
+ - Fix failure to open playback device when using macOS Catalina with
+   certain audio devices
+
+ - Fix failure to make installed executables executable when
+   compiling and installing the source package

@@ -30,6 +30,47 @@
     and <a href="https://vamp-plugins.org/sonic-annotator/">Sonic
     Annotator</a>.
 
+<h3>18th June 2020 &mdash; Sonic Visualiser v4.1 released</h3>
+<h4>Changes in Sonic Visualiser v4.1 since the previous release 4.0.1:</h4>
+<ul><li>Support "dark mode" on Windows and Linux as well as macOS</li>
+<li>Add right-click (or Ctrl-click, on the Mac) context menus to the
+   layer property tabs, pane zoom controls, and all dial controls,
+   providing some basic edit and reset functions</li>
+<li>Provide format options when exporting layers to CSV, allowing
+   control over column separator, header row, and timestamp format</li>
+<li>Permit and handle optional header row when importing from CSV</li>
+<li>Add export of spectrogram data to CSV formats</li>
+<li>Support doubling escapes for quotes in quoted CSV fields on import</li>
+<li>Fix truncated image export when exporting from spectrogram view
+   that hasn't finished loading when the export is requested</li>
+<li>Fix failure to show parameter updates when changing the current
+   program in a Vamp plugin that supports programs (e.g. Melodia)</li>
+<li>Fix inability of Windows builds to open https:// URLs</li>
+<li>Add references to Vamp Plugin Pack in "Find a Transform" results
+   for plugins that are not yet installed but are available in pack</li>
+<li>Improve and tidy various aspects of OSC support, and update
+   documentation for it</li>
+<li>Improve performance of peak-frequency spectrogram</li>
+<li>Fix missing undo/redo of layer renames</li>
+<li>Fix failure to audition effects plugins live, while adjusting their
+   parameters in preparation for applying them - this worked in some
+   cases, but not the most common ones; it should now work everywhere</li></ul>
+<h3>9th June 2020 &mdash; Sonic Annotator v1.6 released</h3>
+<h4>Changes in Sonic Annotator 1.6 since the previous release 1.5:</h4>
+<p>Front-end changes:</p>
+<ul><li>Add support for reading the Opus audio codec on all platforms</li>
+<li>Add support for reading WMA and AAC formats on 64-bit Windows. (AAC
+   was already supported on macOS.)  Note that AAC support on Windows
+   is not "gapless", i.e. the decoder provides no way to identify and
+   remove the encoder gap at the start of the stream, so timings will
+   vary between Windows and Mac. For this reason, like mp3, AAC should
+   not be used as a file format of record</li>
+<li>Add warning to the help text about avoiding mp3 and AAC as file
+   format of record</li>
+</ul><p>Build changes:</p>
+<ul><li>General updates to dependency libraries and build system following
+   changes to the rest of the Sonic Visualiser family code since v1.5
+   appeared</li></ul>
 <h3>10th December 2019 &mdash; Sonic Visualiser v4.0.1 released</h3>
 <h4>Changes in Sonic Visualiser v4.0.1 since the previous release 4.0:</h4>
 <ul><li>Fix nonsense vertical scale in NoteLayer when displaying a model
@@ -532,7 +573,7 @@
 <ul><li>Fix incorrect samplerate in reading m4a files on OS/X</li>
 <li>Fix incorrect handling of FixedSampleRate outputs (Vamp SDK fix)</li>
 <li>Add tests that use the Vamp test plugin</li></ul>
-<h3>March 2013 &mdash; Sonic Visualiser v2.0.1 released</h3>
+<h3>7th March 2013 &mdash; Sonic Visualiser v2.0.1 released</h3>
 <h4>Changes in Sonic Visualiser 2.0.1 since the previous release 2.0:</h4>
 <ul><li>Fix incorrect samplerate in reading m4a files on OS/X</li></ul>
 <h3>17th July 2012 &mdash; Sonic Annotator v0.7 released</h3>
