@@ -1,0 +1,561 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <link rel="stylesheet" media="screen" type="text/css" href="screen.css"/>
+    <link rel="icon" type="image/png" href="images/waveform.png"/>
+    <link rel="shortcut" type="image/png" href="images/waveform.png"/>
+      <title>Sonic Lineup: A Brief Reference</title>
+    <meta name="robots" content="index"/>
+  </head>
+  <body>
+    <div id="reference-toc">
+      <div class="toc2">1 &nbsp;<a href="#purpose">What Sonic Lineup is For</a></div>
+      <div class="toc2">2 &nbsp;<a href="#layout">Window Layout</a></div>
+      <div class="toc2">3 &nbsp;<a href="#openingfiles">Opening Files</a></div>
+      <div class="toc2">4 &nbsp;<a href="#alignment">Alignment</a></div>
+      <div class="toc3">4.1 &nbsp;<a href="#controlling">Controlling Alignment</a></div>
+      <div class="toc2">5 &nbsp;<a href="#playback">Playback and Recording</a></div>
+      <div class="toc3">5.1 &nbsp;<a href="#playbackplayback">Playback</a></div>
+      <div class="toc3">5.2 &nbsp;<a href="#recording">Recording</a></div>
+      <div class="toc2">6 &nbsp;<a href="#navigation">Navigation</a></div>
+      <div class="toc2">7 &nbsp;<a href="#salientfeatures">The Salient Feature Layer</a></div>
+      <div class="toc2">8 &nbsp;<a href="#viewmodes">View Modes</a></div>
+      <div class="toc3">8.1 &nbsp;<a href="#outlinewaveform">Outline Waveform</a></div>
+      <div class="toc3">8.2 &nbsp;<a href="#waveform">Waveform</a></div>
+      <div class="toc3">8.3 &nbsp;<a href="#melodicspectrogram">Melodic Spectrogram</a></div>
+      <div class="toc3">8.4 &nbsp;<a href="#spectrogram">Spectrogram</a></div>
+      <div class="toc3">8.5 &nbsp;<a href="#sungpitch">Sung Pitch</a></div>
+      <div class="toc3">8.6 &nbsp;<a href="#key">Key</a></div>
+      <div class="toc3">8.7 &nbsp;<a href="#stereoazimuth">Stereo Azimuth</a></div>
+    </div>
+
+    <div id="reference-content">
+      <a href="http://www.sonicvisualiser.org/sonic-lineup">
+        <h1 id="header"><span>Sonic Lineup</span></h1></a>
+
+<p>Sonic Lineup is an application for comparative visualisation and
+alignment of related audio recordings.  This is a brief reference
+manual explaining the concepts used in Sonic Lineup and how to use it.
+This manual describes Sonic Lineup version 1.1.</p>
+
+<p>This document is Copyright 2020 Queen Mary, University of London.
+You may modify and redistribute it under the terms of the Creative
+Commons Attribution-ShareAlike 2.5 License.  See
+<a
+href="http://creativecommons.org/licenses/by-sa/2.5/">http://creativecommons.org/licenses/by-sa/2.5/</a>
+for details.</p>
+
+<a name="purpose"></a><h2>1 &nbsp;What Sonic Lineup is For</h2>
+
+      <p>Sonic Lineup is intended for visualisation and inspection of
+        multiple audio files which are related by way of representing
+        the same "source material".
+      </p>
+      <p>This could mean they are recordings of different performances
+        of the same work; different recordings of the same
+        performance; different "takes" of parts in a studio session;
+        or perhaps recordings of variant works or cover songs, so long
+        as they are broadly structurally similar.
+      </p>
+      <p>With multiple such audio files loaded, Sonic Lineup will
+        attempt to <a href="#alignment">align them in time</a>, based
+        on an analysis of their audio content, so that you can
+        navigate them in sync with one another in terms of the common
+        musical content they represent. A number of
+        different <a href="#viewmodes">visualisation modes</a> are
+        provided, and switching modes takes effect for all loaded
+        files at once.
+      </p>
+      <p>Sonic Lineup also supports <a href="playback">recording</a>
+      directly from the microphone or other audio input.
+      </p>
+      <p>Sonic Lineup is <b>not</b> designed for editing, annotation,
+        precision measurement, or any custom analysis of audio. No
+        editing facilities are included, no adjustable parameters for
+        the visualisation modes are provided, and it is not possible
+        to save or export any kind of annotation or session
+        information. In contrast
+        to <a href="https://sonicvisualiser.org/">Sonic
+        Visualiser</a>, Sonic Lineup is intended for "quick"
+        comparative analysis, rather than for intensive study.</p>
+      
+      <a name="layout"></a><h2>2 &nbsp;Window Layout</h2>
+      
+      <p><div align="center"><img class="banner" src="images/whole.png"/><br><i>Sonic Lineup with four audio files loaded</i></div></p>
+
+      <p>Most of the Sonic Lineup window is taken up with views of
+        each of the audio files that you
+        have <a href="#openingfiles">opened</a>, each in a different
+        colour.</p>
+
+      <p>In the very centre of each view is the
+        aligned <a href="#playback">playback position</a> line, a
+        solid white line. The translucent white lines snaking down
+        across the views are the <a href="#salientfeatures">salient
+        feature layer</a> mappings.</p>
+
+      <p>The first of the audio file views is labelled as the
+        "Reference", and has special significance as
+        the <a href="#alignment">alignment reference</a>, source of
+        the salient feature layer, and source of the reference sample
+        rate.</p>
+
+      <p>Below the audio views, at the bottom of the window, are
+        the <a href="#viewmodes">view mode</a> selection buttons,
+        which switch between the available views for all files at
+        once.</p>
+
+      <p>At bottom right are the <a href="#playback">audio playback speed and
+          volume/pan</a> controls.</p>
+      
+      <a name="openingfiles"></a><h2>3 &nbsp;Opening Files</h2>
+
+      <p>Use the <img class="icon" src="images/icons/fileopen.svg"/>
+      Add Files toolbar button or menu option to open one or more
+      audio files. If you have several files in the same folder that
+      you want to open, you can select them all at once in the file
+        dialog.</p>
+
+      <p>To clear the session and start again with new files, use the
+        <img class="icon" src="images/icons/filenew.svg"/> Clear
+        Session toolbar button or menu option. You can also close any
+        of the individual files except for the Reference, and remove
+        it from the view, by clicking the <img class="icon"
+        src="images/icons/cross.svg"/> close button at the top left of
+        its view. You can't close the Reference file except by
+        clearing the session.</p>
+
+      <p>The set of files you have opened is remembered from one run
+        of Sonic Lineup to the next: when you start the application,
+        it starts up with the same files open as last time. You can
+        also use the File &rarr; Recent Sessions menu to choose from
+        the most recently-used sets of files.
+      </p>
+
+      <a name="alignment"></a><h2>4 &nbsp;Alignment</h2>
+
+      <p>When you open more than one audio file, Sonic Lineup will try
+      to calculate an alignment in time between the Reference file
+      (the first one opened) and each of the other files, on the
+      assumption that they all represent different versions of the
+        same underlying musical material.</p>
+
+      <p>If this alignment is calculated correctly, then it becomes
+      possible to scroll through each file while tracking the same
+      position in "musical terms" in all of the other files, and to
+      play through the music switching at any moment between versions
+        at the same "musical" position.</p>
+
+      <p>(Even if the files are totally unrelated, Sonic Lineup will
+      always come up with <b>some</b> alignment. It always does its
+      best. The alignment just won't make any sense unless the
+      recordings have something in common.)
+
+      <p>The alignment may take some time to calculate. A progress bar
+      at the left side of each audio file view shows how far through
+      each file the calculation is, and the text "Aligned" is shown at
+      the left of the file's view when it is complete. (Similar
+      progress bars are used when calculating data for some of the
+      different <a href="#viewmodes">view modes</a>, when you switch
+      mode.)
+
+      <p>The default alignment process uses
+      the <a href="http://www.eecs.qmul.ac.uk/~simond/match/">MATCH
+      algorithm</a>. This typically works well for variant recordings
+      of similar recording quality without significant structural
+      differences.</p>
+
+      <p>Real recordings often differ in pitch as well as time &ndash;
+      because of small differences in tuned pitch, or even because
+      they are performed in different keys &ndash; and so by default,
+      before the time alignment is calculated, Sonic Lineup will check
+      whether the files to be aligned have similar pitch profiles; if
+      not, it may retune them when calculating the time
+      alignment. Files whose alignments were calculated with a tuning
+      difference will have "Aligned at N cents" shown on their views,
+      where N is the number of cents the tuning of the aligned file
+      appeared to differ by, relative to the Reference file.</p>
+
+      <a name="controlling"></a><h3>4.1 &nbsp;Controlling Alignment</h3>
+
+      <p>The Alignment menu offers a choice of alignment methods. Note
+      that in all cases the files are aligned individually against the
+      reference file: each file's alignment is independent of the
+      content of any other files except for the reference.</p>
+
+      <ul><li><b>No Alignment</b> &ndash; If this is selected, no time
+          alignment will be calculated. The files will still scroll
+          together, but on a pure "clock time" timeline.</li>
+
+        <li><b>Linear</b> &ndash; The files will be aligned according
+        to a simple linear calculation based on their relative
+        durations without regard for their content. For example, if
+        one file has twice the duration of the other, it will be
+        assumed that it contains the same material but at half the
+          tempo, and the files will scroll together on that basis.</li>
+
+        <li><b>Linear Trimmed</b> &ndash; As Linear, except that any
+        silent sections at the beginning or end of each file will be
+          ignored when calculating their relative durations.</li>
+
+        <li><b>MATCH Aligner</b> &ndash; Use
+      the <a href="http://www.eecs.qmul.ac.uk/~simond/match/">MATCH
+      algorithm</a>, as implemented in
+      the <a href="https://code.soundsoftware.ac.uk/projects/match-vamp/">MATCH
+      Vamp Plugin</a>. This applies a constrained form of dynamic
+      time-warping to calculate a best cost path through a similarity
+      matrix of spectral audio features. It typically works best for
+      recordings that vary in timing but not significantly in
+      structure or arrangement.</li>
+
+        <li><b>MATCH with Tuning Compensation</b> &ndash; This is the
+        default setting. This uses the MATCH algorithm, but it first
+        compares the pair of files being aligned to establish whether
+        they appear to have an overall difference in tuning or pitch;
+        if so, it instructs the MATCH algorithm to take this into
+        account. This allows the method to align recordings
+        successfully even if they are in different keys or registers
+        or tuned to different reference frequencies. However,
+        sometimes the tuning step gets it wrong, and in that case it
+        may be possible to get a better alignment using the regular
+        MATCH aligner.</li>
+
+        <li><b>Sung Note Contour</b> &ndash; Intended for recordings
+        of unaccompanied solo vocals whose differences in timbre or
+        register are significant enough to confuse the MATCH aligner,
+        this works by calculating a note-segmented pitch track of each
+        file and aligning purely according to the locations and
+        extents of intervals between notes. This method is quite
+        specific and is unlikely to be useful for any accompanied or
+        polyphonic material.</li>
+
+        <li><b>External Alignment Program</b> &ndash; This feature
+        allows the advanced user or researcher to customise alignment
+        by providing their own command-line program which will be used
+        instead of any of the built-in methods. The program should
+        accept the paths of two audio files as its only command-line
+        arguments. It should print to its standard output channel a
+        series of lines of comma-separated values, with one line per
+        alignment point, and each line containing two values
+        representing time in seconds in the first and second audio
+        files respectively. The interpretation is that each row in the
+        first column of the output contains a time in the reference
+        file which is mapped to the time in the other audio file given
+        in the corresponding row in the second column of the
+        output. Nothing else should be printed to standard output, but
+        the program may print anything it likes to standard error and
+          it will be logged but otherwise ignored.</li>
+      </ul>
+
+      <p>In addition to the choice of alignment method, there is a
+        further option that affects how alignment is carried out:</p>
+
+      <ul>
+        <li><b>Align to Section of Reference</b> &ndash; This option
+        can be enabled whenever the alignment method is set to one of
+        the MATCH options or to Sung Note Contour. It tells Sonic
+        Lineup that the other files are not expected to contain
+        versions of the whole of the reference, but only parts of
+        it. If you switch this on, then Sonic Lineup will perform an
+        initial pass in which it tries to identify the section of the
+        reference which each of the other files should be aligned to,
+        and will then align it only against that section.<br> Note
+        also that "MATCH with Tuning Compensation" alignment method is
+        unlikely to produce good results in the case where files
+        represent only part of the reference, so you may also need to
+        use a different method such as plain MATCH.</li>
+      </ul>
+
+      <a name="playback"></a><h2>5 &nbsp;Playback and Recording</h2>
+
+      <a name="playbackplayback"></a><h3 class="first">5.1 &nbsp;Playback</h3>
+
+      <p>Playback is controlled using the transport controls in the
+        toolbar.</p>
+
+      <p>Use the &nbsp;<img class="icon"
+      src="images/icons/playpause.svg">&nbsp; Play / Pause button, or
+      press the Space key, to start and stop playback.</p>
+
+      <p>Use <img class="icon" src="images/icons/rewind-start.svg">
+      Rewind to Start and <img class="icon"
+      src="images/icons/ffwd-end.svg"> Fast Forward to End to jump to
+      either end of the current audio file.</p>
+
+      <p>Use <img class="icon" src="images/icons/rewind.svg"> Rewind
+      and <img class="icon" src="images/icons/ffwd.svg"> Fast Forward
+      to jump to the nearest item in the appropriate direction in
+      the <a href="#salientfeatures">salient feature layer</a> if it
+      is present, or by a short fixed distance otherwise.</p>
+
+      <p>You can also skip about during playback
+      by <a href="#navigate">dragging a pane</a>.</p>
+
+      <p>The current playback position is always that of the pointer
+        in the centre of the audio file view, and the current audio
+        file (the one that is playing) is marked with a vertical white
+        bar at the left end of its view. Click on a different file to
+        switch to that one during playback. If they are properly
+        aligned, then this should take you to the same moment in the
+        underlying musical timeline.</p>
+      
+      <p>At the bottom-right of the main window, you can see two
+controls for playback speed and volume level/pan. The dial control can
+be used to speed up or slow down playback: you can adjust playback
+speed from one-tenth to ten times the original speed without affecting
+its pitch, although the sound quality will suffer. The level/pan
+button shows both volume level and overall stereo balance and can be
+used to adjust both: click on the level/pan button to open a bigger
+control and then drag it up or down for level and left for pan.
+
+        <a name="recording"></a><h3>5.2 &nbsp;Recording</h3>
+
+      <p>Use the Record button <img class="icon"
+      src="images/icons/record.svg"> to start recording a new audio
+      file from the microphone or other connected input. Press Record
+      again, or the Space key, to stop recording. The recording will
+      be added as a new audio file and aligned in the normal way.</p>
+
+      <p>Recorded audio files are saved in a folder beneath your home
+        directory, and remain there after Sonic Lineup exits: clearing
+        the session does not delete them. Go to File &rarr; Browse
+        Recorded Audio to open the recorded audio folder in your
+        system's file explorer window.</p>
+
+<a name="microphonepermission"></a><h4>5.2.1 &nbsp;Permission to use the microphone (macOS only)</h4>
+
+<p>On macOS 10.14 Mojave or newer, the first time you ask to record
+from the built-in microphone, a system dialog box will appear asking
+for permission to use the microphone. You must agree to this, or else
+the recording will be silent. The operating system remembers your
+reply, and will not ask you again, even on subsequent runs of Sonic
+Lineup. If you need to change this later, refer to the Privacy
+controls in your System Preferences.
+  
+      <a name="navigation"></a><h2>6 &nbsp;Navigation</h2>
+
+      <p>To navigate in time, click on a file view and drag it left or
+      right, or use the left and right cursor keys. This will move the
+      timelines of all the file views in that direction, maintaining
+      their alignment against the central position pointer.</p>
+
+      <p>To zoom in and out, use the mouse wheel, a two-finger
+      vertical scroll-drag on the trackpad, or the up and down cursor
+      keys. You can also press the F key (or equivalently use View
+      &rarr; Zoom to Fit) to zoom out all the way so that the whole
+      extent of the audio fits in the window.</p>
+
+      <a name="salientfeatures"></a><h2>7 &nbsp;The Salient Feature Layer</h2>
+
+      <p>When the first audio file is loaded for use as the Reference
+        file, a set of "salient features" is calculated from it,
+        labelling points of interest in the recording.</p>
+
+      <p><div align="center"><img class="banner" src="images/salient.png"/><br><i>Salient Feature Layer on an Outline Waveform.<br>The solid line in the middle is the playback position indicator</i></div></p>
+
+        <p>These features are chord changes calculated
+      using <a href="https://code.soundsoftware.ac.uk/projects/nnls-chroma/">Chordino</a>.
+      Chordino is a chord estimator for pop and rock music, so the
+      resulting features are unlikely to be directly meaningful in
+      other kinds of recording, but the feature times will often
+      correspond to harmonic changes of some sort and may have value
+      as indicators of salient moments in the music.</p>
+
+      <p>The salient features are marked with translucent vertical
+      lines placed over the Reference file view, and next to each line
+      the label of the chord estimate is shown. The timings of these
+      features are then mapped on to the other files according to the
+      alignment between them, so that you can see at a glance where
+      these moments in the Reference have been aligned to in the other
+        files.</p>
+
+      <p>Note that the vertical lines displayed on non-Reference views
+      show where the salient features found in the Reference have been
+      mapped to by the alignment process &ndash; they do not show
+      features extracted from the non-Reference audio. Salient
+      features are only calculated from the Reference file.</p>
+
+      <a name="viewmodes"></a><h2>8 &nbsp;View Modes</h2>
+
+      <a name="outlinewaveform"></a><h3 class="first">8.1 &nbsp;Outline Waveform</h3>
+
+      <p>The Outline Waveform view is an audio waveform-style display
+        designed to give an impression of the overall audio envelope
+        even when very little space is available.</p>
+
+      <div align="center"><img class="banner" src="images/outline-waveform.png"/><br><i>An Outline Waveform view</i></div>
+
+      <p>Only a single wave shape is shown for each audio file, no
+      matter how many channels it has. Two-channel audio is shown in a
+      merged "butterfly" format, with the first channel level
+      determining the distance the shape rises above the X axis and
+      the second channel the distance it descends below it. If there
+      are more than two channels in the file, only the first two are
+      used.</p>
+
+      <p>The vertical scale for sample values uses a non-linear scale
+      based on IEC-268 meter deflection levels. This is intended to
+      make quiet sections easier to see than in a typical linear-scale
+      waveform, while making peaks still fairly apparent.</p>
+
+      <a name="waveform"></a><h3>8.2 &nbsp;Waveform</h3>
+
+      <p>The Waveform view is a classic audio waveform with one
+      "track" per channel and a simple linear vertical scale.</p>
+      
+      <div align="center"><img class="banner" src="images/waveform.png"/><br><i>A Waveform view</i></div>
+
+      <p>The image above shows the same audio (from a recording of
+      Bach cello suites) as was used in the Outline Waveform image in
+        the previous section.</p>
+
+      <a name="melodicspectrogram"></a><h3>8.3 &nbsp;Melodic Spectrogram</h3>
+
+      <p>The Melodic Spectrogram view is a time-frequency plot derived
+      from a succession of short-time Fourier transforms, truncated to
+      a limited frequency range (80 to 1500 Hz,
+      roughly <code>D#2</code> to <code>F#6</code> in ASA octave
+      terms).</p>
+
+      <p>It may be useful for observing melodic and harmonic
+      progressions in the music.</p>
+      
+      <div align="center"><img class="banner" src="images/melodic-spectrogram.png"/><br><i>A Melodic Spectrogram view</i></div>
+        
+      <p>The spectrogram uses an 8192-sample Hann window and FFT
+      size, with 2048-sample advance between frames. If the audio file
+      has multiple channels, they are mixed to provide the source of
+      the spectrogram.</p>
+
+      <p>The colour scale uses a mapping that is linear in magnitude
+        within each column, but which scales each column down so that
+        its maximum magnitude is set to the base-10 logarithm of its
+        original value. This flattens out the difference in level
+        between subsequent columns, making it easier to see pitch
+        content but obscuring some of the volume and timing
+        information.</p>
+
+      <a name="spectrogram"></a><h3>8.4 &nbsp;Spectrogram</h3>
+
+      <p>The Spectrogram view is a classic full-frequency-range
+      spectrogram, a time-frequency plot derived from a succession of
+      short-time Fourier transforms, covering the frequency range from
+      0 to half the sample rate of the Reference audio file.</p>
+      
+      <p>It may be useful for observing production and recording
+      conditions such as frequency bandwidth or noise levels, as well
+      as percussive content and the general spectral envelope.</p>
+      
+      <div align="center"><img class="banner" src="images/spectrogram.png"/><br><i>A Spectrogram view</i></div>
+
+      <p>The spectrogram uses a 1024-sample Hann window and FFT size,
+      with 512-sample advance between frames. If the audio file has
+      multiple channels, they are mixed to provide the source of the
+      spectrogram. The colour scale is based on a logarithmic (dB)
+      mapping.</p>
+      
+      <p>The image above shows the same audio (from a recording of
+      Bach cello suites) as appears in the Melodic Spectrogram image
+      in the previous section, and indeed in the leading images for
+      all of the other views in this documentation.</p>
+      
+      <a name="sungpitch"></a><h3>8.5 &nbsp;Sung Pitch</h3>
+
+      <p>The Sung Pitch view shows the result of analysing the audio
+      using
+      the <a href="https://code.soundsoftware.ac.uk/projects/pyin">pYIN</a>
+      pitch tracker. pYIN is purely a pitch tracker for monophonic
+      audio &ndash; it does not extract a melodic line from mixed or
+      ensemble pieces.</p>
+      
+      <div align="center"><img class="banner" src="images/sung-pitch.png"/><br><i>A Sung Pitch view</i></div>
+
+      <p>The name Sung Pitch reflects the fact that this pitch
+      extractor is most reliable for recordings of the solo singing
+      voice, though it will work reasonably well for many other solo
+      instruments, such as the cello recording shown here.</p>
+        
+      <p><img class="left-modest" src="images/sung-pitch-overlay.png">
+
+        Each of the views, other than the Reference view, also has the
+        Reference pitch track overlaid upon it &ndash; as shown in the
+        image to the left here.</p><p>That is, the pitch track
+        extracted from the Reference audio is warped in time according
+        to the alignment that has been calculated between the current
+        audio file and the Reference, and is shown in white next to
+        the current file's own pitch track in its colour. In this
+        example we can see that the Reference audio is about four
+        semitones lower than the current file, although detailed
+        measurement is always better done in a different application
+        such as <a href="https://sonicvisualiser.org">Sonic
+        Visualiser</a>.
+      </p>
+      
+      <a name="key"></a><h3 style="clear:both">8.6 &nbsp;Key</h3>
+
+      <p>The Key view shows a merged key-strength plot generated by
+      the <a href="https://vamp-plugins.org/plugin-doc/qm-vamp-plugins.html#qm-keydetector">QM
+      Key Detector</a> Vamp plugin.</p>
+      
+      <div align="center"><img class="banner" src="images/key.png"/><br><i>A Key view</i></div>
+
+      <p>This is calculated by taking a series of chromagram slices
+      through the audio and, for each, comparing the degree to which
+      the chromagram profile correlates to a prepared key profile for
+      each major and minor key. The resulting plot shows how closely
+      each key profile matches at each increment in time, with
+        orange/yellow representing a better match than blue/black.</p>
+
+      <p><img class="right-modest" src="images/key-scale.png"> The
+      vertical scale, shown to the right, follows the circle of fifths
+      with C major / A minor just above the middle, and with each pair
+      of relative major and minor keys merged into a single value. To
+      toggle visibility of this vertical scale, use the S key or View
+      &rarr; Show Vertical Scales.</p>
+
+      <p>This view has a number of limitations, including:
+
+        <ul><li>In the current version of Sonic Lineup, it assumes a
+        fixed tuning frequency of A=440Hz. <i>This will change in
+        future releases.</i> You can see how this affects the results
+        in the view of the cello recording shown above: the piece is
+        in C minor, but it is shown with a tonal centre at B minor (or
+        D major) because the period instrument in this recording has a
+        lower tuning than A=440.</li>
+          <li>The view carries no information about major/minor mode,
+            as the two are merged.</li>
+        </ul>
+      </p>
+      
+      <a name="stereoazimuth"></a><h3 style="clear:both">8.7 &nbsp;Stereo Azimuth</h3>
+
+      <p>The Stereo Azimuth view shows a stereo plan decomposition of
+      the audio. The vertical scale covers the stereo plan from
+      left-channel-only at the bottom to right-channel-only at the
+      top, and the intensity level indicates what proportion of signal
+      energy is found at that point on the plan at each moment. The
+      view assumes that the file has two channels containing left and
+      right channel signals.</p>
+        
+      <div align="center"><img class="banner" src="images/stereo-azimuth.png"/><br><i>A Stereo Azimuth view</i></div>
+
+      <p>The calculation works by taking a spectrogram of each channel
+      and, for each frequency bin, using the relative levels of the
+      two channels at that bin to determine where on the stereo image
+      the bin "lives". The resulting plot is effectively a histogram
+      of these locations, for each time increment in the
+      spectrogram.</p>
+      
+      <p>This view is a bit experimental and perhaps should not be
+      taken too literally, but it does show some of the results of
+      production or recording decisions. A mono recording will appear
+      as a simple straight line down the middle, while recordings with
+      limited numbers of sources placed by "pan pot" will show
+      separate strands for each.</p>
+      
+      
+      <!-- !!! todo: vertical scales -->
+      <p>
+      
+</body>
+</html>
