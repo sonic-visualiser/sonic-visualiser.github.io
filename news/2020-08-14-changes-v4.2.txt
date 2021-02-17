@@ -1,0 +1,10 @@
+=== 14th August 2020 &mdash; Sonic Visualiser v4.2 released
+
+== Changes in Sonic Visualiser v4.2 since the previous release 4.1:
+
+ - Speed up startup, especially on Windows and especially when a lot
+   of plugins are installed. Plugins are now scanned after the main
+   window has been displayed, and the Transform menus are populated
+   dynamically when the results are available.
+
+ - Fix incompatibility of 64-bit Windows build with Windows 7

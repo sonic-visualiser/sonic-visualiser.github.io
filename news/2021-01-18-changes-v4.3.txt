@@ -1,0 +1,11 @@
+=== 18th January 2021 &mdash; Sonic Visualiser v4.3 released
+
+== Changes in Sonic Visualiser v4.3 since the previous release 4.2:
+
+ - Fix failure to activate the Align button on startup, even when the
+   appropriate alignment plugin is installed
+
+ - Fix (obviously) incorrect colour display for closely zoomed-in
+   colour 3d plot views
+
+ - Switch the build system from autoconf/qmake/make to meson/ninja
