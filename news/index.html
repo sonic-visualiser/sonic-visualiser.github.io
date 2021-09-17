@@ -30,6 +30,31 @@
     and <a href="https://vamp-plugins.org/sonic-annotator/">Sonic
     Annotator</a>.
 
+<h3>17th September 2021 &mdash; Sonic Visualiser v4.4 released</h3>
+<h4>Changes in Sonic Visualiser v4.4 since the previous release 4.3:</h4>
+<ul><li>Update Mac build to add support for Apple M1 (arm64) architecture:
+   the official package is now a universal binary app, and the arm64
+   slice can use both (existing) x86_64 and (future) arm64 Vamp plugins</li>
+<li>Fix long-standing idiosycratic choice of dB scale, so as to conform
+   to conventional usage for root-power quantities. That is, dB values
+   for audio signals are now 20 x log10 rather than 10 x log10. Power
+   and power-like signals (where units are available) remain 10 x
+   log10</li>
+<li>Fix time lag between visual position of playback pointer and actual
+   audio played, particularly when playing files resampled from one
+   rate to another</li>
+<li>When recording audio into an empty session with an active session
+   template that includes one or more plugin transforms, re-run the
+   transforms when recording finishes, instead of only when the
+   recorded model is first created (so as to get proper results for
+   the full recording)</li>
+<li>Fix failure to re-run transforms when loading a session or template
+   before the initial plugin scan has completed</li>
+<li>Fix misalignment and potential crash when rendering 3d plots with
+   variant sample rates</li>
+<li>Change interpretation of modifiers (shift/alt) for the mouse
+   scroll-wheel, and the documentation for them, so as to be
+   consistent with one another and with other contexts</li></ul>
 <h3>18th January 2021 &mdash; Sonic Visualiser v4.3 released</h3>
 <h4>Changes in Sonic Visualiser v4.3 since the previous release 4.2:</h4>
 <ul><li>Fix failure to activate the Align button on startup, even when the
