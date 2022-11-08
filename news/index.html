@@ -30,6 +30,43 @@
     and <a href="https://vamp-plugins.org/sonic-annotator/">Sonic
     Annotator</a>.
 
+<h3>7th November 2022 &mdash; Sonic Visualiser v4.5.1 released</h3>
+<h4>Changes in Sonic Visualiser v4.5.1 since the previous release 4.5:</h4>
+<ul><li>Update to use Rubber Band v3 with its higher quality timestretcher
+   (the older, lower-CPU one is still available in preferences). This
+   means the build requires rubberband-3.0.0 or newer, so you may need
+   to install it separately if building on an older system.</li>
+<li>Fix inability to select Hz as the unit of a layer following import</li>
+<li>Provisional fix to bailing out on startup when invoked with "Open
+   With..." on Mac</li>
+<li>Fix nonsense display when showing frequency scaled points with value
+   of 0Hz</li></ul>
+<h3>31st March 2022 &mdash; Sonic Visualiser v4.5 released</h3>
+<h4>Changes in Sonic Visualiser v4.5 since the previous release 4.4:</h4>
+<ul><li>Add option to switch off the interpolation used in the waveform
+   view for zoom levels closer than one pixel per frame: sometimes it
+   can be an unnecessary distraction. With interpolation switched off,
+   the individual samples are shown as unconnected points instead</li>
+<li>Make it possible to toggle segment colouring in the segmentation
+   view of the time value layer, as well as toggling segment division
+   lines</li>
+<li>When importing CSV files, if a column heading indicates a likely
+   unit for the column, use it by default; also remember last user
+   settings for the import dialog</li>
+<li>Ensure the Choose Default Template option on the templates menu can
+   be reached even when no file is loaded</li>
+<li>Give the spectrum layer the same effective scale range as it had
+   before the dB scale fix in v4.4, fixing the accidental halving of
+   the visible range for that layer in v4.4</li>
+<li>Fix hang when opening two plugin parameter dialogs at once</li>
+<li>Fix crash when rendering slice or spectrum layers scrolled to
+   earlier than the start of the audio or later than the end</li>
+<li>Fix crash when more than one audio file is supplied at the command
+   line with a default session template that requires regenerating one
+   or more feature extraction layers and layer generation produces an
+   error or warning</li>
+<li>Fix failure to exit fully if the window is closed before plugin
+   scan is complete at startup</li></ul>
 <h3>17th September 2021 &mdash; Sonic Visualiser v4.4 released</h3>
 <h4>Changes in Sonic Visualiser v4.4 since the previous release 4.3:</h4>
 <ul><li>Update Mac build to add support for Apple M1 (arm64) architecture:
