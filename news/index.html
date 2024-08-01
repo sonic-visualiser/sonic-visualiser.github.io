@@ -30,6 +30,42 @@
     and <a href="https://vamp-plugins.org/sonic-annotator/">Sonic
     Annotator</a>.
 
+<h3>31st July 2024 &mdash; Sonic Visualiser v5.0 released</h3>
+<h4>Changes in Sonic Visualiser v5.0 since the previous release 4.5.2:</h4>
+<ul><li>Port to Qt6. The code now builds only with Qt6, and Qt5 is no
+   longer supported</li>
+<li>Add mechanism to ignore plugins on subsequent runs if they fail to
+   load, and to review ignored plugins from the preferences dialog</li>
+<li>Add Mel scale to the options for vertical spectrogram scale</li>
+<li>Add an opaque toggle to the spectrogram; switching it off gives
+   spectrograms some transparency, so they can be overlaid over other
+   layers, including other spectrograms</li>
+<li>Update opaque toggle in colour 3d layers so that it works like the
+   new one in the spectrogram. Previously colour 3d plot layers could
+   be translucent at low resolutions but not at higher ones; now the
+   setting affects all resolutions. Correspondingly make it default to
+   off, as in the spectrogram</li>
+<li>Add smoothing toggle directly to spectrogram parameters, like the
+   one already found in colour 3d plot layers. Previously spectrogram
+   smoothing could be toggled only from the preferences</li>
+<li>Stop snapping spectrogram frequency range to bin frequencies. This
+   already-confusing feature caused problems with the new support for
+   translucent spectrograms, which permits overlaying spectrograms of
+   differing bin counts that would be too hard to line up properly if
+   the frequency extents were always snapped to the nearest bin</li>
+<li>Clarify keyboard and mouse shortcut descriptions in the Key And
+   Mouse Reference window, especially for the platform-specific
+   descriptions used on the Mac, and add a few more alternative
+   shortcuts including more standard zoom in/out shortcuts</li>
+<li>Fix disappearing peaks in peak-bin display mode in the spectrogram,
+   caused by overzealous smoothing</li>
+<li>Fix jumps in spectrogram when changing zoom level between certain
+   values in hi-dpi pixel-doubled situations, caused by a failure of
+   cache invalidation</li>
+<li>Fix some very slow spectrogram painting</li>
+<li>Fix disappearance of right-button Transforms menu after file load</li>
+<li>Fix inconsistent default vs set threshold values in spectrogram</li>
+<li>Fix crash on painting very low-resolution dense 3d plots</li></ul>
 <h3>3rd May 2023 &mdash; Sonic Visualiser v4.5.2 released</h3>
 <h4>Changes in Sonic Visualiser v4.5.2 since the previous release 4.5.1:</h4>
 <ul><li>Support multi-line text labels on time instants</li>
@@ -715,17 +751,20 @@
 <h3>8th April 2011 &mdash; Sonic Visualiser v1.8 released</h3>
 <h4>Changes in Sonic Visualiser 1.8 since the previous release 1.7.2:</h4>
 <ul><li>Sonic Visualiser now registers as a file type handler on OS/X,
- providing better integration with the desktop generally (Dan Stowell)</li>
+ providing better integration with the desktop generally (thanks to
+ Dan Stowell)</li>
 <li>There is a new function to toggle all Time Rulers at once (key #)</li>
 <li>The CSV import dialog has been overhauled, allowing more flexible
  selection of purpose for each column</li>
 <li>Text overlays are now easier to read on dark backgrounds</li>
-<li>Hidden layers are now ignored when exporting an image (Dan Stowell)</li>
+<li>Hidden layers are now ignored when exporting an image (thanks to
+ Dan Stowell)</li>
 <li>A crash when starting a new session or exiting the application
-   after loading a session with saved alignment data has been fixed</li>
+ after loading a session with saved alignment data has been fixed</li>
 <li>The duplication of right-button menu functions when multiple files
  were loaded has been fixed</li>
-<li>The layer-add menu functions now have shortcuts (Dan Stowell)</li>
+<li>The layer-add menu functions now have shortcuts (thanks to Dan
+ Stowell)</li>
 <li>The codebase has been reorganised into libraries and a configure
  step added.  It should be easier to build and maintain on OS/X and
  Linux than previously, although it won't make much difference on
@@ -857,7 +896,7 @@
  .xml that contain suitable session data will be loaded as sessions.
  Note that .xml extension files still do not show up in the default
  file load filter.  This is intentional, as there may be any kind of
- data in them -- if you want to load uncompressed session files from
+ data in them - if you want to load uncompressed session files from
  XML, you need to know you're doing it.</li>
 <li>Several crashes and other bugs have been fixed.</li></ul>
 <h3>10th July 2008 &mdash; Sonic Visualiser v1.3 released</h3>
@@ -916,7 +955,7 @@
  alongside the cursor than previously.</li>
 <li>There is a new Erase tool for erasing individual points from an
  editable layer.</li>
-<li>Several keyboard shortcuts have changed -- all of the Alt+key
+<li>Several keyboard shortcuts have changed: all of the Alt+key
  shortcuts now either use Ctrl or a plain keypress with no modifier,
  to avoid clashes with window manager shortcuts and to make them
  easier to use and remember</li>

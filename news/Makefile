@@ -1,7 +1,7 @@
 
 CODE_ROOT	:= ../../../..
-CODE_ROOT_SV	:= $(CODE_ROOT)/sv
-CODE_ROOT_SML	:= $(CODE_ROOT)/sml
+CODE_ROOT_SV	:= $(CODE_ROOT)
+CODE_ROOT_SML	:= $(CODE_ROOT)/bisquay
 
 CHANGELOGS	:= \
 	$(CODE_ROOT_SV)/sonic-visualiser/CHANGELOG \

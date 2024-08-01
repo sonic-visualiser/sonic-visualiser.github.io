@@ -1,0 +1,15 @@
+=== 3rd May 2023 &mdash; Sonic Visualiser v4.5.2 released
+
+== Changes in Sonic Visualiser v4.5.2 since the previous release 4.5.1:
+
+ - Support multi-line text labels on time instants
+
+ - Improve refresh and rendering of text labels in various layers
+
+ - Improve abbreviation of layer names in the key at bottom-right of a
+   pane
+
+ - Fix repeated writes to settings file when rendering time-ruler
+   layers at close zoom levels
+
+ - Use system Vamp host SDK if provided

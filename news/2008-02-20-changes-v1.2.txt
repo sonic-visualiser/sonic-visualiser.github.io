@@ -52,7 +52,7 @@
  - There is a new Erase tool for erasing individual points from an
  editable layer.
 
- - Several keyboard shortcuts have changed -- all of the Alt+key
+ - Several keyboard shortcuts have changed: all of the Alt+key
  shortcuts now either use Ctrl or a plain keypress with no modifier,
  to avoid clashes with window manager shortcuts and to make them
  easier to use and remember
