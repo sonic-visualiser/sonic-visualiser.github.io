@@ -30,6 +30,35 @@
     and <a href="https://vamp-plugins.org/sonic-annotator/">Sonic
     Annotator</a>.
 
+<h3>6th March 2025 &mdash; Sonic Visualiser v5.2 released</h3>
+<h4>Changes in Sonic Visualiser v5.2 since the previous release 5.0.1:</h4>
+<ul><li>On the Mac, substantially improve responsiveness during scrolling
+   and zooming, with threaded paint and various perceptual changes.
+   If threaded paint causes instability, it can be disabled by setting
+   the SV_NO_THREADED_PAINT environment variable (to anything).
+   (Sonic Visualiser was previously perceptually more sluggish on the
+   Mac than on other platforms, where this change was not necessary)</li>
+<li>Fix habit of holding open the device microphone after recording</li>
+<li>Improve compatibility with Vamp plugins that return unexpectedly
+   many values in features</li>
+<li>Improve compatibility with Vamp plugins that express units in
+   variant forms such as "Hertz"</li>
+<li>Fix incorrect choice of UI language on systems with more than one
+   of the supported languages configured, and on which English (that is
+   not explicitly regionalised to en_US or en_GB) has a higher priority
+   than any other supported language. Previously the first other
+   matching language would have been used; now it will be English</li>
+<li>Fix tendency to pop up a progress dialog over the top of any user
+   input needed when opening a file</li></ul>
+<h3>1st October 2024 &mdash; Sonic Visualiser v5.0.1 released</h3>
+<h4>Changes in Sonic Visualiser v5.0.1 since the previous release 5.0.0:</h4>
+<ul><li>Fix occasional crashes in the Mac package, caused by a Qt bug, by
+   updating the version of Qt used when packaging</li>
+<li>Fix bug in Preferences that prevented some of the analysis settings
+   from taking effect</li>
+<li>Fix failure to load some older 32-bit Windows Vamp plugins</li>
+<li>Update UI translation loading logic to better reflect system locale
+   settings</li></ul>
 <h3>31st July 2024 &mdash; Sonic Visualiser v5.0 released</h3>
 <h4>Changes in Sonic Visualiser v5.0 since the previous release 4.5.2:</h4>
 <ul><li>Port to Qt6. The code now builds only with Qt6, and Qt5 is no
