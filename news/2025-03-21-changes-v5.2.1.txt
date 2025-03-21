@@ -1,0 +1,8 @@
+=== 21st March 2025 &mdash; Sonic Visualiser v5.2.1 released
+
+== Changes in Sonic Visualiser v5.2.1 since the previous release 5.2:
+
+ - Fix hang on exporting an image or SVG during interactive use
+
+ - Fix failure to highlight some points on mouse-over when using a
+   hi-dpi display

@@ -1,0 +1,14 @@
+=== 1st October 2024 &mdash; Sonic Visualiser v5.0.1 released
+
+== Changes in Sonic Visualiser v5.0.1 since the previous release 5.0.0:
+
+ - Fix occasional crashes in the Mac package, caused by a Qt bug, by
+   updating the version of Qt used when packaging
+
+ - Fix bug in Preferences that prevented some of the analysis settings
+   from taking effect
+
+ - Fix failure to load some older 32-bit Windows Vamp plugins
+
+ - Update UI translation loading logic to better reflect system locale
+   settings
